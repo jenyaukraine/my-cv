@@ -194,6 +194,16 @@ body.theme-light .card {
 a { color: #f6d861; text-decoration: none; border-bottom: 1px dashed rgba(246,201,14,.45); }
 a:hover { color: #ffe58f; border-bottom-color: rgba(255,229,143,.85); }
 
+body.theme-light a {
+  color: #7a4f00;
+  border-bottom-color: rgba(122,79,0,.45);
+}
+
+body.theme-light a:hover {
+  color: #5f3d00;
+  border-bottom-color: rgba(95,61,0,.75);
+}
+
 @media (max-width: 860px) {
   .grid-2 { grid-template-columns: 1fr; }
 }
