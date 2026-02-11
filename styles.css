@@ -18,6 +18,14 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); f
   padding: 80px 0 72px;
 }
 
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
 .badge {
   display: inline-block;
   font-size: .78rem;
@@ -27,9 +35,16 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); f
   background: var(--accent);
   padding: 6px 10px;
   border-radius: 999px;
-  margin-bottom: 14px;
   font-weight: 700;
 }
+
+.lang-switch {
+  font-size: .9rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.lang-switch a { margin-left: 8px; }
 
 h1 { margin: 0; font-size: clamp(2rem, 4.7vw, 3.6rem); line-height: 1.08; }
 h1 span { color: var(--accent); }
