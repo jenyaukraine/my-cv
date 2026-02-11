@@ -89,16 +89,22 @@ a:hover { color: #ffe58f; border-bottom-color: rgba(255,229,143,.85); }
     --bg: #ffffff;
     --bg-soft: #ffffff;
     --line: #d8d8d8;
-    --text: #111111;
-    --muted: #444444;
-    --accent: #111111;
+    --text: #000000;
+    --muted: #000000;
+    --accent: #000000;
   }
 
   html, body {
     background: #fff !important;
-    color: #111 !important;
+    color: #000 !important;
     font-size: 10.5pt;
     line-height: 1.35;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body, p, li, span, a, h1, h2, h3, strong, em {
+    color: #000 !important;
   }
 
   .hero {
