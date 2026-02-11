@@ -166,5 +166,5 @@ I don’t just write code — I design systems that survive growth, refactors, a
 
 ## Contact
 
-**Email:** jenya.punchenko@gmail.com  
+**Email:** jenyaukraine@gmail.com  
 **GitHub:** github.com/jenyaukraine
