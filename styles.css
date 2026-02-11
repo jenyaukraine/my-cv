@@ -44,7 +44,14 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); f
   white-space: nowrap;
 }
 
-.lang-switch a { margin-left: 8px; }
+.lang-switch a,
+.lang-switch strong {
+  margin-left: 8px;
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid rgba(246,201,14,.28);
+  border-radius: 999px;
+}
 
 h1 { margin: 0; font-size: clamp(2rem, 4.7vw, 3.6rem); line-height: 1.08; }
 h1 span { color: var(--accent); }
