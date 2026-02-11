@@ -87,8 +87,8 @@ body.theme-light .hero {
 }
 
 .theme-toggle .ios-switch {
-  width: 52px;
-  height: 28px;
+  width: 64px;
+  height: 30px;
   border-radius: 999px;
   background: #2a2f37;
   border: 1px solid #434b57;
@@ -102,7 +102,7 @@ body.theme-light .hero {
 .theme-toggle .ios-switch::before {
   content: "🌙";
   position: absolute;
-  right: 7px;
+  right: 9px;
   top: 50%;
   transform: translateY(-52%);
   font-size: 12px;
@@ -112,8 +112,8 @@ body.theme-light .hero {
 
 .theme-toggle .ios-switch::after {
   content: "☀️";
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: #fff;
   position: absolute;
@@ -134,12 +134,12 @@ body.theme-light .hero {
 
 .theme-toggle input:checked + .ios-switch::before {
   content: "☀️";
-  right: 31px;
+  right: 39px;
 }
 
 .theme-toggle input:checked + .ios-switch::after {
   content: "🌙";
-  transform: translateX(24px);
+  transform: translateX(34px);
 }
 
 h1 { margin: 0; font-size: clamp(2rem, 4.7vw, 3.6rem); line-height: 1.08; }
