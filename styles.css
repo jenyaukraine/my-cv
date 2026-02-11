@@ -77,3 +77,117 @@ a:hover { color: #ffe58f; border-bottom-color: rgba(255,229,143,.85); }
 @media (max-width: 860px) {
   .grid-2 { grid-template-columns: 1fr; }
 }
+
+/* Print version (A4-optimized) */
+@page {
+  size: A4;
+  margin: 11mm;
+}
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #ffffff;
+    --line: #d8d8d8;
+    --text: #111111;
+    --muted: #444444;
+    --accent: #111111;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 10.5pt;
+    line-height: 1.35;
+  }
+
+  .hero {
+    background: #fff !important;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 6mm 0 4mm;
+  }
+
+  .badge {
+    background: #111 !important;
+    color: #fff !important;
+    padding: 2px 7px;
+    font-size: 8pt;
+    margin-bottom: 6px;
+  }
+
+  h1 { font-size: 18pt; margin: 0 0 4px; }
+  h2 { font-size: 12pt; margin: 0 0 7px; color: #111 !important; }
+  h3 { font-size: 10.5pt; margin: 0 0 4px; }
+
+  .meta, .lead { margin: 2px 0; }
+  .section { padding: 3.2mm 0; }
+  .section-dark {
+    background: #fff !important;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .card {
+    background: #fff !important;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    padding: 7px;
+  }
+
+  .card.full { grid-column: 1 / -1; }
+
+  .list {
+    margin: 4px 0 0;
+    padding-left: 16px;
+    line-height: 1.35;
+  }
+
+  .list li {
+    margin: 0 0 2px;
+    orphans: 2;
+    widows: 2;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .chips span {
+    background: #f4f4f4 !important;
+    border: 1px solid #d4d4d4;
+    color: #111 !important;
+    padding: 2px 6px;
+    font-size: 8.8pt;
+  }
+
+  a {
+    color: #111 !important;
+    border-bottom: none !important;
+    text-decoration: none;
+  }
+
+  .footer {
+    border-top: 1px solid #d8d8d8;
+    padding: 3mm 0 0;
+    margin-top: 3mm;
+  }
+
+  /* Better page breaks */
+  section, .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+}
