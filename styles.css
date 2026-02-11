@@ -34,15 +34,17 @@ body.theme-light .hero {
 .hero-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .top-controls {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .badge {
@@ -55,6 +57,7 @@ body.theme-light .hero {
   padding: 6px 10px;
   border-radius: 999px;
   font-weight: 700;
+  margin-bottom: 12px;
 }
 
 .lang-switch {
