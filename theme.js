@@ -10,7 +10,8 @@
 
   function init() {
     const saved = localStorage.getItem(KEY);
-    apply(saved === 'light' ? 'light' : 'dark');
+    // Light is the default for new visitors; an explicit dark preference is preserved.
+    apply(saved === 'dark' ? 'dark' : 'light');
 
     document.querySelectorAll('.theme-toggle-input').forEach(input => {
       input.addEventListener('change', () => {

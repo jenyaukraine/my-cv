@@ -37,6 +37,8 @@ I don’t just write code — I design systems that survive growth, refactors, a
 - 🌐 Network-aware architecture & remote systems
 - 🖥 IoT / embedded / device-driven systems
 - 🤖 AI-assisted development and automation workflows
+- 📡 24/7 infrastructure operations, monitoring & incident troubleshooting
+- 🛠 Linux networking, DNS/DHCP, Ubiquiti, MikroTik & VMware environments
 - 📊 Traffic generation funnels & systemized traffic workflows
 - 🧵 Structured logical thinking and problem decomposition
 
@@ -74,6 +76,7 @@ I don’t just write code — I design systems that survive growth, refactors, a
 - Network architecture and remote access systems
 - RouterOS / RouterBoard environments
 - Ubiquiti network infrastructure
+- DNS, DHCP, routing, Nagios and Zabbix monitoring
 - Gateway design and remote connectivity solutions
 - Secure device provisioning and update pipelines
 
@@ -97,9 +100,26 @@ I don’t just write code — I design systems that survive growth, refactors, a
 - Reduced technical debt through systematic removal of obsolete architecture layers
 - Established CI/CD pipelines enabling reproducible builds and safer deployments
 - Designed AI-assisted workflows for content generation and UI production
+- Built and maintained a local llama.cpp fork for Spark X2.5 with C++ tool-call parsing, streaming and AMD Vulkan support
+- Designed HRIT, a reproducible technical-assessment platform combining automated checks with AI-assisted scorecards
 - Built standalone native binaries for Python services to eliminate runtime dependencies
 - Designed traffic generation and processing funnels integrated into platform workflows
 - Implemented secure remote access architectures for distributed device fleets
+
+---
+
+## Selected Projects & Earlier Experience
+
+### Local AI & Developer Infrastructure
+- **ffprocessor:** C++ llama.cpp fork for Spark X2.5 with local coding-agent integration, tool-call parsing, streaming and AMD Vulkan support
+- **codex-skill:** Python orchestration layer for multiple local AI workers with queueing and result review
+- **HRIT:** reproducible hiring-task platform with automated validation and AI-assisted evaluation
+
+### Infrastructure & Operations Background
+- ISP operations and quality assurance in 24/7 environments
+- Linux/CentOS administration, Bash, VMware, Nagios and Zabbix
+- Ubiquiti, MikroTik, routing, DNS/DHCP and network troubleshooting
+- Rock Pi backup tooling, embedded Linux and remote system support
 
 ---
 

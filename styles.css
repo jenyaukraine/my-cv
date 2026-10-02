@@ -150,9 +150,35 @@ h1 span { color: var(--accent); }
 .meta { color: #dedede; margin: 14px 0 10px; }
 .lead { color: var(--muted); max-width: 900px; line-height: 1.7; }
 
+.role-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.role-chip {
+  border: 1px solid rgba(246, 201, 14, .45);
+  background: rgba(31, 26, 7, .72);
+  color: #f5dd77;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: .88rem;
+  font-weight: 600;
+}
+.section-kicker {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .75rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+.ai-section .card { background: rgba(17, 17, 17, .78); }
+
 body.theme-light .meta,
 body.theme-light .lead {
   color: #1c2430;
+}
+
+body.theme-light .role-chip {
+  background: #fff8d9;
+  border-color: #b08a00;
+  color: #5f4800;
 }
 
 .section { padding: 58px 0; }
@@ -300,6 +326,19 @@ body.theme-light a:hover {
   }
 
   .chips span {
+    background: #f4f4f4 !important;
+    border: 1px solid #d4d4d4;
+    color: #111 !important;
+    padding: 2px 6px;
+    font-size: 8.8pt;
+  }
+
+  .role-stack {
+    gap: 4px;
+    margin-top: 5px;
+  }
+
+  .role-chip {
     background: #f4f4f4 !important;
     border: 1px solid #d4d4d4;
     color: #111 !important;
