@@ -404,6 +404,23 @@ textarea { min-height: 130px; resize: vertical; }
   transition: filter .2s ease, opacity .2s ease;
 }
 .btn-submit:hover { filter: brightness(1.08); }
+.contact-cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #111;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 24px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter .2s ease, transform .2s ease;
+}
+.contact-cta:hover {
+  color: #111;
+  border-bottom: 0;
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
 .btn-submit:disabled { opacity: .6; cursor: not-allowed; }
 .form-note { font-size: .8rem; color: var(--muted); max-width: 340px; }
 .form-status {
