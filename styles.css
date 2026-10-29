@@ -21,6 +21,13 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); f
 
 .container { width: min(1080px, 92%); margin: 0 auto; }
 
+.experience-list { display: grid; gap: 12px; margin-top: 20px; }
+.experience-item { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 24px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg-soft); }
+.experience-item h3 { margin: 0 0 7px; font-size: 1.08rem; }
+.experience-item p { margin: 0; line-height: 1.55; }
+.experience-date { color: var(--accent); font-weight: 700; font-size: .93rem; }
+@media (max-width: 650px) { .experience-item { grid-template-columns: 1fr; gap: 7px; } }
+
 .hero {
   border-bottom: 1px solid var(--line);
   background: radial-gradient(circle at 85% -10%, #2b2200 0%, #141414 38%, #0b0b0b 68%);
