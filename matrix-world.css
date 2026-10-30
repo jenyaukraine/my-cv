@@ -2,10 +2,10 @@
  body:not(.matrix-world)>.matrix-world-canvas,body:not(.matrix-world)>.matrix-lifts,body:not(.matrix-world)>.matrix-neo,body:not(.matrix-world)>.matrix-motion-toggle{display:none}
  body.matrix-world,body.matrix-world.theme-light{--bg:#091c25;--bg-soft:#102b35;--text:#e6f2ef;--muted:#abc7c6;--line:#31515a;--accent:#74dfbd;--matrix-strength:0;position:relative;isolation:isolate;background:#061820;color:var(--text)}
  body.matrix-world.theme-light{--bg:#ffffff;--bg-soft:#edf4f2;--line:#cfdfdc;--text:#172c38;--muted:#526875;--accent:#087d75;background:#dcebe6}
- .matrix-world-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.24;mask-image:linear-gradient(90deg,#000 0%,#000b 18%,#0003 36%,#0003 65%,#000b 84%,#000 100%)}
+ .matrix-world-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.12;mask-image:linear-gradient(90deg,#000 0%,#0008 10%,transparent 25%,transparent 75%,#0008 90%,#000 100%)}
  .matrix-lifts{position:absolute;top:0;left:0;width:100%;overflow:hidden;z-index:0;pointer-events:none}
  .matrix-lift{position:absolute;top:0;left:0;border:2px solid #54baa54a;border-radius:9px 9px 2px 2px;background:linear-gradient(145deg,#153d40b3,#07171dc9);box-shadow:0 0 30px #31da9a0e,inset 0 0 22px #0008;opacity:.25;transition:opacity 1s,border-color 1s,box-shadow 1s}
- .matrix-lift-active{opacity:calc(.35 + var(--matrix-strength)*.5);border-color:#73e7bf94;box-shadow:0 0 55px #43eab42b,inset 0 0 25px #0008}
+ .matrix-lift-active{opacity:calc(.3 + var(--matrix-strength)*.2);border-color:#73e7bf70;box-shadow:0 0 30px #43eab415,inset 0 0 25px #0008}
  .matrix-lift-display{position:absolute;top:9px;left:0;width:100%;text-align:center;font:9px monospace;color:#8fe8cc;letter-spacing:2px}
  .matrix-lift-doors{position:absolute;inset:32px 8px 9px;display:flex;overflow:hidden;background:#07171c;perspective:700px}
  .matrix-lift-doors i{display:block;width:50%;height:100%;background:linear-gradient(90deg,#0b2229,#20454a 96%,#70cdb6);transition:transform 1.1s cubic-bezier(.22,.8,.24,1)}
@@ -43,6 +43,9 @@
  .cv-music-invite .cv-music-kicker{font-size:10px;color:#83d9b9;letter-spacing:1.8px;margin:0 0 10px}.cv-music-invite h2{font-size:19px;line-height:1.35;letter-spacing:-.5px;color:#edf8f3;margin:0 0 10px}.cv-music-invite p{font-size:12px;color:#bad1ca;margin:0 0 15px;line-height:1.6}.cv-music-invite button{font:600 12px 'Segoe UI',sans-serif;cursor:pointer;border-radius:5px;padding:9px 12px}.cv-music-play{color:#092b2b;background:#87dec0;border:1px solid #87dec0}.cv-music-dismiss{color:#c7dcd4;background:transparent;border:1px solid #53796d;margin-left:7px}.cv-music-invite button:focus-visible{outline:2px solid white;outline-offset:3px}.cv-music-invite[hidden]{display:none}.cv-music-invite .cv-music-playing{display:flex;justify-content:space-between;align-items:center;gap:10px}.cv-music-invite .cv-music-playing p{margin:0;font-size:12px}.cv-music-close{border:0;background:transparent;color:#c7dcd4;padding:3px!important;font-size:18px!important}.cv-music-status{font-size:11px!important;margin:10px 0 0!important}
  @media(max-width:1399px){.matrix-world main>.section.container,.matrix-world main>.section>.container{background:#0b2028f2;box-shadow:0 0 25px 10px #0b2028c9}.matrix-world.theme-light main>.section.container,.matrix-world.theme-light main>.section>.container{background:#fff;box-shadow:0 0 25px 10px #e9f3efed}}
  @media(max-width:700px){.matrix-lift{opacity:.15}.matrix-motion-toggle{right:12px;bottom:12px;font-size:10px}.cv-music-invite{left:16px;bottom:65px;width:calc(100vw - 32px);max-width:325px;padding:17px}.cv-music-invite h2{font-size:17px}}
+ .matrix-world.cv-reading-layout main>.section.container,.matrix-world.cv-reading-layout main>.section>.container{background:#10232bf7;border-color:#304b54;box-shadow:0 10px 35px #0002}
+ body.theme-light .cv-music-invite{background:#fffffff7;border-color:#b5d0c6;color:#182b34;box-shadow:0 10px 35px #23473c20}
+ body.theme-light .cv-music-invite h2{color:#182b34}body.theme-light .cv-music-invite p{color:#53666b}body.theme-light .cv-music-invite .cv-music-kicker{color:#087d75}body.theme-light .cv-music-dismiss,body.theme-light .cv-music-close{color:#365b52;border-color:#b5d0c6}
  @media(prefers-reduced-motion:reduce){.matrix-world-canvas{display:none}.matrix-lift-doors i,.matrix-lift{transition:none}.matrix-neo{display:none}}
 }
 @media print{.matrix-world-canvas,.matrix-lifts,.matrix-neo,.matrix-motion-toggle,.cv-music-invite{display:none!important}}

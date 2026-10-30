@@ -16,10 +16,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="alternate" hreflang="en" href="https://jenyaukraine.github.io/my-cv/">
   <link rel="alternate" hreflang="de" href="https://jenyaukraine.github.io/my-cv/de.html">
-  <link rel="stylesheet" href="cv-enhancements.css?v=20261030g">
-  <link rel="stylesheet" href="matrix-world.css?v=20261030g">
+  <link rel="stylesheet" href="cv-enhancements.css?v=20261030i">
+  <link rel="stylesheet" href="matrix-world.css?v=20261030i">
 </head>
-<body>
+<body class="cv-reading-layout">
   <a class="cv-skip" href="#cv-main">Zum Lebenslauf springen</a>
   <header class="hero">
     <div class="container">
@@ -29,6 +29,7 @@
             <input class="theme-toggle-input" type="checkbox" aria-label="Darstellung ändern" />
             <span class="ios-switch"></span>
           </label>
+          <button type="button" class="theme-auto" aria-label="Gerätedesign verwenden" aria-pressed="true">Auto</button>
           <nav class="lang-switch" aria-label="Sprache"><a href="index.html" lang="en" hreflang="en">🇬🇧 English</a> <strong lang="de" aria-current="page">🇩🇪 Deutsch</strong></nav>
         </div>
       </div>
@@ -74,7 +75,7 @@
       <p class="cv-availability">Aktuell bei TCB Hard + Software tätig und offen für eine neue Position oder Projektarbeit.</p>
       <p class="muted">Die Positionen sind nach dokumentiertem Beginn geordnet. Einige Projekte aus dem Jahr 2019 überschneiden sich.</p>
       <div class="experience-list">
-        <article class="experience-item"><div class="experience-date">Feb. 2020–heute</div><div><h3>Senior PHP Developer · TCB Hard + Software</h3><p>Entwicklung und Modernisierung einer PHP-Plattform.</p><div class="cv-role-detail"><h4>Digital Signage: Kampagnen-Player und VPN-Automatisierung</h4><p>Eine vorhandene technische Basis samt Datenbank zu einer vollständigen, betriebsfähigen Digital-Signage-Plattform weiterentwickelt.</p><ul><li>Einen Kampagnen-Player für Bild-Slideshows und Videowiedergabe entwickelt.</li><li>Den Betrieb der Player über private VPN-Netzwerke automatisiert.</li></ul></div></div></article>
+        <article class="experience-item"><div class="experience-date">Feb. 2020–heute</div><div><h3>Senior PHP Developer · TCB Hard + Software</h3><p>Entwicklung und Modernisierung einer PHP-Plattform.</p><div class="cv-role-detail"><h4>Digital Signage: Kampagnen-Player und VPN-Automatisierung</h4><p>Eine vorhandene technische Basis samt Datenbank zu einer vollständigen, betriebsfähigen Digital-Signage-Plattform weiterentwickelt.</p><ul><li>Einen Kampagnen-Player für Bild-Slideshows und Videowiedergabe entwickelt.</li><li>Den Betrieb der Player über private VPN-Netzwerke automatisiert.</li></ul></div><div class="cv-role-detail cv-migration-case"><h4>Migration bestehender Geräte &amp; Release-Paketierung</h4><p>Einen Fernmigrationsweg für bestehende Digital-Signage-Geräte entwickelt: Eine temporäre RAM-Umgebung installiert ein vorbereitetes Ubuntu-basiertes Systemabbild und startet anschließend die eingerichtete Anwendung.</p><ul><li>Vorhandene Wi-Fi-Einstellungen vom alten Datenträger übernommen, damit das neue System die Kundenverbindung automatisch wiederherstellt.</li><li>Die Migration schrittweise über räumlich verteilte Kundenstandorte ausgerollt und zeitweise nicht erreichbare Geräte berücksichtigt.</li><li>Python-Komponenten als eigenständige Binärpakete über CI/CD ausgeliefert, um Probleme mit Laufzeitabhängigkeiten und Kompatibilität zu reduzieren.</li></ul></div></div></article>
         <article class="experience-item"><div class="experience-date">Jan.–Feb. 2020</div><div><h3>Senior PHP Developer · SYS Softwaresysteme GmbH</h3><p>Laravel-Backend und Frontend mit Vue und TypeScript.</p></div></article>
         <article class="experience-item"><div class="experience-date">Aug. 2019–Jan. 2020</div><div><h3>Middle PHP Developer · Hallo Welt! GmbH</h3><p>PHP-Entwicklung im MediaWiki- und BlueSpice-Umfeld.</p></div></article>
         <article class="experience-item"><div class="experience-date">2019</div><div><h3>Middle PHP Developer · Astarios</h3><p>Arbeit mit MediaWiki und BlueSpice; Docker, Tomcat und NPM gehörten zum Projektstack.</p></div></article>
@@ -108,6 +109,7 @@
               <li>Werkzeugnutzende Agenten mit Anbindung an APIs, Repositories, CI/CD und interne Systeme</li>
             </ul>
           </article>
+        <article class="card full cv-delivery-workflow"><h3>Von der Anforderung zur geprüften Umsetzung</h3><ol><li>Anfragen in Linear erfassen und Anforderungen klären.</li><li>Aufgaben und Kontext mit Claude strukturieren.</li><li>Die Umsetzung schrittweise über mehrere Agenten koordinieren.</li><li>Ergebnisse mit der ursprünglichen Aufgabe abgleichen, fehlende Logik erkennen und gezielt nacharbeiten lassen.</li></ol><p>Ich halte die Verbindung zwischen Kundenwunsch, Aufgabenbeschreibung und tatsächlichem Ergebnis aufrecht. Mein Beitrag umfasst Aufgabenklärung, Koordination und eigene Prüfung der Umsetzung.</p></article>
         </div>
       </div>
     </section>
@@ -207,6 +209,7 @@
         <h2>Wichtige Erfolge</h2>
         <ul class="list">
           <li><strong>Digital signage:</strong> Eine vollständige Digital-Signage-Plattform mit Kampagnen-Player für Bilder und Videos sowie automatisiertem Betrieb über private VPN-Netzwerke realisiert.</li>
+          <li>Fernmigration einer bestehenden Geräteinstallation auf ein neues Systemabbild ermöglicht — mit Übernahme der Kunden-Netzwerkeinstellungen, schrittweisem Rollout und CI/CD-Binärpaketen.</li>
           <li>Architektur-Refactoring einer komplexen Multi-Tenant-Plattform (Hotels / Reseller / Endkunden) geleitet</li>
           <li>Legacy-Frontend auf moderne Vue-3- und Vite-Architektur migriert</li>
           <li>Modulare Backend-Struktur als Ersatz für eng gekoppelte Legacy-Logik entworfen</li>
@@ -348,9 +351,9 @@
       <p class="muted">Strukturierte Systeme. Zuverlässige Umsetzung. Langfristiger technischer Einfluss.</p>
     </div>
   </footer>
-  <script src="theme.js?v=20261030g"></script>
+  <script src="theme.js?v=20261030i"></script>
   <script src="app.js?v=20261030" defer></script>
-  <script src="matrix-world.js?v=20261030g" defer></script>
-  <script src="music-invite.js?v=20261030g" defer></script>
+  <script src="matrix-world.js?v=20261030i" defer></script>
+  <script src="music-invite.js?v=20261030i" defer></script>
 </body>
 </html>

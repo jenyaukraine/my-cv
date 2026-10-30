@@ -4,9 +4,9 @@ The existing CV, its EN/DE content, project gallery and original PDF downloads a
 
 ## CV presentation
 
-The default theme follows `prefers-color-scheme` from the browser/device. A deliberate choice through the existing theme switch is stored locally and takes precedence. Without a manual choice, a device-theme change updates the CV automatically.
+The default theme follows `prefers-color-scheme` from the browser/device. A deliberate choice through the existing theme switch is stored locally and takes precedence. The Auto button clears that override. Without a manual choice, a device-theme change updates the CV automatically.
 
-Day mode uses the original light CV presentation. Night mode enables `matrix-world.js` and `matrix-world.css`: progressive full-page code rain, decorative elevators beside sections and a sprite travelling between them in response to scrolling. The background intensifies over 50 seconds of visible-page animation time; the character enters after six seconds. Motion pauses when the document is hidden, can be paused using the on-page control, and respects reduced-motion preferences. Decorations never capture pointer input. Text remains in foreground panels.
+Day mode uses light reading panels with dark text. Night mode keeps the same reading-panel structure and enables `matrix-world.js` and `matrix-world.css`: sparse code rain only in the outer gutters, decorative elevators centred beside sections and a sprite travelling between them in response to scrolling. The background intensifies gently over 65 seconds of visible-page animation time, with capped stream density; the character enters after six seconds. Motion pauses when the document is hidden, can be paused using the on-page control, and respects reduced-motion preferences. Decorations never capture pointer input. Text remains in foreground panels.
 
 `music-invite.js` offers Pentaloop through a non-modal side prompt. Playback starts only after the visitor presses Play. The compact player supports pause/resume and close; the original track controls remain available. The prompt choice is remembered for that tab session. Theme and music scripts must retain their versioned asset URLs when edited to avoid stale browser caches.
 

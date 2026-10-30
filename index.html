@@ -16,10 +16,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="alternate" hreflang="en" href="https://jenyaukraine.github.io/my-cv/">
   <link rel="alternate" hreflang="de" href="https://jenyaukraine.github.io/my-cv/de.html">
-  <link rel="stylesheet" href="cv-enhancements.css?v=20261030g">
-  <link rel="stylesheet" href="matrix-world.css?v=20261030g">
+  <link rel="stylesheet" href="cv-enhancements.css?v=20261030i">
+  <link rel="stylesheet" href="matrix-world.css?v=20261030i">
 </head>
-<body>
+<body class="cv-reading-layout">
   <a class="cv-skip" href="#cv-main">Skip to CV</a>
   <header class="hero">
     <div class="container">
@@ -29,6 +29,7 @@
             <input class="theme-toggle-input" type="checkbox" aria-label="Toggle theme" />
             <span class="ios-switch"></span>
           </label>
+          <button type="button" class="theme-auto" aria-label="Use device theme" aria-pressed="true">Auto</button>
           <nav class="lang-switch" aria-label="Language"><strong lang="en" aria-current="page">🇬🇧 English</strong> <a href="de.html" lang="de" hreflang="de">🇩🇪 Deutsch</a></nav>
         </div>
       </div>
@@ -74,7 +75,7 @@
       <p class="cv-availability">Currently at TCB Hard + Software and open to a new role or contract opportunity.</p>
       <p class="muted">Roles are listed by their documented start dates. Some 2019 projects overlap.</p>
       <div class="experience-list">
-        <article class="experience-item"><div class="experience-date">Feb 2020–present</div><div><h3>Senior PHP Developer · TCB Hard + Software</h3><p>PHP platform development and modernisation.</p><div class="cv-role-detail"><h4>Digital signage: campaign player &amp; VPN automation</h4><p>Developed an existing technical foundation and database into a complete, operational digital signage platform.</p><ul><li>Implemented a campaign player for image slideshows and video playback.</li><li>Automated player operation across private VPN networks.</li></ul></div></div></article>
+        <article class="experience-item"><div class="experience-date">Feb 2020–present</div><div><h3>Senior PHP Developer · TCB Hard + Software</h3><p>PHP platform development and modernisation.</p><div class="cv-role-detail"><h4>Digital signage: campaign player &amp; VPN automation</h4><p>Developed an existing technical foundation and database into a complete, operational digital signage platform.</p><ul><li>Implemented a campaign player for image slideshows and video playback.</li><li>Automated player operation across private VPN networks.</li></ul></div><div class="cv-role-detail cv-migration-case"><h4>Legacy device migration &amp; release packaging</h4><p>Designed a remote migration path for existing digital signage devices: a temporary RAM-resident environment installs a prepared Ubuntu-based system image, followed by application provisioning and startup.</p><ul><li>Preserved existing Wi-Fi settings from the old storage so the replacement system could reconnect to the customer network automatically.</li><li>Rolled out in stages across geographically distributed customer sites, accounting for intermittently offline devices.</li><li>Delivered Python components as self-contained binary packages through CI/CD to reduce runtime dependency and compatibility problems.</li></ul></div></div></article>
         <article class="experience-item"><div class="experience-date">Jan–Feb 2020</div><div><h3>Senior PHP Developer · SYS Softwaresysteme GmbH</h3><p>Laravel backend and Vue/TypeScript frontend.</p></div></article>
         <article class="experience-item"><div class="experience-date">Aug 2019–Jan 2020</div><div><h3>Middle PHP Developer · Hallo Welt! GmbH</h3><p>PHP development in the MediaWiki / BlueSpice ecosystem.</p></div></article>
         <article class="experience-item"><div class="experience-date">2019</div><div><h3>Middle PHP Developer · Astarios</h3><p>MediaWiki / BlueSpice work; Docker, Tomcat and NPM in the project stack.</p></div></article>
@@ -108,6 +109,7 @@
               <li>Tool-using agents connected to APIs, repositories, CI/CD, and internal systems</li>
             </ul>
           </article>
+        <article class="card full cv-delivery-workflow"><h3>From requirements to reviewed implementation</h3><ol><li>Capture requests in Linear and clarify the requirements.</li><li>Structure tasks and context with Claude.</li><li>Coordinate implementation incrementally across multiple agents.</li><li>Review the result against the original task, identify missing logic and direct the next iteration.</li></ol><p>I keep the customer request, task specification and delivered result connected. My contribution includes problem framing, coordination and hands-on review of the implementation.</p></article>
         </div>
       </div>
     </section>
@@ -208,6 +210,7 @@
         <h2>Key Achievements</h2>
         <ul class="list">
           <li><strong>Digital signage:</strong> Delivered a complete digital signage platform with image/video campaign playback and automated operation across private VPN networks.</li>
+          <li>Enabled remote migration of an installed device fleet to a replacement system image, preserving customer network settings and using staged rollout and CI/CD-built binary packages.</li>
           <li>Led architectural refactoring of a complex multi-tenant platform (Hotels / Resellers / End Clients)</li>
           <li>Migrated legacy frontend stack to modern Vue 3 + Vite architecture</li>
           <li>Designed modular backend structure replacing tightly coupled legacy logic</li>
@@ -358,9 +361,9 @@
       <p class="muted">Web platforms, AI workflows, connected devices and creative production.</p>
     </div>
   </footer>
-  <script src="theme.js?v=20261030g"></script>
+  <script src="theme.js?v=20261030i"></script>
   <script src="app.js?v=20261030" defer></script>
-  <script src="matrix-world.js?v=20261030g" defer></script>
-  <script src="music-invite.js?v=20261030g" defer></script>
+  <script src="matrix-world.js?v=20261030i" defer></script>
+  <script src="music-invite.js?v=20261030i" defer></script>
 </body>
 </html>
