@@ -2,17 +2,13 @@
 @media screen and (min-width:1280px) {
   body.cv-reading-layout .container,
   body.cv-reading-layout main > .section.container {
-    width:min(1760px,calc(100% - 72px));
+    width:min(1420px,calc(100% - 64px));
     max-width:none;
   }
 }
 @media screen and (min-width:2200px) {
-  body.cv-reading-layout .container,
-  body.cv-reading-layout main > .section.container {
-    width:min(2200px,calc(100% - 96px));
-  }
   body.cv-reading-layout #engineering-profile .cv-domain-grid,
-  body.cv-reading-layout #projects .project-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  body.cv-reading-layout #projects .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media screen {
   body.matrix-world.theme-light.cv-reading-layout main > .section.container,

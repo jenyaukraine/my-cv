@@ -56,7 +56,7 @@
   let energy=0;if(analyser&&[...document.querySelectorAll('audio')].some(a=>!a.paused&&!a.muted)){analyser.getByteFrequencyData(spectrum);energy=spectrum.slice(1,14).reduce((a,b)=>a+b,0)/(13*255);}pulse+=(energy-pulse)*.1;body.style.setProperty('--music-pulse',pulse.toFixed(3));
   const light=body.classList.contains('theme-light');
   const strength=Math.min(1,elapsed/65);body.style.setProperty('--matrix-strength',strength.toFixed(3));canvas.style.opacity=String((light?.55:.32)+strength*.14+pulse*.06);
-  ctx.fillStyle=light?'rgba(241,242,244,.22)':'rgba(0,0,0,.22)';ctx.fillRect(0,0,width,height);ctx.font='12px monospace';
+  ctx.clearRect(0,0,width,height);ctx.font='12px monospace';
   rain.forEach((drop,i)=>{drop.y+=(light?-1:1)*drop.speed*dt*(.7+strength*.25);if(light&&drop.y< -80)drop.y=height+Math.random()*200;if(!light&&drop.y>height+80)drop.y=-Math.random()*200;if(drop.seed>(light?.34:.10)+strength*.18)return;ctx.fillStyle=light?(frame%37===i%37?'#087d75':'#247c6f'):(frame%37===i%37?'#afffd0':'#45c779');ctx.fillText(glyphs[(frame+i*7)%glyphs.length],i*46,drop.y);});frame++;
   selectLift(now);
   const lift=lifts[active];const targetX=lift.x+(lift.w-size)/2,targetY=lift.y+lift.h*.18-window.scrollY;

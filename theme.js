@@ -33,7 +33,7 @@
         'Value: keep remote media devices manageable and campaigns running across a distributed fleet.',
         'Value: validate changes before they reach production and recover quickly when they fail.',
         'Value: turn local AI experiments into repeatable developer workflows with review.',
-        'Value: launch a storefront from a prepared 1C/BAS backup without a live 1C dependency.',
+        'Value: bring existing business data into a usable storefront and operational workflow.',
         'Value: make recurring device and spreadsheet tasks easier to operate and verify.',
         'Value: connect a customer-facing catalogue with search, enquiries and administration.',
         'Value: connect physical devices to useful local controls and climate automation.',
@@ -44,7 +44,7 @@
         'Nutzen: Verteilte Mediengeräte fernverwalten und Kampagnen zuverlässig ausspielen.',
         'Nutzen: Änderungen vor dem Betrieb prüfen und bei Fehlern schnell zurücknehmen.',
         'Nutzen: Lokale KI-Experimente in wiederholbare, überprüfte Entwicklungsabläufe überführen.',
-        'Nutzen: Einen Shop aus einem vorbereiteten 1C/BAS-Backup ohne laufende 1C-Verbindung starten.',
+        'Nutzen: Bestehende Geschäftsdaten in einen nutzbaren Shop und klare Arbeitsabläufe überführen.',
         'Nutzen: Wiederkehrende Geräte- und Tabellenaufgaben einfacher bedienen und prüfen.',
         'Nutzen: Kundenkatalog, Suche, Anfragen und Verwaltung zu einem Ablauf verbinden.',
         'Nutzen: Physische Geräte mit lokaler Steuerung und Klimaautomatisierung verbinden.',
@@ -157,19 +157,6 @@
         });
       });
     }
-
-    const firstTrack = document.querySelector('audio[aria-label*="Polyrhythmic Drive"]');
-    if (firstTrack) {
-      const nextTrack = document.createElement('div');
-      nextTrack.className = 'next-track';
-      nextTrack.innerHTML = '<img src="assets/pentaloop.webp" alt="Techno Punch — Pentaloop cover art" loading="lazy"><div><span>UP NEXT · TECHNO PUNCH</span><h4>Pentaloop</h4></div><audio controls preload="metadata" aria-label="Play Techno Punch — Pentaloop"><source src="assets/pentaloop.mp3" type="audio/mpeg"></audio>';
-      firstTrack.after(nextTrack);
-      const secondTrack = nextTrack.querySelector('audio');
-      firstTrack.addEventListener('ended', () => secondTrack.play().catch(() => {}));
-      firstTrack.addEventListener('play', () => secondTrack.pause());
-      secondTrack.addEventListener('play', () => firstTrack.pause());
-    }
-
 
   }
 
