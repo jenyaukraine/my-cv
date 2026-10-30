@@ -26,7 +26,7 @@
   width=innerWidth;height=innerHeight;const dpr=Math.min(devicePixelRatio||1,1.5);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
   const compact=width<1400;size=width<700?105:compact?155:Math.min(310,(width-1060)/2-25);actor.style.width=size+'px';actor.style.height=size*1.333+'px';
   const liftW=Math.max(70,size*.8),liftH=size*1.5;const rect=document.querySelector('.hero > .container')?.getBoundingClientRect();const contentLeft=rect?.left||24,contentRight=rect?.right||width-24;
-  lifts.forEach((lift,i)=>{const box=lift.section.getBoundingClientRect();lift.w=liftW;lift.h=liftH;lift.x=i%2?Math.max(8,contentLeft-liftW-35):Math.min(width-liftW-8,contentRight+35);lift.y=box.top+window.scrollY+Math.max(36,(box.height-liftH)/2);lift.el.style.width=liftW+'px';lift.el.style.height=liftH+'px';lift.el.style.transform=`translate3d(${lift.x}px,${lift.y}px,0)`;});
+  lifts.forEach((lift,i)=>{const box=lift.section.getBoundingClientRect();lift.w=liftW;lift.h=liftH;lift.x=i%2?Math.max(8,(contentLeft-liftW)/2):Math.min(width-liftW-8,contentRight+(width-contentRight-liftW)/2);lift.y=box.top+window.scrollY+Math.max(36,(box.height-liftH)/2);lift.el.style.width=liftW+'px';lift.el.style.height=liftH+'px';lift.el.style.transform=`translate3d(${lift.x}px,${lift.y}px,0)`;});
   rain=Array.from({length:Math.ceil(width/46)},()=>({y:Math.random()*height,speed:22+Math.random()*30,seed:Math.random()}));
   liftsLayer.style.height=document.documentElement.scrollHeight+'px';active=-1;flight=null;selectLift(performance.now(),true);
  }
