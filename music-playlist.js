@@ -23,6 +23,9 @@
         audio.src = track.src;
         audio.preload = 'metadata';
       }
+      audio.pause();
+      audio.currentTime = 0;
+      audio.autoplay = false;
       audio.controls = false;
       audio.hidden = true;
 
@@ -46,6 +49,7 @@
       const time = document.createElement('span');
       time.className = 'cv-track-duration';
       const seek = document.createElement('input');
+      let userStarted = false;
       seek.type = 'range';
       seek.className = 'cv-track-seek';
       seek.min = '0';
@@ -68,13 +72,14 @@
         }
       }
       play.addEventListener('click', () => {
-        if (audio.paused) audio.play().catch(() => {});
+        if (audio.paused) { userStarted = true; audio.play().catch(() => {}); }
         else audio.pause();
       });
       seek.addEventListener('input', () => {
         if (Number.isFinite(audio.duration)) audio.currentTime = Number(seek.value);
       });
       audio.addEventListener('play', () => {
+        if (!userStarted) { audio.pause(); audio.currentTime = 0; update(); return; }
         for (const other of playlist.querySelectorAll('audio')) if (other !== audio) other.pause();
       });
       for (const event of ['play', 'pause', 'ended', 'timeupdate', 'loadedmetadata', 'durationchange']) {
