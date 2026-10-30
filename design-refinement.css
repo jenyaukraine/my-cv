@@ -1,0 +1,118 @@
+/* Final screen polish. Keep the printable CV and the existing copy intact. */
+@media screen {
+  body.cv-reading-layout > .cv-section-nav {
+    border-bottom: 1px solid #87ddc035;
+    box-shadow: 0 10px 30px #0005;
+    backdrop-filter: blur(16px);
+  }
+  body.cv-reading-layout .cv-section-nav > .container:not(.cv-search-panel) {
+    min-height: 64px;
+    gap: 8px !important;
+  }
+  body.cv-reading-layout .cv-section-nav a,
+  body.cv-reading-layout .cv-nav-more > summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+    padding: 8px 13px !important;
+    border-radius: 8px;
+    font-size: 13px !important;
+    font-weight: 650;
+    line-height: 1.25;
+    letter-spacing: .01em;
+  }
+  body.cv-reading-layout .cv-section-nav a[aria-current] {
+    color: #8be2c6 !important;
+    background: #86ddc41b;
+    box-shadow: inset 0 0 0 1px #86ddc44d;
+  }
+  body.cv-reading-layout .cv-nav-more > summary:hover,
+  body.cv-reading-layout .cv-section-nav a:hover { background: #86ddc414; }
+  body.cv-reading-layout .cv-nav-tools button {
+    min-height: 34px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+  body.cv-reading-layout .hero-with-cover .btn,
+  body.cv-reading-layout .hero-with-cover a[href$='.pdf'] {
+    border: 1px solid #a7ebd5;
+    background: #a7ebd5;
+    color: #102821;
+    box-shadow: 0 8px 26px #031f1880;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  body.cv-reading-layout .hero-with-cover .btn:hover,
+  body.cv-reading-layout .hero-with-cover a[href$='.pdf']:hover {
+    transform: translateY(-2px);
+    background: #c5f6e5;
+    box-shadow: 0 13px 30px #031f18aa;
+  }
+  body.cv-reading-layout .hero-with-cover a[href$='.pdf']:focus-visible,
+  body.cv-reading-layout .cv-nav-tools button:focus-visible,
+  body.cv-reading-layout .cv-nav-more > summary:focus-visible {
+    outline: 2px solid #a7ebd5;
+    outline-offset: 3px;
+  }
+  body.cv-reading-layout main > .section.container,
+  body.cv-reading-layout main > .section > .container {
+    scroll-margin-top: 82px;
+  }
+  body.cv-reading-layout .project-card,
+  body.cv-reading-layout .cv-domain.card {
+    transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+  }
+  body.cv-reading-layout .project-card:hover,
+  body.cv-reading-layout .cv-domain.card:hover {
+    transform: translateY(-4px);
+    border-color: #86ddc480 !important;
+    box-shadow: 0 18px 42px #0005;
+  }
+  body.cv-reading-layout .cv-floating-track {
+    left: 22px;
+    bottom: 22px;
+    width: 228px;
+    border-color: #86ddc45c;
+    background: #151b1ae8;
+    backdrop-filter: blur(14px);
+  }
+  body.cv-reading-layout.theme-light .cv-floating-track {
+    background: #fffffff2;
+    box-shadow: 0 10px 32px #24393130;
+  }
+  body.cv-reading-layout.theme-light .cv-section-nav a[aria-current] {
+    color: #116c54 !important;
+    background: #d7f3e8;
+    box-shadow: inset 0 0 0 1px #91d9bf;
+  }
+}
+@media screen and (max-width: 650px) {
+  body.cv-reading-layout .matrix-neo { display: none !important; }
+  body.cv-reading-layout .cv-section-nav > .container:not(.cv-search-panel) {
+    min-height: 52px;
+    gap: 2px !important;
+  }
+  body.cv-reading-layout .cv-section-nav a,
+  body.cv-reading-layout .cv-nav-more > summary {
+    min-height: 34px;
+    padding: 6px 7px !important;
+    font-size: 11px !important;
+  }
+  body.cv-reading-layout .cv-nav-tools button {
+    display: grid;
+    place-items: center;
+    min-height: 32px;
+    width: 32px;
+    padding: 0 !important;
+    font-size: 0 !important;
+  }
+  body.cv-reading-layout .cv-nav-tools button::before { content: '⌕'; font-size: 23px; line-height: 1; }
+  body.cv-reading-layout .cv-floating-track { display: none; }
+  body.cv-reading-layout main > .section.container,
+  body.cv-reading-layout main > .section > .container { scroll-margin-top: 65px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.cv-reading-layout .hero-with-cover a[href$='.pdf'],
+  body.cv-reading-layout .project-card,
+  body.cv-reading-layout .cv-domain.card { transition: none; }
+}
