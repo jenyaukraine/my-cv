@@ -57,7 +57,7 @@
   const light=body.classList.contains('theme-light');
   const strength=Math.min(1,elapsed/65);body.style.setProperty('--matrix-strength',strength.toFixed(3));canvas.style.opacity=String((light?.7:.68)+strength*.14+pulse*.06);
   ctx.clearRect(0,0,width,height);ctx.font='bold 25px ui-monospace,monospace';
-  rain.forEach((drop,i)=>{drop.y+=(light?-1:1)*drop.speed*dt*(.7+strength*.25);if(light&&drop.y< -80)drop.y=height+Math.random()*200;if(!light&&drop.y>height+80)drop.y=-Math.random()*200;if(drop.seed>(light?.62:.34)+strength*.24)return;ctx.fillStyle=light?(frame%37===i%37?'#087d75':'#247c6f'):(frame%37===i%37?'#afffd0':'#45c779');ctx.fillText(glyphs[(frame+i*7)%glyphs.length],i*34,drop.y);});frame++;
+  rain.forEach((drop,i)=>{drop.y+=(light?-1:1)*drop.speed*dt*(.7+strength*.25);if(light&&drop.y< -220)drop.y=height+Math.random()*200;if(!light&&drop.y>height+220)drop.y=-Math.random()*200;if(drop.seed>(light?.72:.68)+strength*.16)return;for(let tail=0;tail<8;tail++){const yy=drop.y-(light?-1:1)*tail*29;ctx.globalAlpha=tail===0?1:Math.max(.16,.8-tail*.09);ctx.fillStyle=light?(tail===0?'#087d75':'#247c6f'):(tail===0?'#b8ffdb':'#4cda86');ctx.fillText(glyphs[(frame+tail*3+i*7)%glyphs.length],i*34,yy);}});ctx.globalAlpha=1;frame++;
   selectLift(now);
   const lift=lifts[active];const targetX=lift.x+(lift.w-size)/2,targetY=lift.y+lift.h*.18-window.scrollY;
   let pose=66.666,rotation=0;
