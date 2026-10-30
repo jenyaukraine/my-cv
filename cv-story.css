@@ -33,14 +33,14 @@
   body.cv-reading-layout .hero-with-cover .hero-details span { color:#cbd0d5; }
   body.cv-reading-layout .hero-with-cover .contact-cta { background:#e8e8ed!important; color:#151518!important; }
 
-  #summary.cv-summary-article { padding-top:64px; padding-bottom:68px; }
+  #summary.cv-summary-article { padding-top:48px; padding-bottom:52px; border-radius:0!important; }
   #summary.cv-summary-article h2 { margin-bottom:34px; }
   .cv-summary-lead,.cv-summary-outro { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr); align-items:center; gap:34px; }
   .cv-summary-prose > p:first-child { font-size:1.1rem; line-height:1.7; }
   .cv-summary-image,.cv-domain-visual,.cv-ai-visual { margin:0; overflow:hidden; border:1px solid var(--line); border-radius:12px; background:#111; }
   .cv-summary-image img { display:block; width:100%; height:270px; object-fit:cover; }
   .cv-summary-image figcaption,.cv-domain-visual figcaption,.cv-ai-visual figcaption { padding:10px 14px; color:var(--muted); font:11px ui-monospace,monospace; }
-  .cv-summary-strengths { margin:34px 0; padding:25px 28px; border:1px solid var(--line); border-left:3px solid #82dfc3; border-radius:10px; background:#ffffff09; }
+  .cv-summary-strengths { margin:28px 0; padding:22px 26px; border:0; border-left:3px solid #82dfc3; border-radius:0; background:#ffffff09; }
   .cv-summary-strengths > p { margin:0 0 15px; }
   .cv-summary-strengths .list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px 24px; margin:0; padding:0; list-style:none; }
   .cv-summary-strengths li { position:relative; padding-left:20px; margin:0!important; line-height:1.5; }
@@ -86,6 +86,7 @@
   .cv-strength-card .list { list-style:none; padding:0; margin:0; }
   .cv-strength-card li { padding:11px 0; border-top:1px solid var(--line); line-height:1.45; }
   body.theme-light .cv-strength-card,body.theme-light .cv-summary-strengths { background:#fff; }
+  body.cv-reading-layout main > #summary.cv-summary-article { border-radius:0!important; }
 }
 @media screen and (max-width:900px) {
   .cv-summary-lead,.cv-summary-outro { grid-template-columns:1fr; }

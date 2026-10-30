@@ -8,7 +8,6 @@
     document.body.classList.toggle('theme-light', light);
     const toggles = document.querySelectorAll('.theme-toggle-input');
     toggles.forEach(t => { t.checked = light; });
-    document.querySelectorAll('.theme-auto').forEach(button => button.setAttribute('aria-pressed', String(!manualTheme)));
     document.dispatchEvent(new CustomEvent('cv-theme-change', { detail: { theme } }));
   }
 
@@ -25,13 +24,6 @@
         manualTheme = theme;
         try { localStorage.setItem(KEY, theme); } catch {}
         apply(theme);
-      });
-    });
-    document.querySelectorAll('.theme-auto').forEach(button => {
-      button.addEventListener('click', () => {
-        manualTheme = null;
-        try { localStorage.removeItem(KEY); } catch {}
-        apply(systemTheme.matches ? 'dark' : 'light');
       });
     });
 

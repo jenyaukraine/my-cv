@@ -19,7 +19,8 @@
   <link rel="stylesheet" href="cv-enhancements.css?v=20261030r">
   <link rel="stylesheet" href="matrix-world.css?v=20261030s">
   <link rel="stylesheet" href="visual-rhythm.css?v=20261030a">
-  <link rel="stylesheet" href="cv-story.css?v=20261030a">
+  <link rel="stylesheet" href="presentation-sections.css?v=20261030a">
+  <link rel="stylesheet" href="cv-story.css?v=20261030b">
 </head>
 <body class="cv-reading-layout">
   <a class="cv-skip" href="#cv-main">Skip to CV</a>
@@ -33,8 +34,7 @@
             <input class="theme-toggle-input" type="checkbox" aria-label="Toggle theme" />
             <span class="ios-switch"></span>
           </label>
-          <button type="button" class="theme-auto" aria-label="Use device theme" aria-pressed="true">Auto</button>
-          <nav class="lang-switch" aria-label="Language"><strong lang="en" aria-current="page">🇬🇧 English</strong> <a href="de.html" lang="de" hreflang="de">🇩🇪 Deutsch</a></nav>
+          <nav class="lang-switch" aria-label="Language"><strong lang="en" aria-current="page" aria-label="English" title="English">🇬🇧</strong> <a href="de.html" lang="de" hreflang="de" aria-label="Deutsch" title="Deutsch">🇩🇪</a></nav>
         </div>
       </div>
       <p class="badge">Resume Profile</p>
@@ -195,117 +195,85 @@
       </div>
     </section>
 
-    <section class="section section-dark" id="achievements">
-      <div class="container">
-        <h2>Key Achievements</h2>
-        <ul class="list">
-          <li><strong>Digital signage:</strong> Delivered a complete digital signage platform with image/video campaign playback and automated operation across private VPN networks.</li>
-          <li>Enabled remote migration of an installed device fleet to a replacement system image, preserving customer network settings and using staged rollout and CI/CD-built binary packages.</li>
-          <li>Led architectural refactoring of a complex multi-tenant platform (Hotels / Resellers / End Clients)</li>
-          <li>Migrated legacy frontend stack to modern Vue 3 + Vite architecture</li>
-          <li>Designed modular backend structure replacing tightly coupled legacy logic</li>
-          <li>Built device fleet management and remote update pipelines for embedded systems</li>
-          <li>Designed scalable media pipelines with storage abstraction and licensing-aware workflows</li>
-          <li>Reduced technical debt through systematic removal of obsolete architecture layers</li>
-          <li>Established CI/CD pipelines enabling reproducible builds and safer deployments</li>
-          <li>Designed AI-assisted workflows for content generation and UI production</li>
-           <li>Built and maintained a local llama.cpp fork for Spark X2.5 with C++ tool-call parsing, streaming and AMD Vulkan support</li>
-           <li>Designed HRIT, a reproducible technical-assessment platform combining automated checks with AI-assisted scorecards</li>
-          <li>Built standalone native binaries for Python services to eliminate runtime dependencies</li>
-          <li>Designed traffic generation and processing funnels integrated into platform workflows</li>
-          <li>Implemented secure remote access architectures for distributed device fleets</li>
-        </ul>
-      </div>
-    </section>
+    <section class="section section-dark cv-showcase" id="achievements"><div class="container">
+          <p class="section-kicker">SELECTED OUTCOMES</p><h2>Complex systems, made useful.</h2>
+          <div class="cv-showcase-grid">
+            <article class="cv-feature cv-feature-large"><img src="assets/electronics-device.webp" alt="Connected-device project" loading="lazy"><div><span>01 / CONNECTED DEVICES</span><h3>Digital signage that works in the field</h3><p>Image and video campaigns, VPN automation and remote migration of installed devices.</p></div></article>
+            <article class="cv-feature"><img src="assets/fermershop-de.webp" alt="Fermershop interface" loading="lazy"><div><span>02 / PRODUCT PLATFORMS</span><h3>Modernising legacy systems</h3><p>Multi-tenant architecture, modular backends and modern Vue interfaces.</p></div></article>
+            <article class="cv-feature"><img src="assets/nnl-tabula-preview.jpg" alt="Experimental Tabula interface" loading="lazy"><div><span>03 / DEVELOPER TOOLS</span><h3>Putting local AI to work</h3><p>C++ tooling, AI-assisted workflows and reproducible assessments.</p></div></article>
+          </div><details class="cv-evidence"><summary>Explore all achievements <span aria-hidden="true">↗</span></summary><ul class="list">
+<li><strong>Digital signage:</strong> Delivered a complete digital signage platform with image/video campaign playback and automated operation across private VPN networks.</li>
+<li>Enabled remote migration of an installed device fleet to a replacement system image, preserving customer network settings and using staged rollout and CI/CD-built binary packages.</li>
+<li>Led architectural refactoring of a complex multi-tenant platform (Hotels / Resellers / End Clients)</li>
+<li>Migrated legacy frontend stack to modern Vue 3 + Vite architecture</li>
+<li>Designed modular backend structure replacing tightly coupled legacy logic</li>
+<li>Built device fleet management and remote update pipelines for embedded systems</li>
+<li>Designed scalable media pipelines with storage abstraction and licensing-aware workflows</li>
+<li>Reduced technical debt through systematic removal of obsolete architecture layers</li>
+<li>Established CI/CD pipelines enabling reproducible builds and safer deployments</li>
+<li>Designed AI-assisted workflows for content generation and UI production</li>
+<li>Built and maintained a local llama.cpp fork for Spark X2.5 with C++ tool-call parsing, streaming and AMD Vulkan support</li>
+<li>Designed HRIT, a reproducible technical-assessment platform combining automated checks with AI-assisted scorecards</li>
+<li>Built standalone native binaries for Python services to eliminate runtime dependencies</li>
+<li>Designed traffic generation and processing funnels integrated into platform workflows</li>
+<li>Implemented secure remote access architectures for distributed device fleets</li>
+</ul></details>
+        </div></section>
 
-    <section class="section container">
-      <h2>Selected Projects &amp; Earlier Experience</h2>
-      <div class="grid-2">
-        <article class="card">
-          <h3>Local AI &amp; Developer Infrastructure</h3>
-          <ul>
-            <li><strong>ffprocessor:</strong> C++ llama.cpp fork for Spark X2.5 with local coding-agent integration, tool-call parsing, streaming and AMD Vulkan support <a href="https://github.com/jenyaukraine/ffprocessor" target="_blank" rel="noopener">Source on GitHub ↗</a></li>
-            <li><strong>codex-skill:</strong> Python orchestration layer for multiple local AI workers with queueing and result review</li>
-            <li><strong>HRIT:</strong> reproducible hiring-task platform with automated validation and AI-assisted evaluation</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Infrastructure &amp; Operations Background</h3>
-          <ul>
-            <li>ISP operations and quality assurance in 24/7 environments</li>
-            <li>Linux/CentOS administration, Bash, VMware, Nagios and Zabbix</li>
-            <li>Ubiquiti, MikroTik, routing, DNS/DHCP and network troubleshooting</li>
-            <li>Rock Pi backup tooling, embedded Linux and remote system support</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+    <section class="section container cv-early-work"><p class="section-kicker">MORE THAN WEB APPS</p><h2>Engineering across layers.</h2><div class="cv-early-grid">
+          <article class="cv-early-card"><img src="assets/nnl-tabula-preview.jpg" alt="Tabula project interface" loading="lazy"><div><span>LOCAL AI / C++ / PYTHON</span><h3>Tools for developers</h3><p>Local models, agent orchestration and automated technical assessments.</p><details><summary>Explore projects</summary><ul>
+<li><strong>ffprocessor:</strong> C++ llama.cpp fork for Spark X2.5 with local coding-agent integration, tool-call parsing, streaming and AMD Vulkan support <a href="https://github.com/jenyaukraine/ffprocessor" rel="noopener" target="_blank">Source on GitHub ↗</a></li>
+<li><strong>codex-skill:</strong> Python orchestration layer for multiple local AI workers with queueing and result review</li>
+<li><strong>HRIT:</strong> reproducible hiring-task platform with automated validation and AI-assisted evaluation</li>
+</ul></details></div></article>
+          <article class="cv-early-card"><img src="assets/electronics-board.webp" alt="Electronics prototype" loading="lazy"><div><span>LINUX / NETWORKS / DEVICES</span><h3>Infrastructure that keeps running</h3><p>Experience in operations, monitoring, networking and embedded Linux.</p><details><summary>Explore experience</summary><ul>
+<li>ISP operations and quality assurance in 24/7 environments</li>
+<li>Linux/CentOS administration, Bash, VMware, Nagios and Zabbix</li>
+<li>Ubiquiti, MikroTik, routing, DNS/DHCP and network troubleshooting</li>
+<li>Rock Pi backup tooling, embedded Linux and remote system support</li>
+</ul></details></div></article>
+        </div></section>
 
-    <section class="section container">
-      <h2>Open Source & Low-Level Experience</h2>
-      <ul class="list">
-        <li>Open-source contributions including work within Wikipedia ecosystem (Gerrit-based workflow)</li>
-        <li>Linux kernel patch contributions</li>
-        <li>Experience working close to system-level constraints and performance boundaries</li>
-        <li>Strong understanding of Linux internals and runtime environments</li>
-      </ul>
-    </section>
+    <section class="section container cv-open-source"><div class="cv-open-visual" aria-hidden="true"><span>GERRIT</span><i></i><span>LINUX</span><i></i><span>RUNTIME</span></div><div><p class="section-kicker">OPEN SOURCE &amp; SYSTEMS</p><h2>Below the surface, too.</h2><p>Contributions in the Wikipedia ecosystem and to Linux kernel patches, with an understanding of runtime environments, performance and system constraints.</p><details class="cv-evidence"><summary>Explore this experience</summary><ul class="list">
+<li>Open-source contributions including work within Wikipedia ecosystem (Gerrit-based workflow)</li>
+<li>Linux kernel patch contributions</li>
+<li>Experience working close to system-level constraints and performance boundaries</li>
+<li>Strong understanding of Linux internals and runtime environments</li>
+</ul></details></div></section>
 
-    <section class="section expertise-group"><div class="container"><p class="section-kicker">HOW I WORK</p><h2>Approach and scope</h2><div class="expertise-grid"><article class="expertise-item section section-dark">
-      <div class="container">
-        <h3>Architecture Philosophy</h3>
-        <ul class="list">
-          <li>Prefer simple architectures that scale, not over-engineered systems</li>
-          <li>Strong separation between: domain logic, infrastructure, UI</li>
-          <li>Systems must be: debuggable, observable, replaceable</li>
-          <li>Security and maintainability are architectural concerns, not afterthoughts</li>
-          <li>Refactors are strategic investments, not cosmetic cleanup</li>
-          <li>Architecture should enable developers, not slow them down</li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="expertise-item section container">
-      <h3>Typical Responsibilities</h3>
-      <ul class="list">
-        <li>Define and evolve system architecture</li>
-        <li>Break monoliths into maintainable modules</li>
-        <li>Design data models and API contracts</li>
-        <li>Own critical performance and security paths</li>
-        <li>Guide frontend architectural decisions</li>
-        <li>Design long-term platform strategy</li>
-        <li>Mentor engineers in architectural thinking</li>
-        <li>Translate business chaos into technical clarity</li>
-        <li>Design human-in-the-loop agentic workflows across the delivery lifecycle</li>
-        <li>Orchestrate AI agents across planning, implementation, testing, deployment, and monitoring</li>
-      </ul>
-    </article>
-
-    <article class="expertise-item section section-dark">
-      <div class="container">
-        <h3>Selected Project Domains</h3>
-        <ul class="list">
-          <li>Multi-tenant SaaS platforms</li>
-          <li>Media management systems</li>
-          <li>Device fleets & remote control systems</li>
-          <li>AI-augmented design and content workflows</li>
-          <li>Traffic acquisition and processing systems</li>
-          <li>IoT and edge infrastructure platforms</li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="expertise-item section container">
-      <h3>Work Style</h3>
-      <ul class="list">
-        <li>Architecture-first mindset</li>
-        <li>Prototyping before large refactors</li>
-        <li>Pragmatic decisions over hype-driven tech</li>
-        <li>Clean code, predictable deployments</li>
-        <li>Strong documentation culture</li>
-        <li>Independent, focused, introvert-friendly work style</li>
-      </ul>
-    </article></div></div></section>
+    <section class="section expertise-group cv-approach"><div class="container"><p class="section-kicker">HOW I WORK / ARBEITSWEISE</p><h2>How I work</h2><p class="cv-approach-lead">Four perspectives on my work. Open a card for the full detail.</p><div class="cv-approach-grid"><article class="cv-approach-card"><span class="cv-approach-index">01</span><p class="section-kicker">ARCHITECTURE</p><h3>Clarity over complexity</h3><p>Build systems teams can understand and keep improving.</p><details><summary>Explore details</summary><ul class="list">
+<li>Prefer simple architectures that scale, not over-engineered systems</li>
+<li>Strong separation between: domain logic, infrastructure, UI</li>
+<li>Systems must be: debuggable, observable, replaceable</li>
+<li>Security and maintainability are architectural concerns, not afterthoughts</li>
+<li>Refactors are strategic investments, not cosmetic cleanup</li>
+<li>Architecture should enable developers, not slow them down</li>
+</ul></details></article><article class="cv-approach-card"><span class="cv-approach-index">02</span><p class="section-kicker">OWNERSHIP</p><h3>From problem to production</h3><p>Connect data models, APIs, performance, security and technical decisions.</p><details><summary>Explore details</summary><ul class="list">
+<li>Define and evolve system architecture</li>
+<li>Break monoliths into maintainable modules</li>
+<li>Design data models and API contracts</li>
+<li>Own critical performance and security paths</li>
+<li>Guide frontend architectural decisions</li>
+<li>Design long-term platform strategy</li>
+<li>Mentor engineers in architectural thinking</li>
+<li>Translate business chaos into technical clarity</li>
+<li>Design human-in-the-loop agentic workflows across the delivery lifecycle</li>
+<li>Orchestrate AI agents across planning, implementation, testing, deployment, and monitoring</li>
+</ul></details></article><article class="cv-approach-card"><span class="cv-approach-index">03</span><p class="section-kicker">DOMAINS</p><h3>Web, media and devices</h3><p>Platforms across SaaS, content, device control and edge infrastructure.</p><details><summary>Explore details</summary><ul class="list">
+<li>Multi-tenant SaaS platforms</li>
+<li>Media management systems</li>
+<li>Device fleets &amp; remote control systems</li>
+<li>AI-augmented design and content workflows</li>
+<li>Traffic acquisition and processing systems</li>
+<li>IoT and edge infrastructure platforms</li>
+</ul></details></article><article class="cv-approach-card"><span class="cv-approach-index">04</span><p class="section-kicker">WORK STYLE</p><h3>Deliver pragmatically</h3><p>Prototype, document clearly and ship predictably.</p><details><summary>Explore details</summary><ul class="list">
+<li>Architecture-first mindset</li>
+<li>Prototyping before large refactors</li>
+<li>Pragmatic decisions over hype-driven tech</li>
+<li>Clean code, predictable deployments</li>
+<li>Strong documentation culture</li>
+<li>Independent, focused, introvert-friendly work style</li>
+</ul></details></article></div></div></section>
 
     <section class="section project-section" id="projects">
       <div class="container">
@@ -330,18 +298,7 @@
       </div>
     </section>
 
-    <section class="section section-dark" id="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>If you would like to discuss a role, project or collaboration, send me a message directly.</p>
-        <p><a class="contact-cta" href="mailto:jenyaukraine@gmail.com?subject=Software%20engineering%20opportunity&amp;body=Hello%20Eugen%2C%0A%0AI%27d%20like%20to%20discuss%20an%20opportunity%20with%20you.">Contact me</a></p>
-        <p>📧 <strong>Email:</strong> <a href="mailto:jenyaukraine@gmail.com">jenyaukraine@gmail.com</a></p>
-        <p>💻 <strong>GitHub:</strong> <a href="https://github.com/jenyaukraine" target="_blank" rel="noopener">github.com/jenyaukraine</a></p>
-
-
-        <p class="cv-rate-note"><strong>Affordable development.</strong> Flexible pricing for contract work; scope and budget agreed directly.</p>
-      </div>
-    </section>
+    <section class="section section-dark cv-contact" id="contact"><div class="container"><div class="cv-contact-copy"><p class="section-kicker">LET'S TALK</p><h2>What are you building?</h2><p>A role, a project or a concrete technical challenge: send me a message and we can find a good starting point.</p><a class="contact-cta" href="mailto:jenyaukraine@gmail.com?subject=Software%20engineering%20opportunity">Write to me <span aria-hidden="true">↗</span></a><p class="cv-rate-note">We can agree scope and contract terms directly.</p></div><div class="cv-contact-links"><div class="cv-contact-mark" aria-hidden="true"><span>&lt;/&gt;</span><i></i><b>LET'S BUILD</b></div><a href="mailto:jenyaukraine@gmail.com"><small>EMAIL</small><strong>jenyaukraine@gmail.com</strong><span aria-hidden="true">↗</span></a><a href="https://github.com/jenyaukraine" target="_blank" rel="noopener"><small>GITHUB</small><strong>github.com/jenyaukraine</strong><span aria-hidden="true">↗</span></a></div></div></section>
   </main>
 
 <section class="cv-audience container" aria-label="Site statistics"><p class="cv-visitor-count"><strong data-stat="unique">—</strong> unique visitors <span>(<strong data-stat="online">—</strong> active now)</span></p></section>
