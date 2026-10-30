@@ -620,6 +620,7 @@ section.contact-grid .contact-info a { color: var(--accent); }
   .project-card:nth-child(4) img { object-position: center 48%; }
   .project-card:nth-child(5) img { object-position: center 28%; }
   .project-card:nth-child(6) img { object-fit: contain; background: #0b1018; padding: 25px; box-sizing: border-box; }
+  .project-card-mobile img { object-fit: contain !important; object-position: center !important; background: #f7f8f6 !important; padding: 10px !important; box-sizing: border-box; }
   .project-card:nth-child(7) img { object-fit: contain; background: #f8faf9; }
   .project-card:nth-child(8) img { object-position: center 42%; }
   .project-card:nth-child(11) img { object-position: center 38%; }
