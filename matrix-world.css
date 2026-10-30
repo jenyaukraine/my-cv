@@ -2,7 +2,7 @@
  body:not(.matrix-world)>.matrix-world-canvas,body:not(.matrix-world)>.matrix-lifts,body:not(.matrix-world)>.matrix-neo,body:not(.matrix-world)>.matrix-motion-toggle{display:none}
  body.matrix-world,body.matrix-world.theme-light{--bg:#091c25;--bg-soft:#102b35;--text:#e6f2ef;--muted:#abc7c6;--line:#31515a;--accent:#74dfbd;--matrix-strength:0;position:relative;isolation:isolate;background:#061820;color:var(--text)}
  body.matrix-world.theme-light{--bg:#ffffff;--bg-soft:#edf4f2;--line:#cfdfdc;--text:#172c38;--muted:#526875;--accent:#087d75;background:#dcebe6}
- .matrix-world-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.12;mask-image:linear-gradient(90deg,#000 0%,#0008 10%,transparent 25%,transparent 75%,#0008 90%,#000 100%)}
+ .matrix-world-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.72;mask-image:linear-gradient(90deg,#000 0%,#0008 10%,transparent 25%,transparent 75%,#0008 90%,#000 100%)}
  .matrix-lifts{position:absolute;top:0;left:0;width:100%;overflow:hidden;z-index:0;pointer-events:none}
  .matrix-lift{position:absolute;top:0;left:0;border:2px solid #54baa54a;border-radius:9px 9px 2px 2px;background:linear-gradient(145deg,#153d40b3,#07171dc9);box-shadow:0 0 30px #31da9a0e,inset 0 0 22px #0008;opacity:.25;transition:opacity 1s,border-color 1s,box-shadow 1s}
  .matrix-lift-active{opacity:calc(.3 + var(--matrix-strength)*.2);border-color:#73e7bf70;box-shadow:0 0 30px #43eab415,inset 0 0 25px #0008}

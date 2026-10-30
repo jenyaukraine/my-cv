@@ -32,7 +32,7 @@
   const liftW=Math.max(70,size*.8),liftH=size*1.5;
   canvas.style.maskImage=`linear-gradient(to right,black 0,black ${Math.max(0,contentLeft-36)}px,transparent ${contentLeft}px,transparent ${contentRight}px,black ${Math.min(width,contentRight+36)}px,black 100%)`;
   lifts.forEach((lift,i)=>{const box=lift.section.getBoundingClientRect();lift.w=liftW;lift.h=liftH;lift.x=i%2?Math.max(8,(contentLeft-liftW)/2):Math.min(width-liftW-8,contentRight+(width-contentRight-liftW)/2);lift.y=box.top+window.scrollY+Math.max(36,(box.height-liftH)/2);lift.el.style.width=liftW+'px';lift.el.style.height=liftH+'px';lift.el.style.transform=`translate3d(${lift.x}px,${lift.y}px,0)`;});
-  rain=Array.from({length:Math.ceil(width/46)},()=>({y:Math.random()*height,speed:22+Math.random()*30,seed:Math.random()}));
+  rain=Array.from({length:Math.ceil(width/34)},()=>({y:Math.random()*height,speed:35+Math.random()*55,seed:Math.random()}));
   liftsLayer.style.height=document.documentElement.scrollHeight+'px';active=-1;flight=null;selectLift(performance.now(),true);
  }
  function selectLift(now,instant=false){
@@ -55,9 +55,9 @@
   if(now-lastPaint<40)return;const dt=last?Math.min((now-last)/1000,.08):0;last=now;lastPaint=now;elapsed+=dt;
   let energy=0;if(analyser&&[...document.querySelectorAll('audio')].some(a=>!a.paused&&!a.muted)){analyser.getByteFrequencyData(spectrum);energy=spectrum.slice(1,14).reduce((a,b)=>a+b,0)/(13*255);}pulse+=(energy-pulse)*.1;body.style.setProperty('--music-pulse',pulse.toFixed(3));
   const light=body.classList.contains('theme-light');
-  const strength=Math.min(1,elapsed/65);body.style.setProperty('--matrix-strength',strength.toFixed(3));canvas.style.opacity=String((light?.55:.32)+strength*.14+pulse*.06);
-  ctx.clearRect(0,0,width,height);ctx.font='12px monospace';
-  rain.forEach((drop,i)=>{drop.y+=(light?-1:1)*drop.speed*dt*(.7+strength*.25);if(light&&drop.y< -80)drop.y=height+Math.random()*200;if(!light&&drop.y>height+80)drop.y=-Math.random()*200;if(drop.seed>(light?.34:.10)+strength*.18)return;ctx.fillStyle=light?(frame%37===i%37?'#087d75':'#247c6f'):(frame%37===i%37?'#afffd0':'#45c779');ctx.fillText(glyphs[(frame+i*7)%glyphs.length],i*46,drop.y);});frame++;
+  const strength=Math.min(1,elapsed/65);body.style.setProperty('--matrix-strength',strength.toFixed(3));canvas.style.opacity=String((light?.7:.68)+strength*.14+pulse*.06);
+  ctx.clearRect(0,0,width,height);ctx.font='bold 25px ui-monospace,monospace';
+  rain.forEach((drop,i)=>{drop.y+=(light?-1:1)*drop.speed*dt*(.7+strength*.25);if(light&&drop.y< -80)drop.y=height+Math.random()*200;if(!light&&drop.y>height+80)drop.y=-Math.random()*200;if(drop.seed>(light?.62:.34)+strength*.24)return;ctx.fillStyle=light?(frame%37===i%37?'#087d75':'#247c6f'):(frame%37===i%37?'#afffd0':'#45c779');ctx.fillText(glyphs[(frame+i*7)%glyphs.length],i*34,drop.y);});frame++;
   selectLift(now);
   const lift=lifts[active];const targetX=lift.x+(lift.w-size)/2,targetY=lift.y+lift.h*.18-window.scrollY;
   let pose=66.666,rotation=0;
