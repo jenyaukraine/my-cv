@@ -1,32 +1,17 @@
 (()=>{
  function init(){
- const de=document.documentElement.lang==='de',key='cv-music-choice';
- try{if(sessionStorage.getItem(key))return;}catch{}
- const track=document.querySelector('audio[aria-label*="Pentaloop"]');if(!track)return;
- const invite=document.createElement('aside');invite.className='cv-music-invite';invite.setAttribute('aria-label',de?'Musik des Autors':'Music by the author');
- invite.innerHTML=`<p class="cv-music-kicker">TECHNO PUNCH / PENTALOOP</p><h2>${de?'Meinen Lebenslauf mit meiner Musik lesen?':'Read my CV with my music?'}</h2><p>${de?'Pentaloop — ein Track aus meiner eigenen Musikproduktion.':'Pentaloop — a track from my own music production.'}</p><button type="button" class="cv-music-play">${de?'Pentaloop abspielen':'Play Pentaloop'} ▷</button><button type="button" class="cv-music-dismiss">${de?'Ohne Musik':'No thanks'}</button><p class="cv-music-status" role="status"></p>`;
- const remember=value=>{try{sessionStorage.setItem(key,value);}catch{}};
- function compact(){
-  invite.replaceChildren();invite.classList.add('cv-player');
-  const top=document.createElement('div');top.className='cv-player-top';
-  const cover=document.createElement('img');cover.src='assets/pentaloop.webp';cover.alt='Pentaloop cover';cover.width=48;cover.height=48;
-  const name=document.createElement('div');name.className='cv-player-name';const title=document.createElement('strong');title.textContent='Pentaloop';const artist=document.createElement('span');artist.textContent='Techno Punch';name.append(title,artist);
-  const control=document.createElement('button');control.className='cv-player-toggle';control.type='button';
-  const close=document.createElement('button');close.className='cv-music-close';close.type='button';close.textContent='×';close.setAttribute('aria-label',de?'Musik stoppen und schließen':'Stop music and close');
-  top.append(cover,name,control,close);
-  const seek=document.createElement('input');seek.type='range';seek.className='cv-player-seek';seek.min='0';seek.max=String(Number.isFinite(track.duration)?track.duration:0);seek.step='.1';seek.value=String(track.currentTime);seek.setAttribute('aria-label',de?'Pentaloop spulen':'Seek Pentaloop');
-  const times=document.createElement('div');times.className='cv-player-times';const elapsed=document.createElement('span'),duration=document.createElement('span');times.append(elapsed,duration);
+  const de=document.documentElement.lang==='de',track=document.querySelector('audio[aria-label*="Pentaloop"]');if(!track)return;
   const format=t=>Number.isFinite(t)?Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0'):'—:—';
-  const update=()=>{control.textContent=track.paused?'▶':'Ⅱ';control.setAttribute('aria-label',track.paused?(de?'Abspielen':'Play'):'Pause');elapsed.textContent=format(track.currentTime);duration.textContent=format(track.duration);if(Number.isFinite(track.duration)){seek.max=String(track.duration);seek.value=String(track.currentTime);seek.disabled=false;}else seek.disabled=true;};
-  const events=['play','pause','ended','timeupdate','loadedmetadata','durationchange'];events.forEach(e=>track.addEventListener(e,update));
-  seek.addEventListener('input',()=>{if(Number.isFinite(track.duration)){track.currentTime=Number(seek.value);update();}});
-  control.addEventListener('click',()=>{if(track.paused)track.play().catch(()=>{});else track.pause();});
-  close.addEventListener('click',()=>{track.pause();events.forEach(e=>track.removeEventListener(e,update));invite.remove();});
-  invite.append(top,seek,times);update();
- }
- invite.querySelector('.cv-music-dismiss').addEventListener('click',()=>{remember('declined');invite.remove();});
- invite.querySelector('.cv-music-play').addEventListener('click',()=>{track.play().then(()=>{remember('accepted');compact();}).catch(()=>{invite.querySelector('.cv-music-status').textContent=de?'Wiedergabe konnte nicht gestartet werden. Bitte erneut versuchen.':'Playback could not start. Please try again.';});});
- document.body.append(invite);
+  function player(floating){
+   const box=document.createElement(floating?'aside':'div');box.className=floating?'cv-music-invite cv-player':'cv-player cv-inline-player';box.setAttribute('aria-label',de?'Pentaloop Musikplayer':'Pentaloop music player');
+   box.innerHTML='<div class="cv-player-top"><img src="assets/pentaloop.webp" width="48" height="48" alt="Pentaloop cover"><div class="cv-player-name"><strong>Pentaloop</strong><span>Techno Punch</span></div><button type="button" class="cv-player-toggle"></button><button type="button" class="cv-speaker"></button></div><input class="cv-player-seek" type="range" min="0" max="0" step=".1" value="0"><div class="cv-player-times"><span></span><span></span></div>';
+   const play=box.querySelector('.cv-player-toggle'),speaker=box.querySelector('.cv-speaker'),seek=box.querySelector('input'),times=box.querySelectorAll('.cv-player-times span');seek.setAttribute('aria-label',de?'Pentaloop spulen':'Seek Pentaloop');
+   function update(){play.textContent=track.paused?'▶':'Ⅱ';play.setAttribute('aria-label',track.paused?(de?'Abspielen':'Play'):'Pause');speaker.textContent=track.muted?'🔇':'🔊';speaker.setAttribute('aria-label',track.muted?(de?'Ton einschalten':'Unmute'):(de?'Ton ausschalten':'Mute'));times[0].textContent=format(track.currentTime);times[1].textContent=format(track.duration);seek.disabled=!Number.isFinite(track.duration);if(!seek.disabled){seek.max=String(track.duration);seek.value=String(track.currentTime);}}
+   play.addEventListener('click',()=>{if(track.paused)track.play().catch(()=>{});else track.pause();});speaker.addEventListener('click',()=>{if(track.paused){track.muted=false;track.play().catch(()=>{});}else track.muted=!track.muted;update();});seek.addEventListener('input',()=>{if(Number.isFinite(track.duration))track.currentTime=Number(seek.value);});
+   for(const event of ['play','pause','ended','timeupdate','loadedmetadata','durationchange','volumechange'])track.addEventListener(event,update);update();return box;
+  }
+  document.body.append(player(true));const inline=track.closest('.next-track');if(inline){const custom=player(false);inline.replaceChildren(custom,track);track.controls=false;track.hidden=true;}
+  track.volume=.3;track.play().catch(()=>{});
  }
  if(document.readyState==='complete')init();else addEventListener('DOMContentLoaded',init,{once:true});
 })();
