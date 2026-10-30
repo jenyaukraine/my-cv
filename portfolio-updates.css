@@ -28,7 +28,7 @@
   body.cv-reading-layout .footer .cv-visitor-inline { color:var(--muted); font-size:12px; white-space:nowrap; }
   body.cv-reading-layout .footer .cv-visitor-inline strong { color:var(--text); font-size:13px; }
   .cv-visitor-sep { padding:0 5px; }
-  .cv-reading-layout .matrix-world-canvas { z-index:3; }
+  body.matrix-world.cv-reading-layout > .matrix-world-canvas { z-index:4!important; }
   @media(max-width:650px) {
     #beyond-web .cv-printer-card img { height:260px; }
     #beyond-web .music-card > .cv-youtube-embeds { grid-template-columns:1fr; }
