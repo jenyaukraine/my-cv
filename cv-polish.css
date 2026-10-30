@@ -9,6 +9,7 @@
     text-decoration:none; white-space:nowrap;
   }
   .hero .lang-switch a[lang],.hero .lang-switch strong[lang] { background-image:none!important; background-size:auto!important; }
+  .hero .lang-switch img { display:block; width:21px; height:15px; object-fit:cover; border-radius:2px; box-shadow:0 0 0 1px #0003; }
   .hero .lang-switch strong { background:#86ddc4!important; color:#0d2824!important; border-color:#86ddc4!important; box-shadow:0 0 0 2px #86ddc433; }
   .hero .lang-switch strong::after { content:'✓'; font-size:13px; }
   .hero .lang-switch a { background:#071719bb!important; color:#f0f7f4!important; }
@@ -34,6 +35,13 @@
   .cv-track-card-time { color:var(--muted); font:11px ui-monospace,monospace; }
   body.cv-music-in-view > .cv-music-invite.cv-player { visibility:hidden; pointer-events:none; }
   body.theme-light .cv-track-card { background:#fff; }
+
+  /* SVG tech marks are dark; invert only when the cards are dark. */
+  body.matrix-world.theme-light #tech-stack .cv-tech-icons img { filter:none!important; opacity:1!important; }
+  #tech-stack .cv-tech-icons { height:34px; gap:13px; align-items:center; }
+  #tech-stack .cv-tech-icons img { width:32px; height:32px; }
+  #tech-stack .cv-tech-node { min-height:108px; }
+  body.matrix-world.theme-light #tech-stack .cv-tech-node { background:#fff!important; }
 }
 @media screen and (max-width:650px) {
   .hero .lang-switch a,.hero .lang-switch strong { padding:7px 8px!important; font-size:11px!important; }
