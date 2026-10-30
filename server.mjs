@@ -1,6 +1,6 @@
 import http from 'node:http';
 import {DatabaseSync} from 'node:sqlite';
-import {scryptSync,timingSafeEqual,randomBytes} from 'node:crypto';
+import {scryptSync,timingSafeEqual,randomBytes,createHash} from 'node:crypto';
 import {readFileSync,createReadStream,mkdirSync,statSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
@@ -19,9 +19,10 @@ export function createApp({dataDir=process.env.DATA_DIR||'data',passwordHash=pro
  const counts=()=>({online:[...active.values()].filter(t=>t>Date.now()-90000).length,today:db.prepare('SELECT COUNT(*) n FROM views WHERE day=?').get(day()).n,total:db.prepare('SELECT COUNT(*) n FROM views').get().n});
  const timer=setInterval(()=>{let now=Date.now();for(const [k,v]of active)if(v<now-90000)active.delete(k);for(const [k,v]of sessions)if(v<now)sessions.delete(k);for(const [k,v]of limits)if(v.until<now)limits.delete(k);db.prepare('DELETE FROM events WHERE ts < ?').run(now-90*86400000);db.prepare('DELETE FROM views WHERE ts < ?').run(now-90*86400000);},60000);timer.unref();
  // Lifetime page-load total is preserved independently of the 90-day detail retention.
+ db.exec('CREATE TABLE IF NOT EXISTS visitors(id TEXT PRIMARY KEY, first_seen INTEGER NOT NULL);');
  db.exec('CREATE TABLE IF NOT EXISTS counters(key TEXT PRIMARY KEY,value INTEGER NOT NULL);');
  db.prepare("INSERT OR IGNORE INTO counters VALUES('total',(SELECT COUNT(*) FROM views))").run();
- const totals=()=>({...counts(),total:db.prepare("SELECT value FROM counters WHERE key='total'").get().value});
+ const totals=()=>({...counts(),unique:db.prepare('SELECT COUNT(*) n FROM visitors').get().n,total:db.prepare("SELECT value FROM counters WHERE key='total'").get().value});
  const limit=(key,max,ms)=>{const now=Date.now();let v=limits.get(key);if(!v||v.until<now){v={count:0,until:now+ms};limits.set(key,v);}return ++v.count<=max;};
  const send=(res,status,data)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(data));};
  const body=async req=>{let text='';for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)>8192)throw new Error('Body too large');}return JSON.parse(text||'{}');};
@@ -64,14 +65,14 @@ export function createApp({dataDir=process.env.DATA_DIR||'data',passwordHash=pro
     if(['/api/visit','/api/heartbeat','/api/event'].includes(route)&&req.method==='POST'){
      if(/bot|crawler|spider|headless/i.test(req.headers['user-agent']||''))return send(res,202,{ignored:true});
      if(!limit('traffic:'+ip(req),6000,60000))return send(res,429,{error:'Rate limit'});
-     const b=await body(req);if(!validSid(b.session))return send(res,400,{error:'Invalid session'});
+     const b=await body(req);if(b.visitor!==undefined&&!validSid(b.visitor))return send(res,400,{error:'Invalid visitor'});if(!validSid(b.session))return send(res,400,{error:'Invalid session'});
      if(route==='/api/visit'){
       if(!limit('visit:'+b.session,20,60000))return send(res,429,{error:'Rate limit'});
       let source='direct';try{if(b.referrer){const ref=new URL(b.referrer);if(['http:','https:'].includes(ref.protocol))source=ref.hostname.slice(0,100);}}catch{}
       const params=b.utm&&typeof b.utm==='object'?b.utm:{};
       const clean=v=>typeof v==='string'?v.replace(/[^\p{L}\p{N} ._/-]/gu,'').slice(0,80):'';
       if(clean(params.source))source=clean(params.source);const campaign=clean(params.campaign);
-      db.exec('BEGIN');try{db.prepare('INSERT INTO views(session,ts,day,page,source,campaign) VALUES(?,?,?,?,?,?)').run(b.session,Date.now(),day(),b.page==='de'?'de':'en',source,campaign);db.prepare("UPDATE counters SET value=value+1 WHERE key='total'").run();db.exec('COMMIT');}catch(e){db.exec('ROLLBACK');throw e;}
+      db.exec('BEGIN');try{db.prepare('INSERT OR IGNORE INTO visitors VALUES(?,?)').run(createHash('sha256').update(b.visitor||b.session).digest('hex'),Date.now());db.prepare('INSERT INTO views(session,ts,day,page,source,campaign) VALUES(?,?,?,?,?,?)').run(b.session,Date.now(),day(),b.page==='de'?'de':'en',source,campaign);db.prepare("UPDATE counters SET value=value+1 WHERE key='total'").run();db.exec('COMMIT');}catch(e){db.exec('ROLLBACK');throw e;}
       if(b.visible!==false)active.set(b.session,Date.now());
      }else if(route==='/api/heartbeat'){
       if(b.visible===false)active.delete(b.session);else if(db.prepare('SELECT 1 FROM views WHERE session=? LIMIT 1').get(b.session))active.set(b.session,Date.now());
@@ -92,6 +93,8 @@ export function createApp({dataDir=process.env.DATA_DIR||'data',passwordHash=pro
    const file=path.join(root,name);let stat;try{stat=statSync(file);}catch{return send(res,404,{error:'Not found'});}
    const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.mp3':'audio/mpeg','.pdf':'application/pdf','.txt':'text/plain','.json':'application/json'};
    if(name==='admin.html')res.setHeader('X-Robots-Tag','noindex, nofollow');
+   if(name.endsWith('.mp3'))res.setHeader('Accept-Ranges','bytes');
+   if(name.endsWith('.mp3')&&req.headers.range){const match=/^bytes=(\d*)-(\d*)$/.exec(req.headers.range);let start=0,end=stat.size-1;if(match&&(match[1]||match[2])){if(!match[1])start=Math.max(0,stat.size-Number(match[2]));else{start=Number(match[1]);if(match[2])end=Math.min(end,Number(match[2]));}}else start=stat.size;if(!Number.isSafeInteger(start)||!Number.isSafeInteger(end)||start<0||start>=stat.size||end<start){res.writeHead(416,{'Content-Range':`bytes */${stat.size}`});res.end();return;}res.writeHead(206,{'Content-Type':'audio/mpeg','Content-Range':`bytes ${start}-${end}/${stat.size}`,'Content-Length':end-start+1});if(req.method==='HEAD')res.end();else createReadStream(file,{start,end}).pipe(res);return;}
    res.writeHead(200,{'Content-Type':types[path.extname(name)]||'application/octet-stream','Content-Length':stat.size,'Cache-Control':name.endsWith('.html')?'no-cache':'public, max-age=3600'});
    if(req.method==='HEAD')res.end();else createReadStream(file).pipe(res);
   }catch(e){if(!res.headersSent)send(res,400,{error:'Invalid request'});else res.end();}

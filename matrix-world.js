@@ -15,6 +15,8 @@
  const toggle=document.createElement('button');toggle.type='button';toggle.className='matrix-motion-toggle';body.append(toggle);
  let width=0,height=0,size=180,rain=[],active=-1,elapsed=0,last=0,lastPaint=0,scrollY=window.scrollY,direction=1,scrollingUntil=0,lastShot=0,flight=null,x=0,y=0,frame=0,paused=reduced.matches;
  let beams=[],revealed=false,enabled=!body.classList.contains('theme-light');
+ let audioContext,analyser,spectrum,pulse=0;const audioSources=new WeakSet();
+ document.addEventListener('play',event=>{const media=event.target;if(!(media instanceof HTMLMediaElement))return;try{const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;if(!audioContext){audioContext=new Audio();analyser=audioContext.createAnalyser();analyser.fftSize=256;analyser.smoothingTimeConstant=.85;spectrum=new Uint8Array(analyser.frequencyBinCount);analyser.connect(audioContext.destination);}if(!audioSources.has(media)){audioContext.createMediaElementSource(media).connect(analyser);audioSources.add(media);}audioContext.resume().catch(()=>{});}catch{}},true);
  body.classList.toggle('matrix-world',enabled);
  const updateToggle=()=>{toggle.hidden=reduced.matches||!enabled;toggle.textContent=paused?(de?'Animation starten':'Resume motion'):(de?'Animation pausieren':'Pause motion');toggle.setAttribute('aria-pressed',String(paused));body.classList.toggle('matrix-paused',paused);};
  const pause=value=>{paused=value;last=0;beams=[];updateToggle();if(paused){actor.style.opacity='0';canvas.style.opacity='.18';ctx.clearRect(0,0,width,height);}};
@@ -46,8 +48,9 @@
   requestAnimationFrame(draw);
   if(!enabled||paused||document.hidden){last=0;return;}
   if(now-lastPaint<40)return;const dt=last?Math.min((now-last)/1000,.08):0;last=now;lastPaint=now;elapsed+=dt;
-  const strength=Math.min(1,elapsed/65);body.style.setProperty('--matrix-strength',strength.toFixed(3));canvas.style.opacity=String(.12+strength*.14);
-  ctx.fillStyle='rgba(3,15,20,.22)';ctx.fillRect(0,0,width,height);ctx.font='12px monospace';
+  let energy=0;if(analyser&&[...document.querySelectorAll('audio')].some(a=>!a.paused)){analyser.getByteFrequencyData(spectrum);energy=spectrum.slice(1,14).reduce((a,b)=>a+b,0)/(13*255);}pulse+=(energy-pulse)*.1;body.style.setProperty('--music-pulse',pulse.toFixed(3));
+  const strength=Math.min(1,elapsed/65);body.style.setProperty('--matrix-strength',strength.toFixed(3));canvas.style.opacity=String(.10+strength*.1+pulse*.06);
+  ctx.fillStyle='rgba(0,0,0,.22)';ctx.fillRect(0,0,width,height);ctx.font='12px monospace';
   rain.forEach((drop,i)=>{drop.y+=drop.speed*dt*(.7+strength*.25);if(drop.y>height+80)drop.y=-Math.random()*200;if(drop.seed>.10+strength*.18)return;ctx.fillStyle=frame%37===i%37?'#639f85':'#2d735b';ctx.fillText(glyphs[(frame+i*7)%glyphs.length],i*46,drop.y);});frame++;
   selectLift(now);
   const lift=lifts[active];const targetX=lift.x+(lift.w-size)/2,targetY=lift.y+lift.h*.18-window.scrollY;

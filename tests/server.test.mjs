@@ -11,12 +11,14 @@ test('analytics, origin validation, private admin, editing and durable counters'
  let server=createApp({dataDir:dir,passwordHash:hash,secure:false,prefix:''});await new Promise(r=>server.listen(0,'127.0.0.1',r));let base='http://127.0.0.1:'+server.address().port;
  const request=async(route,data,cookie,origin='https://inkora.at')=>fetch(base+route,{method:data?'POST':'GET',headers:{...(data?{'Content-Type':'application/json',Origin:origin}:{}),...(cookie?{Cookie:cookie}:{})},body:data?JSON.stringify(data):undefined});
  try{
+  const range=await fetch(base+'/assets/pentaloop.mp3',{headers:{Range:'bytes=0-31'}});assert.equal(range.status,206);assert.equal((await range.arrayBuffer()).byteLength,32);assert.match(range.headers.get('content-range'),/^bytes 0-31\//);
+  assert.equal((await fetch(base+'/assets/pentaloop.mp3',{headers:{Range:'bytes=999999999999-'}})).status,416);
   assert.equal((await request('/api/admin/stats')).status,401);
   assert.equal((await request('/.env')).status,404);
   assert.equal((await request('/server.mjs')).status,404);
   assert.equal((await request('/api/visit',{session:randomUUID()},null,'https://evil.invalid')).status,403);
   assert.equal((await request('/api/visit',{session:'bad'})).status,400);
-  const sid=randomUUID();let r=await request('/api/visit',{session:sid,page:'en',referrer:'https://example.com/private?secret=abc',utm:{source:'newsletter',campaign:'launch'}});assert.equal(r.status,200);assert.deepEqual(await r.json(),{online:1,today:1,total:1});
+  const sid=randomUUID();let r=await request('/api/visit',{session:sid,page:'en',referrer:'https://example.com/private?secret=abc',utm:{source:'newsletter',campaign:'launch'}});assert.equal(r.status,200);assert.deepEqual(await r.json(),{online:1,today:1,total:1,unique:1});
   r=await request('/api/heartbeat',{session:sid,visible:false});assert.equal((await r.json()).online,0);
   r=await request('/api/heartbeat',{session:sid,visible:true});assert.equal((await r.json()).online,1);
   r=await request('/api/event',{session:sid,name:'pdf'});assert.equal(r.status,200);
@@ -27,8 +29,9 @@ test('analytics, origin validation, private admin, editing and durable counters'
   r=await request('/api/admin/profile',{lang:'en',intro:'Updated introduction',availability:'Open to work'},cookie);assert.equal(r.status,200);assert.equal((await (await request('/api/profile')).json()).en.intro,'Updated introduction');
   assert.equal((await request('/api/admin/profile',{lang:'en',intro:'x'.repeat(1501),availability:'test'},cookie)).status,400);
   r=await request('/api/admin/logout',{},cookie);assert.equal(r.status,200);assert.equal((await request('/api/admin/stats',null,cookie)).status,401);
+  const duplicate=await request('/api/visit',{session:randomUUID(),visitor:sid});const duplicateStats=await duplicate.json();assert.equal(duplicateStats.unique,1);assert.equal(duplicateStats.total,2);
   await new Promise(r=>server.close(r));server=createApp({dataDir:dir,passwordHash:hash,secure:false,prefix:''});await new Promise(r=>server.listen(0,'127.0.0.1',r));base='http://127.0.0.1:'+server.address().port;
-  assert.equal((await (await request('/api/stats')).json()).total,1);assert.equal((await (await request('/api/profile')).json()).en.availability,'Open to work');
+  assert.equal((await (await request('/api/stats')).json()).total,2);assert.equal((await (await request('/api/profile')).json()).en.availability,'Open to work');
   assert.equal((await request('/api/admin/stats',null,cookie)).status,401);
  }finally{await new Promise(r=>server.close(r));rmSync(dir,{recursive:true,force:true});}
 });
