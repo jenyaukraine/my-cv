@@ -73,7 +73,7 @@
           copy: { en: 'An experimental language and companion interface for conversation and parallel model-training workflows. Training results remain under evaluation.', de: 'Experimentelle Sprache und Oberfläche für Dialoge und parallele Modell-Trainingsabläufe. Die Ergebnisse werden noch geprüft.' }
         },
         {
-          title: 'Rezar Auto MiniApp', image: 'assets/rezar-miniapp-preview.jpg', stack: 'MiniApp · car catalogue',
+          id: 'project-rezar', title: 'Rezar Auto MiniApp', image: 'assets/rezar-miniapp-preview.jpg', stack: 'Python · Telegram Mini App', url: 'https://jenyaukraine.github.io/rezar_bot_miniapp/',
           copy: { en: 'A mobile-first car catalogue with search, filters, budget estimates and vehicle details.', de: 'Mobil optimierter Autokatalog mit Suche, Filtern, Budgetschätzung und Fahrzeugdetails.' }
         },
         {
@@ -95,7 +95,7 @@
       ];
       projects.forEach(project => {
         const card = document.createElement('article');
-        card.className = 'project-card';
+        card.className = 'project-card' + (project.id === 'project-rezar' ? ' project-card-mobile' : '');
         if (project.id) card.id = project.id;
         const image = document.createElement('img');
         image.src = project.image;
@@ -109,6 +109,14 @@
         const description = document.createElement('p');
         description.textContent = project.copy[language] || project.copy.en;
         body.append(stack, heading, description);
+        if (project.url) {
+          const link = document.createElement('a');
+          link.href = project.url;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.textContent = language === 'de' ? 'Projekt ansehen ↗' : 'View the project ↗';
+          body.append(link);
+        }
         card.append(image, body);
         projectGrid.append(card);
       });
