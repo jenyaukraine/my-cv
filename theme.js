@@ -129,7 +129,7 @@
       projectGrid.after(additional);
     }
 
-    const projectImages = document.querySelectorAll('.project-card > img');
+    const projectImages = document.querySelectorAll('.project-card > img, .cv-printer-card > img');
     if (projectImages.length) {
       const labels = {
         en: ['Open larger image', 'Close image'],

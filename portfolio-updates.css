@@ -1,5 +1,8 @@
 @media screen {
   #beyond-web .cv-printer-card img { width:100%; height:310px; object-fit:cover; object-position:center 55%; }
+  #beyond-web .cv-printer-card .project-image-button { width:100%; }
+  #beyond-web .music-card { grid-column:1/-1; }
+  #beyond-web .music-card > .cv-youtube-embeds { grid-template-columns:repeat(2,minmax(0,1fr)); }
   #beyond-web .cv-printer-card > div { padding:24px; }
   #beyond-web .cv-printer-card .section-kicker { margin:0 0 8px; }
   .cv-video-dock { position:fixed; z-index:45; left:22px; bottom:22px; width:min(390px,calc(100vw - 44px)); padding:12px; border:1px solid #86ddc47d; border-radius:14px; color:#eeeef0; background:#15191bf5; box-shadow:0 18px 55px #0008; backdrop-filter:blur(16px); transition:width .2s ease; }
@@ -28,6 +31,7 @@
   .cv-reading-layout .matrix-world-canvas { z-index:3; }
   @media(max-width:650px) {
     #beyond-web .cv-printer-card img { height:260px; }
+    #beyond-web .music-card > .cv-youtube-embeds { grid-template-columns:1fr; }
     .cv-video-dock { left:12px; bottom:12px; width:calc(100vw - 24px); }
     body.cv-reading-layout #contact > .container { padding-top:26px; padding-bottom:26px; }
   }
