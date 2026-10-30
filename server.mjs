@@ -88,7 +88,7 @@ export function createApp({dataDir=process.env.DATA_DIR||'data',passwordHash=pro
    }
    if(!['GET','HEAD'].includes(req.method))return send(res,405,{error:'Method not allowed'});
    let name=decodeURIComponent(route).replace(/^\/+|\/+$/g,'')||'index.html';if(name==='admin')name='admin.html';
-   const publicFile=/^(index\.html|de\.html|privacy\.html|admin\.html|styles\.css|cv-enhancements\.css|matrix-world\.css|matrix-world\.js|music-invite\.js|analytics\.css|admin\.css|theme\.js|app\.js|admin\.js|profile-defaults\.json|Eugen_Punchenko_CV(?:_DE)?\.pdf|Jenya_Punchenko_CV\.pdf|robots\.txt|assets\/[a-zA-Z0-9_.-]+)$/.test(name);
+   const publicFile=/^(index\.html|de\.html|privacy\.html|admin\.html|styles\.css|cv-navigation\.js|cv-enhancements\.css|matrix-world\.css|matrix-world\.js|music-invite\.js|analytics\.css|admin\.css|theme\.js|app\.js|admin\.js|profile-defaults\.json|Eugen_Punchenko_CV(?:_DE)?\.pdf|Jenya_Punchenko_CV\.pdf|robots\.txt|assets\/[a-zA-Z0-9_.-]+)$/.test(name);
    if(!publicFile)return send(res,404,{error:'Not found'});
    const file=path.join(root,name);let stat;try{stat=statSync(file);}catch{return send(res,404,{error:'Not found'});}
    const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.mp3':'audio/mpeg','.pdf':'application/pdf','.txt':'text/plain','.json':'application/json'};

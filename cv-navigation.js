@@ -1,0 +1,21 @@
+(()=>{
+ const nav=document.querySelector('.cv-section-nav');if(!nav)return;
+ const de=document.documentElement.lang==='de',main=document.querySelector('main'),links=[...nav.querySelectorAll('a')];
+ const tools=document.createElement('div');tools.className='cv-nav-tools';const open=document.createElement('button');open.type='button';open.textContent=de?'Suchen /':'Find /';open.setAttribute('aria-label',de?'Lebenslauf durchsuchen':'Search CV');tools.append(open);nav.querySelector('.container').append(tools);
+ const panel=document.createElement('div');panel.className='cv-search-panel container';panel.hidden=true;
+ const input=document.createElement('input');input.type='search';input.placeholder=de?'Im Lebenslauf suchen…':'Find in this CV…';input.setAttribute('aria-label',input.placeholder);
+ const count=document.createElement('output');count.setAttribute('aria-live','polite');
+ const button=(text,label)=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.setAttribute('aria-label',label);return b;};
+ const prev=button('↑',de?'Vorheriger Treffer':'Previous match'),next=button('↓',de?'Nächster Treffer':'Next match'),close=button('×',de?'Suche schließen':'Close search');panel.append(input,count,prev,next,close);nav.append(panel);
+ let matches=[],index=-1,timer;
+ function clear(){for(const mark of matches){const parent=mark.parentNode;if(parent){mark.replaceWith(document.createTextNode(mark.textContent));parent.normalize();}}matches=[];index=-1;}
+ function jump(step=0){if(!matches.length){count.textContent=de?'0 Treffer':'0 matches';return;}matches[index]?.classList.remove('cv-match-current');index=(index+step+matches.length)%matches.length;matches[index].classList.add('cv-match-current');matches[index].scrollIntoView({block:'center',behavior:'smooth'});count.textContent=`${index+1} / ${matches.length}`;}
+ function search(){clear();const query=input.value.trim().toLocaleLowerCase();if(query.length<2){count.textContent='';return;}const walker=document.createTreeWalker(main,NodeFilter.SHOW_TEXT,{acceptNode:node=>node.parentElement.closest('script,style,button,audio')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);for(const node of nodes){const text=node.textContent,lower=text.toLocaleLowerCase();let start=0,pos=lower.indexOf(query);if(pos<0)continue;const fragment=document.createDocumentFragment();while(pos>=0&&matches.length<300){fragment.append(document.createTextNode(text.slice(start,pos)));const mark=document.createElement('mark');mark.className='cv-match';mark.textContent=text.slice(pos,pos+query.length);fragment.append(mark);matches.push(mark);start=pos+query.length;pos=lower.indexOf(query,start);}fragment.append(document.createTextNode(text.slice(start)));node.replaceWith(fragment);if(matches.length>=300)break;}index=0;jump();}
+ open.addEventListener('click',()=>{panel.hidden=!panel.hidden;open.setAttribute('aria-expanded',String(!panel.hidden));if(!panel.hidden)input.focus();});
+ close.addEventListener('click',()=>{clearTimeout(timer);clear();input.value='';panel.hidden=true;open.setAttribute('aria-expanded','false');open.focus();});
+ input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(search,160);});input.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();jump(event.shiftKey?-1:1);}if(event.key==='Escape')close.click();});prev.addEventListener('click',()=>jump(-1));next.addEventListener('click',()=>jump(1));
+ document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();panel.hidden=false;open.setAttribute('aria-expanded','true');input.focus();}});
+ new ResizeObserver(()=>document.documentElement.style.setProperty('--cv-nav-offset',nav.offsetHeight+24+'px')).observe(nav);
+ let pending=false;function active(){pending=false;let selected=links[0];for(const link of links){const section=document.querySelector(link.getAttribute('href'));if(section&&section.getBoundingClientRect().top<=nav.offsetHeight+140)selected=link;}for(const link of links){if(link===selected)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');}}
+ addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(active);}},{passive:true});active();
+})();
