@@ -50,6 +50,19 @@
 }
 @media print{.matrix-world-canvas,.matrix-lifts,.matrix-neo,.matrix-motion-toggle,.cv-music-invite{display:none!important}}
 @media screen{
+ body.cv-reading-layout main h2{font-size:clamp(1.45rem,2vw,1.85rem);font-weight:650;letter-spacing:-.025em;line-height:1.3}
+ body.cv-reading-layout main h3{font-size:1.06rem;font-weight:650;letter-spacing:-.015em;line-height:1.45}
+ body.cv-reading-layout main>.section:not(#beyond-web) .card,body.cv-reading-layout main .expertise-item{background:transparent!important;border:0;border-radius:0;box-shadow:none;padding:0}
+ body.cv-reading-layout main .grid-2,body.cv-reading-layout main .expertise-grid{gap:28px 40px}
+ body.cv-reading-layout main .cv-domain-grid{gap:30px 42px}
+ body.cv-reading-layout main .cv-domain{border-top:1px solid var(--line)!important;padding-top:21px!important}
+ body.cv-reading-layout main .cv-delivery-workflow{border-top:1px solid var(--line)!important;padding-top:23px!important}
+ body.cv-reading-layout main .expertise-item{border-top:1px solid var(--line);padding-top:20px}
+ body.cv-reading-layout main .section-kicker{font-size:.66rem;font-weight:650;letter-spacing:.11em;color:var(--muted)}
+ body.cv-reading-layout main>.section.container,body.cv-reading-layout main>.section>.container{border-radius:8px;box-shadow:none}
+ body.cv-reading-layout main p,body.cv-reading-layout main li{line-height:1.7}
+}
+@media screen{
  .cv-music-invite.cv-player{padding:17px 18px;border-radius:12px;width:min(340px,calc(100vw - 32px))}
  .cv-player-top{display:grid;grid-template-columns:48px minmax(0,1fr) 34px 18px;gap:12px;align-items:center}.cv-player-top img{width:48px;height:48px;object-fit:cover;border-radius:6px}.cv-player-name strong,.cv-player-name span{display:block}.cv-player-name strong{font-size:14px;line-height:1.4;color:inherit}.cv-player-name span{font-size:11px;margin-top:3px;color:#a3a3b0}
  .cv-music-invite .cv-player-toggle{padding:0;width:34px;height:34px;background:#e5e5eb;color:#18181c;border:0;border-radius:50%;font-size:14px}.cv-player-seek{display:block;width:100%;height:18px;margin:16px 0 2px;accent-color:#bfc0cd;cursor:pointer}.cv-player-times{display:flex;justify-content:space-between;color:#a3a3b0;font:10px ui-monospace,monospace}.theme-light .cv-player-name span,.theme-light .cv-player-times{color:#686975}.theme-light .cv-player-seek{accent-color:#494b5c}.theme-light .cv-music-invite .cv-player-toggle{background:#282b34;color:#fff}
