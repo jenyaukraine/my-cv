@@ -1,6 +1,26 @@
 /* Screen-only editorial layout for the CV. The PDF/print layout stays intact. */
 @media screen {
   body.cv-reading-layout > .cv-section-nav { position:sticky; top:0; z-index:40; background:#101013f2; }
+  body.matrix-world.theme-light.cv-reading-layout main > .section.container,
+  body.matrix-world.theme-light.cv-reading-layout main > .section > .container { background:#f7f8fa!important; border-color:#dcdde2; box-shadow:0 10px 35px #20212718; }
+  body.matrix-world.theme-light.cv-reading-layout main > #summary { background:#f2faf7!important; }
+  body.matrix-world.theme-light.cv-reading-layout main > #experience { background:#f1f7fc!important; }
+  body.matrix-world.theme-light.cv-reading-layout main > #engineering-profile { background:#fcf8f0!important; }
+  body.matrix-world.theme-light.cv-reading-layout main > .ai-section > .container { background:#f7f4fc!important; }
+  body.matrix-world.theme-light.cv-reading-layout main > #tech-stack { background:#f2faf7!important; }
+  body.matrix-world.theme-light.cv-reading-layout main > #achievements > .container { background:#fcf8f0!important; }
+  body.matrix-world.theme-light.cv-reading-layout main > #beyond-web { background:#f1f7fc!important; }
+  body.matrix-world.theme-light .card,
+  body.matrix-world.theme-light .ai-section .card,
+  body.matrix-world.theme-light .expertise-item,
+  body.matrix-world.theme-light .project-card,
+  body.matrix-world.theme-light #beyond-web .card { background:#fff; border-color:#dcdde2; }
+  body.matrix-world.theme-light.cv-reading-layout main #engineering-profile .cv-domain.card { background:#fff!important; color:#202127; }
+  body.matrix-world.theme-light .cv-section-nav,
+  body.matrix-world.theme-light > .footer { background:#f7f8fa; }
+  body.matrix-world.theme-light .matrix-lift { opacity:.22; border-color:#509c9166; background:linear-gradient(145deg,#d9ece7,#a8cbc3); }
+  body.matrix-world.theme-light .matrix-lift-display { color:#276c62; }
+  body.matrix-world.theme-light .matrix-neo { filter:drop-shadow(0 0 12px #177f6b55) drop-shadow(0 14px 16px #173b3566); }
   .hero .lang-switch a,.hero .lang-switch strong { display:inline-block; box-sizing:content-box; width:29px; height:19px; padding:4px!important; background-repeat:no-repeat!important; background-size:29px 19px!important; background-position:center!important; font-size:0!important; vertical-align:middle; }
   .hero .lang-switch [lang="en"] { background-image:url('assets/flag-gb.svg')!important; }
   .hero .lang-switch [lang="de"] { background-image:url('assets/flag-de.svg')!important; }
