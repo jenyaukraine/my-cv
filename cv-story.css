@@ -1,6 +1,9 @@
 /* Screen-only editorial layout for the CV. The PDF/print layout stays intact. */
 @media screen {
   body.cv-reading-layout > .cv-section-nav { position:sticky; top:0; z-index:40; background:#101013f2; }
+  .hero .lang-switch a,.hero .lang-switch strong { display:inline-block; box-sizing:content-box; width:29px; height:19px; padding:4px!important; background-repeat:no-repeat!important; background-size:29px 19px!important; background-position:center!important; font-size:0!important; vertical-align:middle; }
+  .hero .lang-switch [lang="en"] { background-image:url('assets/flag-gb.svg')!important; }
+  .hero .lang-switch [lang="de"] { background-image:url('assets/flag-de.svg')!important; }
   .cv-section-nav > .container:not(.cv-search-panel) { display:flex; align-items:center; flex-wrap:wrap; }
   .cv-nav-more { position:relative; color:var(--text); font:12px ui-monospace,monospace; }
   .cv-nav-more > summary { cursor:pointer; padding:8px 10px; list-style:none; }
@@ -62,6 +65,7 @@
   body.cv-reading-layout main #engineering-profile .cv-domain.card { padding:22px!important; border:1px solid var(--line)!important; border-radius:12px; overflow:hidden; transition:transform .25s,border-color .25s,box-shadow .25s; }
   #engineering-profile .cv-domain:hover { transform:translateY(-4px); border-color:#82dfc399!important; box-shadow:0 18px 28px #0003; }
   .cv-domain-visual { margin:15px 0 18px; }
+  #engineering-profile .cv-domain-value { margin:20px 0 0; padding:13px 15px; border-left:3px solid #82dfc3; background:#82dfc30c; font-weight:650; line-height:1.5; }
   .cv-domain-visual img { display:block; width:100%; height:175px; object-fit:cover; }
   .cv-domain:nth-child(6) .cv-domain-visual img { object-fit:contain; background:#101519; }
   .cv-domain:nth-child(3n + 2) .cv-domain-visual img { object-position:center 35%; }

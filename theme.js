@@ -27,6 +27,39 @@
       });
     });
 
+    const profileValue = {
+      en: [
+        'Value: modernise the product while keeping its data and daily operations usable.',
+        'Value: keep remote media devices manageable and campaigns running across a distributed fleet.',
+        'Value: validate changes before they reach production and recover quickly when they fail.',
+        'Value: turn local AI experiments into repeatable developer workflows with review.',
+        'Value: launch a storefront from a prepared 1C/BAS backup without a live 1C dependency.',
+        'Value: make recurring device and spreadsheet tasks easier to operate and verify.',
+        'Value: connect a customer-facing catalogue with search, enquiries and administration.',
+        'Value: connect physical devices to useful local controls and climate automation.',
+        'Value: build interactive experiences across gameplay, visuals and sound.'
+      ],
+      de: [
+        'Nutzen: Das Produkt modernisieren, ohne Daten und laufende Abläufe zu verlieren.',
+        'Nutzen: Verteilte Mediengeräte fernverwalten und Kampagnen zuverlässig ausspielen.',
+        'Nutzen: Änderungen vor dem Betrieb prüfen und bei Fehlern schnell zurücknehmen.',
+        'Nutzen: Lokale KI-Experimente in wiederholbare, überprüfte Entwicklungsabläufe überführen.',
+        'Nutzen: Einen Shop aus einem vorbereiteten 1C/BAS-Backup ohne laufende 1C-Verbindung starten.',
+        'Nutzen: Wiederkehrende Geräte- und Tabellenaufgaben einfacher bedienen und prüfen.',
+        'Nutzen: Kundenkatalog, Suche, Anfragen und Verwaltung zu einem Ablauf verbinden.',
+        'Nutzen: Physische Geräte mit lokaler Steuerung und Klimaautomatisierung verbinden.',
+        'Nutzen: Interaktive Erlebnisse aus Spielmechanik, Bild und Ton entwickeln.'
+      ]
+    };
+    document.querySelectorAll('#engineering-profile .cv-domain').forEach((card, index) => {
+      const copy = profileValue[document.documentElement.lang]?.[index];
+      if (!copy) return;
+      const value = document.createElement('p');
+      value.className = 'cv-domain-value';
+      value.textContent = copy;
+      card.append(value);
+    });
+
     const projectGrid = document.querySelector('.project-grid');
     if (projectGrid) {
       const language = document.documentElement.lang;
