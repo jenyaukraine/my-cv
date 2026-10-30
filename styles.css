@@ -626,6 +626,9 @@ section.contact-grid .contact-info a { color: var(--accent); }
   .project-card:nth-child(11) img { object-position: center 38%; }
   .project-card:nth-child(12) img { object-fit: contain; background: #fff; }
   .project-card > div { padding: 21px 24px 24px; }
+  .project-download { margin: 16px 0 0; }
+  .project-download a { display: inline-flex; align-items: center; min-height: 42px; padding: 9px 14px; border: 1px solid currentColor; border-radius: 8px; font-weight: 700; text-decoration: none; }
+  .project-download a:hover, .project-download a:focus-visible { background: #74dfca; color: #10242a; outline-offset: 3px; }
   .project-card > .crypto-preview { box-sizing: border-box; height: 250px; padding: 20px 24px; background: #0b1015; color: #f0f3ed; font-size: .86rem; }
   .crypto-preview strong { display: block; color: #f6f3e8; font-size: 1.12rem; letter-spacing: -.02em; }
   .crypto-preview small { color: #c6fb4b; font-size: .55rem; letter-spacing: .12em; }
