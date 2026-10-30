@@ -1,7 +1,7 @@
 # Senior Software Architect / Lead Engineer
 
 **Location:** Remote / Europe  
-**Languages:** English, German, Russian, Ukrainian  
+**Published website languages:** English and German
 **Availability:** Full-time / Contract  
 **Focus:** System Architecture, Platform Engineering, High-Load Systems, Security, AI-Enhanced Workflows
 

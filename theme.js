@@ -27,31 +27,31 @@
       const projects = [
         {
           title: 'TidyDrive', image: 'assets/tidydrive-logo.webp', stack: 'Hardware · product',
-          copy: { en: 'A phone flash drive. Development is ongoing.', de: 'Ein USB-Stick für das Smartphone. Die Entwicklung läuft.', uk: 'Флешка для телефона. Розробка триває.', fr: 'Une clé USB pour téléphone. Le développement est en cours.' }
+          copy: { en: 'A phone flash drive. Development is ongoing.', de: 'Ein USB-Stick für das Smartphone. Die Entwicklung läuft.' }
         },
         {
           title: 'Punchenko NNL / Tabula', image: 'assets/nnl-tabula-preview.jpg', stack: 'AI · language · interface',
-          copy: { en: 'An experimental language and companion interface for conversation and parallel model-training workflows. Training results remain under evaluation.', de: 'Experimentelle Sprache und Oberfläche für Dialoge und parallele Modell-Trainingsabläufe. Die Ergebnisse werden noch geprüft.', uk: 'Експериментальна мова й інтерфейс для діалогу та паралельних процесів навчання моделі. Результати ще перевіряються.', fr: 'Langage expérimental et interface de dialogue avec des processus parallèles d’entraînement de modèle. Les résultats restent à évaluer.' }
+          copy: { en: 'An experimental language and companion interface for conversation and parallel model-training workflows. Training results remain under evaluation.', de: 'Experimentelle Sprache und Oberfläche für Dialoge und parallele Modell-Trainingsabläufe. Die Ergebnisse werden noch geprüft.' }
         },
         {
           title: 'Rezar Auto MiniApp', image: 'assets/rezar-miniapp-preview.jpg', stack: 'MiniApp · car catalogue',
-          copy: { en: 'A mobile-first car catalogue with search, filters, budget estimates and vehicle details.', de: 'Mobil optimierter Autokatalog mit Suche, Filtern, Budgetschätzung und Fahrzeugdetails.', uk: 'Мобільний каталог авто з пошуком, фільтрами, оцінкою бюджету й деталями машин.', fr: 'Catalogue automobile mobile avec recherche, filtres, estimation du budget et fiches véhicules.' }
+          copy: { en: 'A mobile-first car catalogue with search, filters, budget estimates and vehicle details.', de: 'Mobil optimierter Autokatalog mit Suche, Filtern, Budgetschätzung und Fahrzeugdetails.' }
         },
         {
           title: 'Shop Jewel / 6 Moments', image: 'assets/shopjewel-preview.webp', stack: 'Commerce · jewellery',
-          copy: { en: 'Jewellery storefront and editorial product presentation.', de: 'Schmuck-Onlineshop mit redaktioneller Produktpräsentation.', uk: 'Ювелірна вітрина з редакційною подачею товарів.', fr: 'Boutique de bijoux et présentation éditoriale des produits.' }
+          copy: { en: 'Jewellery storefront and editorial product presentation.', de: 'Schmuck-Onlineshop mit redaktioneller Produktpräsentation.' }
         },
         {
           title: 'Alex TikTok / VideoDrop', image: 'assets/alex_tiktok-preview.jpg', stack: 'React · video tools',
-          copy: { en: 'Interface for video link previews and download options. The image is a visual asset from the project.', de: 'Oberfläche für Videolinks, Vorschau und Download-Optionen. Das Bild ist ein Projektmotiv.', uk: 'Інтерфейс попереднього перегляду відеопосилань і варіантів завантаження. Зображення — візуальний матеріал проєкту.', fr: 'Interface de prévisualisation de liens vidéo et d’options de téléchargement. L’image est un visuel du projet.' }
+          copy: { en: 'Interface for video link previews and download options. The image is a visual asset from the project.', de: 'Oberfläche für Videolinks, Vorschau und Download-Optionen. Das Bild ist ein Projektmotiv.' }
         },
         {
           title: 's-termin', image: 'assets/stermin-preview.webp', stack: 'Family platform · web',
-          copy: { en: 'A private digital home for families with a shared day plan, messages and media.', de: 'Privater digitaler Treffpunkt für Familien mit gemeinsamem Tagesplan, Nachrichten und Medien.', uk: 'Приватний цифровий простір для родини зі спільним планом дня, повідомленнями та медіа.', fr: 'Espace numérique privé pour les familles avec agenda partagé, messages et médias.' }
+          copy: { en: 'A private digital home for families with a shared day plan, messages and media.', de: 'Privater digitaler Treffpunkt für Familien mit gemeinsamem Tagesplan, Nachrichten und Medien.' }
         },
         {
           title: 'Inkora', image: 'assets/inkora-preview.webp', stack: 'Tattoo concepts · image workflow',
-          copy: { en: 'Tattoo concept exploration from prompts and references, with stencil and dotwork output.', de: 'Entwicklung von Tattoo-Motiven aus Text und Referenzen, mit Schablonen- und Dotwork-Ausgabe.', uk: 'Пошук ідей татуювань за описом і референсами з виводом трафарету та dotwork.', fr: 'Exploration de motifs de tatouage à partir de descriptions et de références, avec rendu pochoir et dotwork.' }
+          copy: { en: 'Tattoo concept exploration from prompts and references, with stencil and dotwork output.', de: 'Entwicklung von Tattoo-Motiven aus Text und Referenzen, mit Schablonen- und Dotwork-Ausgabe.' }
         }
       ];
       projects.forEach(project => {
@@ -77,8 +77,6 @@
       additional.textContent = ({
         en: 'Also built: a Warcraft add-on and Kain One, a management system.',
         de: 'Weitere Arbeiten: ein Warcraft-Add-on und Kain One, ein Verwaltungssystem.',
-        uk: 'Також створив додаток для Warcraft і Kain One — систему керування.',
-        fr: 'Autres réalisations : un add-on pour Warcraft et Kain One, un système de gestion.'
       })[language] || 'Also built: a Warcraft add-on and Kain One, a management system.';
       projectGrid.after(additional);
     }
@@ -88,8 +86,6 @@
       const labels = {
         en: ['Open larger image', 'Close image'],
         de: ['Bild vergrößern', 'Bild schließen'],
-        uk: ['Збільшити зображення', 'Закрити зображення'],
-        fr: ["Agrandir l’image", "Fermer l’image"]
       };
       const [openLabel, closeLabel] = labels[document.documentElement.lang] || labels.en;
       const dialog = document.createElement('dialog');
