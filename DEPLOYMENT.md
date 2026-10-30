@@ -1,0 +1,38 @@
+# Hosting and analytics
+
+The existing CV, its EN/DE content, theme, animation, project gallery and original PDF downloads are preserved. Added features are isolated in `app.js`, `analytics.css` and the Node server.
+
+## Addresses
+
+- Existing GitHub Pages: https://jenyaukraine.github.io/my-cv/
+- Server fallback: https://inkora.at/cv/
+- Server admin: https://inkora.at/cv/admin
+- Prepared custom domain: https://punchenko.de/ and https://punchenko.de/admin
+
+The custom domain needs an A record for `@` to `128.140.104.253`. `www` may use a CNAME to `punchenko.de`. Caddy issues HTTPS certificates automatically once DNS resolves to the server. Do not set a GitHub Pages CNAME: the custom domain points to the server application.
+
+## Runtime
+
+Node 24, built-in HTTP and SQLite; no third-party runtime packages. The application runs as a non-root Docker user with a persistent `/opt/eugen-portfolio/data` volume and is attached to the existing `incora_default` network. Only Caddy exposes it publicly. Application source is in `/opt/eugen-portfolio/app`; runtime password configuration is in `/opt/eugen-portfolio/.env`, outside the repository.
+
+`docker compose -f /opt/eugen-portfolio/compose.yml --project-directory /opt/eugen-portfolio up -d --build` rebuilds after synchronising application source. Back up the whole data directory while the container is stopped, or use SQLite's online backup API. Never replace the data directory during deployment.
+
+`ADMIN_PASSWORD_HASH` must contain a salted scrypt hash. Generate it with `node scripts/admin-password.mjs`, supplying the password on stdin. The login name is `admin`. No password or hash belongs in Git. Admin sessions expire after eight hours and after process restart. Login attempts are rate-limited; the cookie is HttpOnly, Secure in production and SameSite=Strict.
+
+## Analytics definitions
+
+- Views: page loads with JavaScript analytics enabled, including repeat loads.
+- Today: Europe/Kyiv calendar day.
+- Active: anonymous visible-tab identifiers seen within 90 seconds; approximate rather than a count of distinct people.
+- Sources: referrer hostname or `utm_source`; campaigns: `utm_campaign`.
+- Actions: clicks on PDF, email and GitHub links. A click does not establish that a message was sent.
+
+Details are retained for up to 90 days; lifetime page-load total is preserved separately. The application does not store raw IP addresses, full referrer URLs or account identities. Do Not Track disables event submission. Add `?preview=1` during QA to avoid creating visits. Counts can be affected by blockers and automated clients.
+
+The admin dashboard also edits the existing summary paragraph and work-format line in English and German. All other CV sections and PDF files remain maintained in Git. GitHub Pages fetches profile overrides and analytics from the server over restricted CORS; if the API is unavailable the original CV text remains and counters show an unavailable state.
+
+Campaign example: `https://inkora.at/cv/?utm_source=linkedin&utm_campaign=php-roles`.
+
+## Checks
+
+Run `npm test` for integration coverage of analytics, origin checks, admin access, profile edits, logout, persistence and private-file protection. The original `styles.css`, `theme.js` and both original PDFs are deliberately unchanged.

@@ -6,6 +6,7 @@
   <title>Eugen Punchenko — Full-Stack Engineer</title>
   <meta name="description" content="Eugen Punchenko: PHP, Laravel, Symfony, Vue.js, TypeScript und KI-gestützte Entwicklung. Berufserfahrung, Projekte und Kontakt." />
   <link rel="stylesheet" href="styles.css?v=20261029f" />
+  <link rel="stylesheet" href="analytics.css?v=20261030">
 </head>
 <body>
   <header class="hero">
@@ -23,7 +24,7 @@
       <h1>Eugen Punchenko <span>/ Full-Stack Engineer</span></h1>
       <div class="hero-details" aria-label="Standort, Arbeitsform und Sprachen">
         <p><strong>Kyjiw, Ukraine</strong><span>Remote über ukrainischen FOP</span></p>
-        <p><strong>Middle / Senior / Tech Lead</strong><span>Vollzeit oder Vertrag</span></p>
+        <p><strong>Middle / Senior / Tech Lead</strong><span data-profile="availability">Vollzeit oder Vertrag</span></p>
         <p><strong>Sprachen</strong><span>Englisch · Deutsch · Ukrainisch · Russisch</span></p>
       </div>
       <p class="lead">PHP · Laravel · Lumen · Symfony · Vue.js · TypeScript · KI-gestützte Produktentwicklung</p>
@@ -41,7 +42,7 @@
   <main>
     <section class="section container">
       <h2>Zusammenfassung</h2>
-      <p>Full-Stack-Entwickler mit mehr als zehn Jahren kommerzieller PHP-Erfahrung im Laravel-, Lumen- und Symfony-Umfeld, einschließlich Arbeit mit einem Symfony-Microframework. Ich entwickle mit Vue.js, JavaScript und TypeScript und modernisiere Webanwendungen, APIs und Datenbanken. KI-Werkzeuge nutze ich für Recherche, Implementierung und Code-Reviews. Ich arbeite als Entwickler und übernehme bei Bedarf technische Verantwortung für Team und Architektur.</p>
+      <p data-profile="intro">Full-Stack-Entwickler mit mehr als zehn Jahren kommerzieller PHP-Erfahrung im Laravel-, Lumen- und Symfony-Umfeld, einschließlich Arbeit mit einem Symfony-Microframework. Ich entwickle mit Vue.js, JavaScript und TypeScript und modernisiere Webanwendungen, APIs und Datenbanken. KI-Werkzeuge nutze ich für Recherche, Implementierung und Code-Reviews. Ich arbeite als Entwickler und übernehme bei Bedarf technische Verantwortung für Team und Architektur.</p>
       <p>Erfahren im Aufbau von Systemen, die unter realen Bedingungen zuverlässig laufen müssen: hohe Last, verteilte Geräte, instabile Netzwerke, lange Produktlebenszyklen und sich verändernde Geschäftsanforderungen.</p>
       <p><strong>Stärken:</strong></p>
       <ul class="list">
@@ -59,7 +60,7 @@
       <h2>Berufserfahrung</h2>
       <p class="muted">Die Positionen sind nach dokumentiertem Beginn geordnet. Einige Projekte aus dem Jahr 2019 überschneiden sich.</p>
       <div class="experience-list">
-        <article class="experience-item"><div class="experience-date">Ab Feb. 2020 · frühere Position</div><div><h3>Senior PHP Developer · TCB Hard + Software</h3><p>Entwicklung und Modernisierung einer PHP-Plattform. Das genaue Enddatum ist in den vorliegenden Lebenslaufdaten nicht bestätigt.</p></div></article>
+        <article class="experience-item"><div class="experience-date">Feb. 2020–heute</div><div><h3>Senior PHP Developer · TCB Hard + Software</h3><p>Entwicklung und Modernisierung einer PHP-Plattform.</p></div></article>
         <article class="experience-item"><div class="experience-date">Jan.–Feb. 2020</div><div><h3>Senior PHP Developer · SYS Softwaresysteme GmbH</h3><p>Laravel-Backend und Frontend mit Vue und TypeScript.</p></div></article>
         <article class="experience-item"><div class="experience-date">Aug. 2019–Jan. 2020</div><div><h3>Middle PHP Developer · Hallo Welt! GmbH</h3><p>PHP-Entwicklung im MediaWiki- und BlueSpice-Umfeld.</p></div></article>
         <article class="experience-item"><div class="experience-date">2019</div><div><h3>Middle PHP Developer · Astarios</h3><p>Arbeit mit MediaWiki und BlueSpice; Docker, Tomcat und NPM gehörten zum Projektstack.</p></div></article>
@@ -320,6 +321,7 @@
     </section>
   </main>
 
+<section class="cv-audience container" aria-label="Site statistics"><div class="cv-stats"><div><strong data-stat="online">—</strong><span>gerade aktiv</span></div><div><strong data-stat="today">—</strong><span>Aufrufe heute</span></div><div><strong data-stat="total">—</strong><span>Aufrufe insgesamt</span></div></div><p class="stats-status" role="status"></p><p class="cv-stats-note">Aktiv = sichtbare Tabs in den letzten 90 Sekunden. Aufrufe zählen Seitenladungen, keine eindeutigen Personen. Zeitzone: Europe/Kyiv. <a href="privacy.html">Datenschutz</a></p></section>
   <footer class="footer">
     <div class="container">
       <p>Eugen Punchenko — Full-Stack Engineer</p>
@@ -327,5 +329,6 @@
     </div>
   </footer>
   <script src="theme.js?v=20261029c"></script>
+  <script src="app.js?v=20261030" defer></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+{
+  "en": {
+    "intro": "Full-stack engineer with more than 10 years of commercial PHP experience across the Laravel, Lumen and Symfony ecosystems, including Symfony microframework work. I also build with Vue.js, JavaScript and TypeScript, modernising web products, APIs and databases. I use AI tools across research, implementation and review, and can contribute as a developer or take technical ownership of a team and its architecture.",
+    "availability": "Full-time or contract"
+  },
+  "de": {
+    "intro": "Full-Stack-Entwickler mit mehr als zehn Jahren kommerzieller PHP-Erfahrung im Laravel-, Lumen- und Symfony-Umfeld, einschließlich Arbeit mit einem Symfony-Microframework. Ich entwickle mit Vue.js, JavaScript und TypeScript und modernisiere Webanwendungen, APIs und Datenbanken. KI-Werkzeuge nutze ich für Recherche, Implementierung und Code-Reviews. Ich arbeite als Entwickler und übernehme bei Bedarf technische Verantwortung für Team und Architektur.",
+    "availability": "Vollzeit oder Vertrag"
+  }
+}

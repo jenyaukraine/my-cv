@@ -1,0 +1,26 @@
+services:
+  portfolio:
+    build: ./app
+    container_name: eugen-portfolio
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      DATA_DIR: /app/data
+      PUBLIC_ORIGIN: https://inkora.at
+      PUBLIC_PREFIX: ''
+    volumes:
+      - ./data:/app/data
+    networks:
+      - edge
+    mem_limit: 192m
+    cpus: 0.5
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: '2'
+networks:
+  edge:
+    external: true
+    name: incora_default
