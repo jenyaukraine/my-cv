@@ -1,5 +1,19 @@
 /* Visual storytelling for the denser CV sections. */
 @media screen {
+  body.cv-reading-layout .cv-summary-lead .cv-summary-image img,
+  body.cv-reading-layout #engineering-profile .cv-domain:first-child .cv-domain-visual img,
+  body.cv-reading-layout #project-fermershop img {
+    height:auto!important;
+    aspect-ratio:2545 / 1242;
+    object-fit:contain!important;
+    object-position:center!important;
+    background:#f3f8f4;
+  }
+  body.cv-reading-layout #achievements .cv-feature:nth-child(2) img {
+    object-fit:contain;
+    object-position:center;
+    background:#f3f8f4;
+  }
   .cv-domain-previews a + a {margin-left:15px}
   .project-card[id] {scroll-margin-top:80px}
   body.cv-reading-layout #achievements .container {padding-bottom:38px}

@@ -1,0 +1,44 @@
+/* Keep the presentation readable at wide widths and in the light theme. */
+@media screen and (min-width:1280px) {
+  body.cv-reading-layout .container,
+  body.cv-reading-layout main > .section.container {
+    width:min(1760px,calc(100% - 72px));
+    max-width:none;
+  }
+}
+@media screen and (min-width:2200px) {
+  body.cv-reading-layout .container,
+  body.cv-reading-layout main > .section.container {
+    width:min(2200px,calc(100% - 96px));
+  }
+  body.cv-reading-layout #engineering-profile .cv-domain-grid,
+  body.cv-reading-layout #projects .project-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media screen {
+  body.matrix-world.theme-light.cv-reading-layout main > .section.container,
+  body.matrix-world.theme-light.cv-reading-layout main > .section > .container {
+    background:#f7f8fa!important;
+    background-image:none!important;
+    color:#202127!important;
+  }
+  body.matrix-world.theme-light.cv-reading-layout main > #summary {background:#f2faf7!important}
+  body.matrix-world.theme-light.cv-reading-layout main > #experience {background:#f1f7fc!important}
+  body.matrix-world.theme-light.cv-reading-layout main > #engineering-profile {background:#fcf8f0!important}
+  body.matrix-world.theme-light.cv-reading-layout main > #tech-stack {background:#f2faf7!important}
+  body.matrix-world.theme-light.cv-reading-layout main > #beyond-web {background:#f1f7fc!important}
+  body.matrix-world.theme-light.cv-reading-layout main > #achievements > .container {background:#fcf8f0!important}
+  body.matrix-world.theme-light.cv-reading-layout main > #projects > .container {background:#f6f9f7!important}
+  body.matrix-world.theme-light.cv-reading-layout main > #contact > .container {background:#173e38!important;color:#f4faf7!important}
+  body.matrix-world.theme-light.cv-reading-layout main #engineering-profile .cv-domain.card,
+  body.matrix-world.theme-light.cv-reading-layout main #experience .experience-item {
+    background:#fff!important;
+    background-image:none!important;
+    color:#202127!important;
+  }
+  body.matrix-world.theme-light.cv-reading-layout main #engineering-profile .cv-domain h3,
+  body.matrix-world.theme-light.cv-reading-layout main #engineering-profile .cv-domain p:not(.section-kicker),
+  body.matrix-world.theme-light.cv-reading-layout main #experience .experience-item h3,
+  body.matrix-world.theme-light.cv-reading-layout main #experience .experience-item p {color:#26343a!important}
+  body.matrix-world.theme-light.cv-reading-layout main #engineering-profile .cv-domain a {color:#166c61!important}
+  body.matrix-world.theme-light.cv-reading-layout main #experience .experience-date {color:#246c60!important;background:#e8f3f0!important}
+}
