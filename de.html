@@ -1,248 +1,213 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eugen Punchenko — PHP, Laravel, Vue.js &amp; Digital Signage</title>
-  <meta name="description" content="Eugen Punchenko: über 10 Jahre PHP-Erfahrung, Laravel, Vue.js, Digital Signage und VPN-Automatisierung. Berufserfahrung, Projekte und Kontakt." />
-  <link rel="stylesheet" href="styles.css?v=20261029f" />
-  <link rel="stylesheet" href="analytics.css?v=20261030">
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Eugen Punchenko — Full-Stack Engineer">
-  <meta property="og:description" content="Eugen Punchenko: über 10 Jahre PHP-Erfahrung, Laravel, Vue.js, Digital Signage und VPN-Automatisierung. Berufserfahrung, Projekte und Kontakt.">
-  <meta property="og:image" content="https://jenyaukraine.github.io/my-cv/assets/cv-preview.png">
-  <meta property="og:image:alt" content="Eugen Punchenko — CV with engineering experience and projects">
-  <meta property="og:locale" content="de_DE">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="alternate" hreflang="en" href="https://jenyaukraine.github.io/my-cv/">
-  <link rel="alternate" hreflang="de" href="https://jenyaukraine.github.io/my-cv/de.html">
-  <link rel="stylesheet" href="cv-enhancements.css?v=20261030r">
-  <link rel="stylesheet" href="matrix-world.css?v=20261030s">
-  <link rel="stylesheet" href="visual-rhythm.css?v=20261030a">
-  <link rel="stylesheet" href="presentation-sections.css?v=20261030c">
-  <link rel="stylesheet" href="cv-story.css?v=20261030c">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eugen Punchenko — PHP, Laravel, Vue.js &amp; Digital Signage</title>
+<meta content="Eugen Punchenko: über 10 Jahre PHP-Erfahrung, Laravel, Vue.js, Webplattformen und vernetzte Geräte. Berufserfahrung, Projekte und Kontakt." name="description"/>
+<link href="styles.css?v=20261029f" rel="stylesheet"/>
+<link href="analytics.css?v=20261030" rel="stylesheet"/>
+<meta content="profile" property="og:type"/>
+<meta content="Eugen Punchenko — Full-Stack Engineer" property="og:title"/>
+<meta content="Eugen Punchenko: über 10 Jahre PHP-Erfahrung, Laravel, Vue.js, Webplattformen und vernetzte Geräte. Berufserfahrung, Projekte und Kontakt." property="og:description"/>
+<meta content="https://jenyaukraine.github.io/my-cv/assets/cv-preview.png" property="og:image"/>
+<meta content="Eugen Punchenko — CV with engineering experience and projects" property="og:image:alt"/>
+<meta content="de_DE" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://jenyaukraine.github.io/my-cv/" hreflang="en" rel="alternate"/>
+<link href="https://jenyaukraine.github.io/my-cv/de.html" hreflang="de" rel="alternate"/>
+<link href="cv-enhancements.css?v=20261030r" rel="stylesheet"/>
+<link href="matrix-world.css?v=20261030s" rel="stylesheet"/>
+<link href="visual-rhythm.css?v=20261030a" rel="stylesheet"/>
+<link href="presentation-sections.css?v=20261030c" rel="stylesheet"/>
+<link href="cv-story.css?v=20261030c" rel="stylesheet"/>
 <link href="layout-polish.css?v=20261030a" rel="stylesheet"/>
+<link href="cv-polish.css?v=20261030a" rel="stylesheet"/>
 </head>
 <body class="cv-reading-layout">
-  <a class="cv-skip" href="#cv-main">Zum Lebenslauf springen</a>
-  <nav class="cv-section-nav" aria-label="Lebenslauf-Abschnitte"><div class="container"><a href="#summary">Profil</a><a href="#experience">Berufserfahrung</a><a href="#engineering-profile">Kompetenzen</a><details class="cv-nav-more"><summary>Menü</summary><div><a href="#tech-stack">Technologien</a><a href="#achievements">Erfolge</a><a href="#projects">Projekte</a><a href="#contact">Kontakt</a></div></details></div></nav>
-  <header class="hero hero-with-cover">
-    <figure class="cv-cinematic-cover"><img src="assets/neo-neural-lab.png" alt="Neo programmiert neuronale Netze neben einem ruhenden, verbundenen Terminator" width="1916" height="821" fetchpriority="high"></figure>
-    <div class="container">
-      <div class="hero-top">
-        <div class="top-controls">
-          <label class="theme-toggle" title="Darstellung ändern">
-            <input class="theme-toggle-input" type="checkbox" aria-label="Darstellung ändern" />
-            <span class="ios-switch"></span>
-          </label>
-          <nav class="lang-switch" aria-label="Sprache"><a href="index.html" lang="en" hreflang="en" aria-label="English" title="English">🇬🇧</a> <strong lang="de" aria-current="page" aria-label="Deutsch" title="Deutsch">🇩🇪</strong></nav>
-        </div>
-      </div>
-      <p class="badge">Lebenslauf</p>
-      <h1>Eugen Punchenko <span>/ Full-Stack Engineer</span></h1>
-      <div class="hero-details" aria-label="Standort, Arbeitsform und Sprachen">
-        <p><strong>Kyjiw, Ukraine</strong><span>Remote über ukrainischen FOP</span></p>
-        <p><strong>Middle / Senior / Tech Lead</strong><span data-profile="availability">Vollzeit oder Vertrag</span></p>
-        <p><strong>Sprachen</strong><span>Englisch · Deutsch · Ukrainisch · Russisch</span></p>
-      </div>
-      <p class="lead">PHP · Laravel · Lumen · Symfony · Vue.js · TypeScript · KI-gestützte Produktentwicklung</p>
-      <p><a class="contact-cta" href="Eugen_Punchenko_CV.pdf" download>Englischen Lebenslauf als PDF herunterladen</a></p>
-    </div>
-  </header>
-
-
-  <main id="cv-main">
-    <section class="section container cv-summary-article" id="summary">
-      <h2>Zusammenfassung</h2>
-      <div class="cv-summary-lead"><div class="cv-summary-prose">
-      <p data-profile="intro">Full-Stack-Entwickler mit mehr als zehn Jahren kommerzieller PHP-Erfahrung im Laravel-, Lumen- und Symfony-Umfeld, einschließlich Arbeit mit einem Symfony-Microframework. Ich entwickle mit Vue.js, JavaScript und TypeScript und modernisiere Webanwendungen, APIs und Datenbanken. KI-Werkzeuge nutze ich für Recherche, Implementierung und Code-Reviews. Ich arbeite als Entwickler und übernehme bei Bedarf technische Verantwortung für Team und Architektur.</p>
-      <p>Erfahren im Aufbau von Systemen, die unter realen Bedingungen zuverlässig laufen müssen: hohe Last, verteilte Geräte, instabile Netzwerke, lange Produktlebenszyklen und sich verändernde Geschäftsanforderungen.</p>
-      </div><figure class="cv-summary-image"><img src="assets/fermershop-live.png" alt="Fermershop-Webshop mit Produktkategorien" loading="lazy"><figcaption>Beispielprojekt: Fermershop</figcaption></figure></div>
-      <div class="cv-summary-strengths">      <p><strong>Stärken:</strong></p>
-      <ul class="list">
-        <li>Chaotische Systeme in saubere, wartbare Architekturen überführen</li>
-        <li>Entwicklerfreundliche Plattformen und Prozesse aufbauen</li>
-        <li>Technische Richtung geben, ohne Mikromanagement</li>
-        <li>Verantwortung über den gesamten Zyklus: Idee → Architektur → Umsetzung → Produktion</li>
-        <li>Sicherheit und Zuverlässigkeit von Anfang an in die Architektur integrieren</li>
-      </ul>
-      </div>
-      <div class="cv-summary-outro"><div class="cv-summary-prose">
-      <p>Ich arbeite an Anwendungscode, Infrastruktur und vernetzten Geräten und eigne mir die Werkzeuge an, die ein Problem erfordert.</p>
-      <p><strong>Verteilte Videoplattform:</strong> Mitarbeit an einer Plattform mit hoher Last, Android- und TV-Anwendungen sowie Set-Top-Boxen auf RockPi-Basis. Dazu gehörten die Entwicklung von Videotreibern und die Wiedergabe auf ARM, Chromium und Mali sowie der Fernbetrieb Tausender Geräte über OpenVPN einschließlich Netzwerk- und Zertifikatsverwaltung.</p>
-      </div><figure class="cv-summary-image"><img src="assets/electronics-device.webp" alt="Elektronik- und Geräteprojekt" loading="lazy"><figcaption>Beispiel aus der Geräteentwicklung</figcaption></figure></div>
-    </section>
-
-    <section class="section container" id="experience">
-      <h2>Berufserfahrung</h2>
-      <p class="cv-availability">Aktuell bei TCB Hard + Software tätig und offen für eine neue Position oder Projektarbeit.</p>
-      <p class="muted">Die Positionen sind nach dokumentiertem Beginn geordnet.</p>
-      <div class="experience-list">
-        <article class="experience-item"><div class="experience-date">Feb. 2020–heute</div><div><h3>Senior PHP Developer · TCB Hard + Software</h3><p>Entwicklung und Modernisierung einer PHP-Plattform.</p><div class="cv-role-detail"><h4>Digital Signage: Kampagnen-Player und VPN-Automatisierung</h4><p>Eine vorhandene technische Basis samt Datenbank zu einer vollständigen, betriebsfähigen Digital-Signage-Plattform weiterentwickelt.</p><ul><li>Einen Kampagnen-Player für Bild-Slideshows und Videowiedergabe entwickelt.</li><li>Den Betrieb der Player über private VPN-Netzwerke automatisiert.</li></ul></div><div class="cv-role-detail cv-migration-case"><h4>Migration bestehender Geräte &amp; Release-Paketierung</h4><p>Einen Fernmigrationsweg für bestehende Digital-Signage-Geräte entwickelt: Eine temporäre RAM-Umgebung installiert ein vorbereitetes Ubuntu-basiertes Systemabbild und startet anschließend die eingerichtete Anwendung.</p><ul><li>Vorhandene Wi-Fi-Einstellungen vom alten Datenträger übernommen, damit das neue System die Kundenverbindung automatisch wiederherstellt.</li><li>Die Migration schrittweise über räumlich verteilte Kundenstandorte ausgerollt und zeitweise nicht erreichbare Geräte berücksichtigt.</li><li>Python-Komponenten als eigenständige Binärpakete über CI/CD ausgeliefert, um Probleme mit Laufzeitabhängigkeiten und Kompatibilität zu reduzieren.</li></ul></div></div></article>
-        <article class="experience-item"><div class="experience-date">Jan.–Feb. 2020</div><div><h3>Senior PHP Developer · SYS Softwaresysteme GmbH</h3><p>Laravel-Backend und Frontend mit Vue und TypeScript.</p></div></article>
-        <article class="experience-item"><div class="experience-date">Aug. 2019–Jan. 2020</div><div><h3>Middle PHP Developer · Hallo Welt! GmbH / Astarios</h3><p>PHP-Entwicklung im MediaWiki- und BlueSpice-Umfeld.</p></div></article>
-        <article class="experience-item"><div class="experience-date">Sep. 2018–Mai 2019</div><div><h3>Middle PHP Developer · Dyisy Ltd</h3><p>Dashboards und Marktplatz-APIs mit Laravel.</p></div></article>
-        <article class="experience-item"><div class="experience-date">Feb. 2016–Juni 2017</div><div><h3>Full-Stack Developer · UAT-Solutions</h3><p>Produktentwicklung mit Laravel, Vue.js und MySQL.</p></div></article>
-        <article class="experience-item"><div class="experience-date">Aug. 2015–Jan. 2016</div><div><h3>SEO Specialist · Leo Studio</h3><p>Suchmaschinenoptimierung und Umsetzung von Webprojekten.</p></div></article>
-      </div>
-    </section>
-
-<section class="section container" id="engineering-profile"><p class="section-kicker">BREITE MIT KONKRETEN BEISPIELEN</p><h2>Mein technisches Profil im Zusammenhang</h2><p class="cv-profile-intro">Mein kommerzieller Schwerpunkt ist die PHP- und Full-Stack-Entwicklung. Darüber hinaus verbinde ich Webprodukte mit Infrastruktur, vernetzten Geräten, lokalen KI-Werkzeugen und spezialisierten Anwendungen. Die folgenden Beispiele zeigen berufliche Arbeit, eigenständige Produkte und laufende Prototypen.</p><div class="grid-2 cv-domain-grid"><article class="card cv-domain"><p class="section-kicker">Kommerzieller Schwerpunkt</p><h3>Webprodukte &amp; Plattformmodernisierung</h3><figure class="cv-domain-visual"><img alt="Fermershop: Webshop und Datenmigration" loading="lazy" src="assets/fermershop-live.png"/><figcaption>Fermershop: Webshop und Datenmigration</figcaption></figure><p>Mehr als zehn Jahre kommerzielle PHP-Erfahrung mit Laravel, Lumen, Symfony und im MediaWiki-/BlueSpice-Umfeld. Dazu gehören APIs, Datenmodelle, mandantenfähige Plattformen, Vue-Oberflächen und die Modernisierung gewachsener Systeme.</p><p>Die verbindende Stärke: bestehende Systeme verstehen, ihre Rahmenbedingungen erfassen und sie über Frontend, Backend und Betrieb hinweg weiterentwickeln.</p><p class="cv-domain-link cv-domain-previews"><a href="#project-fermershop">Fermershop ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Berufliche Plattformentwicklung</p><h3>Digital Signage &amp; Medienwiedergabe</h3><figure class="cv-domain-visual"><img alt="Geräteprojekt: Hardware und Medienwiedergabe" loading="lazy" src="assets/electronics-device.webp"/><figcaption>Geräteprojekt: Hardware und Medienwiedergabe</figcaption></figure><p>Bei TCB Hard + Software eine vorhandene technische Basis samt Datenbank zur vollständigen, betriebsfähigen Digital-Signage-Plattform weiterentwickelt: Kampagnen mit Bild-Slideshows und Video sowie Automatisierung über private VPN-Netzwerke.</p><p>Der weitere Medienhintergrund umfasst Android-/TV-Anwendungen, ARM- und RockPi-Geräte, Chromium-/Mali-Wiedergabe, Fernzugriff und Zertifikatsverwaltung.</p></article><article class="card cv-domain"><p class="section-kicker">Infrastruktur &amp; Betrieb</p><h3>Linux, Netzwerke &amp; Gerätebetrieb</h3><figure class="cv-domain-visual"><img alt="Caddy Panel: Routenverwaltung" loading="lazy" src="assets/caddy-panel.webp"/><figcaption>Caddy Panel: Routenverwaltung</figcaption></figure><p>Der Hintergrund im 24/7-ISP-Betrieb verbindet Linux-Administration, Routing, DNS/DHCP, VMware, Ubiquiti, MikroTik, Monitoring und Unterstützung entfernter Geräte.</p><p>Zur Projektarbeit gehören Gerätebereitstellung und Update-Werkzeuge, initramfs-/U-Boot-Update-Abläufe sowie Caddy-Routenverwaltung mit Validierung und Rücknahme bei Fehlern. Anwendung und Laufzeitumgebung werden zusammen betrachtet.</p><p class="cv-domain-link cv-domain-previews"><a href="#project-caddy">Caddy Panel ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Entwicklungswerkzeuge &amp; Integration</p><h3>Lokale KI &amp; Entwicklungsautomatisierung</h3><figure class="cv-domain-visual"><img alt="Tabula: experimentelle KI-Oberfläche" loading="lazy" src="assets/nnl-tabula-preview.jpg"/><figcaption>Tabula: experimentelle KI-Oberfläche</figcaption></figure><p>Einen llama.cpp-Integrationsfork für Spark X2.5 gepflegt und erweitert: C++-Tool-Call-Parsing, inkrementelles Streaming, Reasoning-Replay und AMD-Vulkan-Unterstützung. Lokale Worker-Orchestrierung mit persistenter gemeinsamer Warteschlange, begrenzter Parallelität und Ergebnisprüfung entwickelt.</p><p>KI unterstützt Implementierung, Tests und Reviews. Tabula / Punchenko NNL erweitert dies um experimentelle Sprach- und Modell-Workflows; Forschungsergebnisse werden weiter untersucht.</p><p class="cv-domain-link"><a href="https://github.com/jenyaukraine/ffprocessor" rel="noopener" target="_blank">ffprocessor ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Produktprojekte</p><h3>Commerce, Datenmigration &amp; Verwaltung</h3><figure class="cv-domain-visual"><img alt="Shop Jewel: Commerce-Oberfläche" loading="lazy" src="assets/shopjewel-preview.webp"/><figcaption>Shop Jewel: Commerce-Oberfläche</figcaption></figure><p>Fermershop verbindet einen Webshop mit operativer Verwaltung. Katalog, Preise, Lagerbestand und Verkaufshistorie wurden aus einem 1C/BAS-Backup in portable Anwendungsdaten überführt; Datenbank und Konfiguration werden beim Deployment wiederhergestellt.</p><p>Weitere Commerce-Arbeit umfasst den 6-Moments-/Shop-Jewel-Shop und die Paketierung einer OpenCart-Erweiterung. Kundenoberfläche, Geschäftsdaten und wartbare Auslieferung greifen dabei ineinander.</p><p class="cv-domain-link cv-domain-previews"><a href="#project-fermershop">Fermershop ansehen ↗</a><a href="#project-shopjewel">Shop Jewel ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Praxiswerkzeuge</p><h3>Desktop-Anwendungen &amp; Browser-Werkzeuge</h3><figure class="cv-domain-visual"><img alt="TidyDrive: Produktvisualisierung" loading="lazy" src="assets/tidydrive-logo.webp"/><figcaption>TidyDrive: Produktvisualisierung</figcaption></figure><p>Rust-/Tauri-Projekte umfassen Duplicate Control für Excel und eine macOS-Geräteverwaltung. Das Excel-Werkzeug bearbeitet eine Kopie des gewählten Tabellenblatts und erhält die übrigen Arbeitsmappenteile; die Geräteverwaltung verbindet API, VPN, SSH und Updates in einer Oberfläche.</p><p>TidyDrive umfasst Werkzeuge zur Geräteerkennung und -bereitstellung sowie einen aktiven Prototyp zur geräteübergreifenden ISO-Steuerung. Frequent Tab ist eine lokale Chrome-Neue-Tab-Erweiterung mit Ranking nach Besuchshäufigkeit. Die Hardwarevalidierung des neuen Pocket-Ablaufs steht noch aus.</p><p class="cv-domain-link"><a href="https://github.com/jenyaukraine/helper-excel" rel="noopener" target="_blank">Duplicate Control releases ↗</a></p><p class="cv-domain-link cv-domain-previews"><a href="https://github.com/jenyaukraine/TidyDrive-Releases" rel="noopener" target="_blank">TidyDrive-Releases auf GitHub ↗</a><a href="#project-tidydrive">TidyDrive ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Produktintegration</p><h3>Telegram, Kataloge &amp; Geschäftsabläufe</h3><figure class="cv-domain-visual"><img alt="Rezar: mobiler Fahrzeugkatalog" loading="lazy" src="assets/rezar-miniapp-preview.jpg"/><figcaption>Rezar: mobiler Fahrzeugkatalog</figcaption></figure><p>Rezar verbindet einen Python-Telegram-Bot mit mobilem Katalog, Suche und Filtern, Fahrzeugdetails, Anfragebearbeitung und einer Verwaltungsoberfläche für den Katalog.</p><p>Das weitere Projektportfolio umfasst Aufgaben-Marktplätze, Familienkoordination, Video-Werkzeuge und Tattoo-Konzept-Workflows. Gemeinsam ist diesen Projekten die Umsetzung einer konkreten Nutzeraufgabe in einen durchgängigen Produktablauf.</p><p class="cv-domain-link"><a href="https://jenyaukraine.github.io/rezar_bot_miniapp/" rel="noopener" target="_blank">Rezar Mini App ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Geräteintegration</p><h3>Embedded-Systeme &amp; Prototypenbau</h3><figure class="cv-domain-visual"><img alt="Elektronik-Prototyp" loading="lazy" src="assets/electronics-board.webp"/><figcaption>Elektronik-Prototyp</figcaption></figure><p>Praktische Arbeit mit ESP32, ESPHome, Home Assistant, UART, RS-485 und CAN: Geräteintegration, Firmware-Konfiguration, lokale Websteuerung, OTA-Abläufe und Elektronik-Fehlersuche.</p><p>Projekte verbinden Hardware mit Softwareoberflächen, etwa die Integration von Klimaanlagen und Oberflächen zur Klimasteuerung. Löten, Anschlussarbeiten und Prototypen für 3D-gedruckte Gehäuse ergänzen die Softwareentwicklung.</p><p class="cv-domain-link cv-domain-previews"><a href="#beyond-web">Hardwareprojekt ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Eigenständige Projekte</p><h3>Spiele, Interaktion &amp; kreative Produktion</h3><figure class="cv-domain-visual"><img alt="Neon Crown: Spielszene" loading="lazy" src="assets/neon-crown-camp-de.webp"/><figcaption>Neon Crown: Spielszene</figcaption></figure><p>Neon Crown untersucht Gameplay- und Weltsysteme mit Unreal Engine und C++, darunter Interaktion, HUDs, Szenenintegration und Build-/Release-Werkzeuge. MythicBoost ist ein Lua-basiertes World-of-Warcraft-Add-on mit konfigurierbarem HUD und Spielanalyse.</p><p>Die elektronische Musikproduktion als Techno Punch ergänzt Komposition, Klang, Artwork und Videopräsentation. Diese Projekte beschäftigen sich mit dem gesamten Erlebnis aus Bild, Ton und Interaktion.</p><p class="cv-domain-link"><a href="https://github.com/jenyaukraine/wow-mythic-boost" rel="noopener" target="_blank">MythicBoost ↗</a></p><p class="cv-domain-link cv-domain-previews"><a href="#project-neoncrown">NeonCrown ansehen ↗</a></p></article></div></section>
-
-
-    <section class="section section-dark ai-section">
-      <div class="container">
-        <p class="section-kicker">KI-NATIVE ENGINEERING</p>
-        <h2>Agentic Engineering &amp; KI-gestützter SDLC</h2>
-        <p>Ich entwickle KI-native Engineering-Workflows, in denen KI-Agenten den gesamten Delivery-Zyklus unterstützen: Problemklärung, Planung, Implementierung, Tests, Code-Reviews, Deployment, Monitoring und Support — mit menschlicher Verantwortung, Validierung und Produktionszuverlässigkeit.</p><figure class="cv-ai-visual"><img src="assets/nnl-tabula-preview.jpg" alt="Tabula: experimentelle KI-Oberfläche" loading="lazy"><figcaption>Projektbeispiel: Tabula / Punchenko NNL</figcaption></figure>
-        <div class="grid-2">
-          <article class="card">
-            <h3>Positionierung</h3>
-            <ul>
-              <li>AI-Native Software Architect</li>
-              <li>Lead für Agentic Engineering</li>
-              <li>AI Platform &amp; Automation Engineer</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Was ich aufbaue</h3>
-            <ul>
-              <li>Agentic Workflows für wiederholbare Engineering- und Betriebsaufgaben</li>
-              <li>KI-gestützte SDLC-Loops mit Reviews, Tests, Observability und Rollback</li>
-              <li>Werkzeugnutzende Agenten mit Anbindung an APIs, Repositories, CI/CD und interne Systeme</li>
-            </ul>
-          </article>
-        <article class="card full cv-delivery-workflow"><h3>Von der Anforderung zur geprüften Umsetzung</h3><ol><li>Anfragen in Linear erfassen und Anforderungen klären.</li><li>Aufgaben und Kontext mit Claude strukturieren.</li><li>Die Umsetzung schrittweise über mehrere Agenten koordinieren.</li><li>Ergebnisse mit der ursprünglichen Aufgabe abgleichen, fehlende Logik erkennen und gezielt nacharbeiten lassen.</li></ol><p>Ich halte die Verbindung zwischen Kundenwunsch, Aufgabenbeschreibung und tatsächlichem Ergebnis aufrecht. Mein Beitrag umfasst Aufgabenklärung, Koordination und eigene Prüfung der Umsetzung.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark">
-      <div class="container">
-        <h2>Kernkompetenzen</h2>
-
-        <div class="cv-strength-grid">
-          <article class="cv-strength-card"><div class="cv-strength-head"><span>01</span><h3>Architektur &amp; Qualität</h3></div><ul class="list"><li>🧠 System- und Architekturdenken</li><li>🏗 Skalierbare Backend- und Plattformarchitektur</li><li>🔁 Legacy-Refactoring und Abbau technischer Schulden</li><li>🧩 Modularisierung großer Codebasen</li><li>🧵 Strukturierte Problemanalyse und Zerlegung</li></ul></article>
-          <article class="cv-strength-card"><div class="cv-strength-head"><span>02</span><h3>Umsetzung &amp; KI</h3></div><ul class="list"><li>⚡ Performance-Optimierung und Engpassanalyse</li><li>🧪 CI/CD, Automatisierung, reproduzierbare Umgebungen</li><li>🤖 KI-gestützte Entwicklung und Automatisierung</li><li>🔁 KI-native Entwicklung, Agentic Workflows &amp; KI-gestützter SDLC</li><li>📊 Traffic-Funnels und systematische Traffic-Prozesse</li></ul></article>
-          <article class="cv-strength-card"><div class="cv-strength-head"><span>03</span><h3>Infrastruktur &amp; Geräte</h3></div><ul class="list"><li>🔐 Sicherheitsorientiertes Systemdesign</li><li>🌐 Netzwerkbewusste Architektur und Remote-Systeme</li><li>🖥 IoT-, Embedded- und gerätegesteuerte Systeme</li><li>📡 24/7-Infrastrukturbetrieb, Monitoring und Incident-Troubleshooting</li><li>🛠 Linux-Netzwerke, DNS/DHCP, Ubiquiti, MikroTik und VMware-Umgebungen</li></ul></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container" id="tech-stack">
-      <h2>Technologiestack</h2>
-      <div class="grid-2">
-        <article class="card">
-          <h3>Backend</h3>
-          <ul>
-            <li>PHP (Laravel), Node.js, Python, TypeScript</li>
-            <li>REST-APIs, WebSockets</li>
-            <li>Modulare Backend-Architekturen</li>
-            <li>MySQL, PostgreSQL</li>
-            <li>Redis, S3-kompatibler Speicher</li>
-            <li>Erfahrung mit dem NestJS-Ökosystem</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Frontend</h3>
-          <ul>
-            <li>Migration von Vue 2 auf Vue 3</li>
-            <li>Vite, modernes JavaScript-Tooling</li>
-            <li>Modulare UI-Architektur</li>
-            <li>Drag-&-Drop-Oberflächen</li>
-            <li>Timeline-basierte Benutzeroberflächen</li>
-            <li>Canvas- und WebGL-basierte Interfaces</li>
-            <li>Gutes Verständnis von React, Next.js und Nuxt</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>DevOps / Infrastruktur</h3>
-          <ul>
-            <li>Docker, GitHub Actions, CI/CD-Pipelines</li>
-            <li>Linux-basierte Systeme (Server und Embedded)</li>
-            <li>Reproduzierbare Builds</li>
-            <li>VPN-basierte Geräteanbindung</li>
-            <li>OTA-Updates und A/B-Deployment-Strategien</li>
-            <li>Veröffentlichungs- und Release-Prozesse in Marktplätzen</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Netzwerk & Sicherheit</h3>
-          <ul>
-            <li>Sicherheitsorientiertes Backend- und Infrastrukturdesign</li>
-            <li>Netzwerkarchitektur und Remote-Access-Systeme</li>
-            <li>RouterOS- / RouterBoard-Umgebungen</li>
-            <li>Ubiquiti-Netzwerkinfrastruktur</li>
-            <li>DNS, DHCP, Routing sowie Nagios- und Zabbix-Monitoring</li>
-            <li>Gateway-Design und Remote-Konnektivitätslösungen</li>
-            <li>Sichere Geräteprovisionierung und Update-Pipelines</li>
-          </ul>
-        </article>
-
-        <article class="card full">
-          <h3>Hardware / Embedded</h3>
-          <ul>
-            <li>ARM-Geräte (Rock Pi, RK3588, Raspberry-Pi-Klasse)</li>
-            <li>Custom-Linux-Builds</li>
-            <li>Geräteprovisionierung und Remote-Fleet-Management</li>
-            <li>IoT- und Edge-Geräte</li>
-            <li>Elektronik-Prototyping, Löten, Hardware-Debugging</li>
-            <li>3D-Druck und physische Prototyping-Workflows</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-dark cv-showcase" id="achievements"><div class="container">
-          <p class="section-kicker">AUSGEWÄHLTE ERGEBNISSE</p><h2>Von komplexen Systemen zu nutzbaren Produkten.</h2>
-          <div class="cv-showcase-grid">
-            <article class="cv-feature cv-feature-large"><img src="assets/electronics-device.webp" alt="Vernetztes Geräteprojekt" loading="lazy"><div><span>01 / VERNETZTE GERÄTE</span><h3>Digital Signage, das im Betrieb funktioniert</h3><p>Bild- und Videokampagnen, VPN-Automatisierung und Fernmigration bestehender Geräte.</p></div></article>
-            <article class="cv-feature"><img src="assets/fermershop-live.png" alt="Fermershop-Oberfläche" loading="lazy"><div><span>02 / PRODUKTPLATTFORMEN</span><h3>Legacy-Systeme weiterentwickeln</h3><p>Multi-Tenant-Architektur, modulare Backends und moderne Vue-Oberflächen.</p></div></article>
-            <article class="cv-feature"><img src="assets/nnl-tabula-preview.jpg" alt="Experimentelle Tabula-Oberfläche" loading="lazy"><div><span>03 / ENTWICKLERWERKZEUGE</span><h3>Lokale KI praktisch einsetzen</h3><p>C++-Werkzeuge, AI-gestützte Workflows und reproduzierbare Prüfungen.</p></div></article>
-          </div><details class="cv-evidence"><summary>Alle Ergebnisse im Detail ansehen <span aria-hidden="true">↗</span></summary><ul class="list">
-<li><strong>Digital signage:</strong> Eine vollständige Digital-Signage-Plattform mit Kampagnen-Player für Bilder und Videos sowie automatisiertem Betrieb über private VPN-Netzwerke realisiert.</li>
-<li>Fernmigration einer bestehenden Geräteinstallation auf ein neues Systemabbild ermöglicht — mit Übernahme der Kunden-Netzwerkeinstellungen, schrittweisem Rollout und CI/CD-Binärpaketen.</li>
-<li>Architektur-Refactoring einer komplexen Multi-Tenant-Plattform (Hotels / Reseller / Endkunden) geleitet</li>
-<li>Legacy-Frontend auf moderne Vue-3- und Vite-Architektur migriert</li>
-<li>Modulare Backend-Struktur als Ersatz für eng gekoppelte Legacy-Logik entworfen</li>
-<li>Fleet-Management und Remote-Update-Pipelines für Embedded-Systeme aufgebaut</li>
-<li>Skalierbare Medienpipelines mit Speicherabstraktion und lizenzbewussten Workflows entworfen</li>
-<li>Technische Schulden durch systematischen Abbau veralteter Architekturschichten reduziert</li>
-<li>CI/CD-Pipelines für reproduzierbare Builds und sicherere Deployments etabliert</li>
-<li>KI-gestützte Workflows für Content-Erstellung und UI-Produktion entwickelt</li>
-<li>Lokalen llama.cpp-Fork für Spark X2.5 mit C++-Tool-Call-Parsing, Streaming und AMD-Vulkan-Unterstützung aufgebaut</li>
-<li>HRIT als reproduzierbare Plattform für technische Aufgaben mit automatisierten Checks und KI-gestützten Scorecards konzipiert</li>
-<li>Standalone-Native-Binaries für Python-Services erstellt, um Runtime-Abhängigkeiten zu eliminieren</li>
-<li>Traffic-Generierungs- und Verarbeitungs-Funnels in Plattform-Workflows integriert</li>
-<li>Sichere Remote-Access-Architekturen für verteilte Geräteflotten umgesetzt</li>
-</ul></details>
-        </div></section>
-
-    <section class="section container cv-early-work"><p class="section-kicker">WEITERE FACETTEN</p><h2>Auch jenseits der Web-App.</h2><div class="cv-early-grid">
-          <article class="cv-early-card"><img src="assets/nnl-tabula-preview.jpg" alt="Tabula-Projektoberfläche" loading="lazy"><div><span>LOCAL AI / C++ / PYTHON</span><h3>Werkzeuge für Entwickler</h3><p>Lokale Modelle, Agenten-Orchestrierung und automatisierte technische Prüfungen.</p><details><summary>Projekte ansehen</summary><ul>
-<li><strong>ffprocessor:</strong> C++-Fork von llama.cpp für Spark X2.5 mit lokaler Coding-Agent-Integration, Tool-Call-Parsing, Streaming und AMD-Vulkan-Unterstützung <a href="https://github.com/jenyaukraine/ffprocessor" rel="noopener" target="_blank">Quellcode auf GitHub ↗</a></li>
-<li><strong>codex-skill:</strong> Python-Orchestrierung mehrerer lokaler KI-Worker mit Queueing und Ergebnisprüfung</li>
-<li><strong>HRIT:</strong> reproduzierbare Plattform für technische Aufgaben mit automatisierter Validierung und KI-gestützter Bewertung</li>
-</ul></details></div></article>
-          <article class="cv-early-card"><img src="assets/electronics-board.webp" alt="Elektronik-Prototyp" loading="lazy"><div><span>LINUX / NETZWERKE / GERÄTE</span><h3>Infrastruktur, die laufen muss</h3><p>Erfahrung mit Betrieb, Monitoring, Netzwerken und Embedded Linux.</p><details><summary>Erfahrung ansehen</summary><ul>
+<a class="cv-skip" href="#cv-main">Zum Lebenslauf springen</a>
+<nav aria-label="Lebenslauf-Abschnitte" class="cv-section-nav"><div class="container"><a href="#summary">Profil</a><a href="#experience">Berufserfahrung</a><a href="#engineering-profile">Kompetenzen</a><details class="cv-nav-more"><summary>Menü</summary><div><a href="#tech-stack">Technologien</a><a href="#achievements">Erfolge</a><a href="#projects">Projekte</a><a href="#contact">Kontakt</a></div></details></div></nav>
+<header class="hero hero-with-cover">
+<figure class="cv-cinematic-cover"><img alt="Neo programmiert neuronale Netze neben einem ruhenden, verbundenen Terminator" fetchpriority="high" height="821" src="assets/neo-neural-lab.png" width="1916"/></figure>
+<div class="container">
+<div class="hero-top">
+<div class="top-controls">
+<label class="theme-toggle" title="Darstellung ändern">
+<input aria-label="Darstellung ändern" class="theme-toggle-input" type="checkbox"/>
+<span class="ios-switch"></span>
+</label>
+<nav aria-label="Sprache" class="lang-switch"><a aria-label="English" href="index.html" hreflang="en" lang="en" title="English">🇬🇧 English</a> <strong aria-current="page" aria-label="Deutsch" lang="de" title="Deutsch">🇩🇪 Deutsch</strong></nav>
+</div>
+</div>
+<p class="badge">Lebenslauf</p>
+<h1>Eugen Punchenko <span>/ Full-Stack Engineer</span></h1>
+<div aria-label="Standort, Arbeitsform und Sprachen" class="hero-details">
+<p><strong>Kyjiw, Ukraine</strong><span>Remote über ukrainischen FOP</span></p>
+<p><strong>Middle / Senior / Tech Lead</strong><span data-profile="availability">Vollzeit oder Vertrag</span></p>
+<p><strong>Sprachen</strong><span>Englisch · Deutsch · Ukrainisch · Russisch</span></p>
+</div>
+<p class="lead">PHP · Laravel · Lumen · Symfony · Vue.js · TypeScript · KI-gestützte Produktentwicklung</p>
+<p><a class="contact-cta" download="" href="Eugen_Punchenko_CV.pdf">Englischen Lebenslauf als PDF herunterladen</a></p>
+</div>
+</header>
+<main id="cv-main">
+<section class="section container cv-summary-article" id="summary">
+<h2>Zusammenfassung</h2>
+<div class="cv-summary-lead"><div class="cv-summary-prose">
+<p data-profile="intro">Full-Stack-Entwickler mit mehr als zehn Jahren kommerzieller PHP-Erfahrung im Laravel-, Lumen- und Symfony-Umfeld, einschließlich Arbeit mit einem Symfony-Microframework. Ich entwickle mit Vue.js, JavaScript und TypeScript und modernisiere Webanwendungen, APIs und Datenbanken. KI-Werkzeuge nutze ich für Recherche, Implementierung und Code-Reviews. Ich arbeite als Entwickler und übernehme bei Bedarf technische Verantwortung für Team und Architektur.</p>
+<p>Erfahren im Aufbau von Systemen, die unter realen Bedingungen zuverlässig laufen müssen: hohe Last, verteilte Geräte, instabile Netzwerke, lange Produktlebenszyklen und sich verändernde Geschäftsanforderungen.</p>
+</div><figure class="cv-summary-image"><img alt="Fermershop-Webshop mit Produktkategorien" loading="lazy" src="assets/fermershop-live.png"/><figcaption>Beispielprojekt: Fermershop</figcaption></figure></div>
+<div class="cv-summary-strengths"> <p><strong>Stärken:</strong></p>
+<ul class="list">
+<li>Chaotische Systeme in saubere, wartbare Architekturen überführen</li>
+<li>Entwicklerfreundliche Plattformen und Prozesse aufbauen</li>
+<li>Technische Richtung geben, ohne Mikromanagement</li>
+<li>Verantwortung über den gesamten Zyklus: Idee → Architektur → Umsetzung → Produktion</li>
+<li>Sicherheit und Zuverlässigkeit von Anfang an in die Architektur integrieren</li>
+</ul>
+</div>
+<div class="cv-summary-outro"><div class="cv-summary-prose">
+<p>Ich arbeite an Anwendungscode, Infrastruktur und vernetzten Geräten und eigne mir die Werkzeuge an, die ein Problem erfordert.</p>
+<p><strong>Verteilte Videoplattform:</strong> Mitarbeit an einer verteilten Medienplattform mit Anwendungen und vernetzten Geräten. Im Mittelpunkt standen zuverlässige Wiedergabe und Fernbetrieb.</p>
+</div><figure class="cv-summary-image"><img alt="Elektronik- und Geräteprojekt" loading="lazy" src="assets/electronics-device.webp"/><figcaption>Beispiel aus der Geräteentwicklung</figcaption></figure></div>
+</section>
+<section class="section container" id="experience">
+<h2>Berufserfahrung</h2>
+<p class="cv-availability">Aktuell bei TCB Hard + Software tätig und offen für eine neue Position oder Projektarbeit.</p>
+<p class="muted">Die Positionen sind nach dokumentiertem Beginn geordnet.</p>
+<div class="experience-list">
+<article class="experience-item"><div class="experience-date">Feb. 2020–heute</div><div><h3>Senior PHP Developer · TCB Hard + Software</h3><p>PHP-Anwendungen für eine digitale Medienplattform entwickelt und gepflegt, mit Fokus auf Produktentwicklung, Zuverlässigkeit und langfristige Wartbarkeit.</p></div></article>
+<article class="experience-item"><div class="experience-date">Jan.–Feb. 2020</div><div><h3>Senior PHP Developer · SYS Softwaresysteme GmbH</h3><p>Laravel-Backend und Frontend mit Vue und TypeScript.</p></div></article>
+<article class="experience-item"><div class="experience-date">Aug. 2019–Jan. 2020</div><div><h3>Middle PHP Developer · Hallo Welt! GmbH / Astarios</h3><p>PHP-Entwicklung im MediaWiki- und BlueSpice-Umfeld.</p></div></article>
+<article class="experience-item"><div class="experience-date">Sep. 2018–Mai 2019</div><div><h3>Middle PHP Developer · Dyisy Ltd</h3><p>Dashboards und Marktplatz-APIs mit Laravel.</p></div></article>
+<article class="experience-item"><div class="experience-date">Feb. 2016–Juni 2017</div><div><h3>Full-Stack Developer · UAT-Solutions</h3><p>Produktentwicklung mit Laravel, Vue.js und MySQL.</p></div></article>
+<article class="experience-item"><div class="experience-date">Aug. 2015–Jan. 2016</div><div><h3>SEO Specialist · Leo Studio</h3><p>Suchmaschinenoptimierung und Umsetzung von Webprojekten.</p></div></article>
+</div>
+</section>
+<section class="section container" id="engineering-profile"><p class="section-kicker">BREITE MIT KONKRETEN BEISPIELEN</p><h2>Mein technisches Profil im Zusammenhang</h2><p class="cv-profile-intro">Mein kommerzieller Schwerpunkt ist die PHP- und Full-Stack-Entwicklung. Darüber hinaus verbinde ich Webprodukte mit Infrastruktur, vernetzten Geräten, lokalen KI-Werkzeugen und spezialisierten Anwendungen. Die folgenden Beispiele zeigen berufliche Arbeit, eigenständige Produkte und laufende Prototypen.</p><div class="grid-2 cv-domain-grid"><article class="card cv-domain"><p class="section-kicker">Kommerzieller Schwerpunkt</p><h3>Webprodukte &amp; Plattformmodernisierung</h3><figure class="cv-domain-visual"><img alt="Fermershop: Webshop und Datenmigration" loading="lazy" src="assets/fermershop-live.png"/><figcaption>Fermershop: Webshop und Datenmigration</figcaption></figure><p>Mehr als zehn Jahre kommerzielle PHP-Erfahrung mit Laravel, Lumen, Symfony und im MediaWiki-/BlueSpice-Umfeld. Dazu gehören APIs, Datenmodelle, mandantenfähige Plattformen, Vue-Oberflächen und die Modernisierung gewachsener Systeme.</p><p>Die verbindende Stärke: bestehende Systeme verstehen, ihre Rahmenbedingungen erfassen und sie über Frontend, Backend und Betrieb hinweg weiterentwickeln.</p><p class="cv-domain-link cv-domain-previews"><a href="#project-fermershop">Fermershop ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Berufliche Plattformentwicklung</p><h3>Digital Signage &amp; Medienwiedergabe</h3><figure class="cv-domain-visual"><img alt="Geräteprojekt: Hardware und Medienwiedergabe" loading="lazy" src="assets/electronics-device.webp"/><figcaption>Geräteprojekt: Hardware und Medienwiedergabe</figcaption></figure><p>Digitale Medienprodukte entwickelt und gepflegt, die Webanwendungen mit vernetzten Geräten verbinden.</p><p>Schwerpunkte waren zuverlässiger Betrieb, Bedienbarkeit und langfristige Betreuung.</p></article><article class="card cv-domain"><p class="section-kicker">Infrastruktur &amp; Betrieb</p><h3>Linux, Netzwerke &amp; Gerätebetrieb</h3><figure class="cv-domain-visual"><img alt="Caddy Panel: Routenverwaltung" loading="lazy" src="assets/caddy-panel.webp"/><figcaption>Caddy Panel: Routenverwaltung</figcaption></figure><p>Erfahrung mit produktiver Infrastruktur, Linux-Betrieb, Monitoring, Netzwerken und Fernsupport.</p><p>Praktische Werkzeuge entwickelt, damit Teams Dienste und Geräte langfristig betreiben können.</p><p class="cv-domain-link cv-domain-previews"><a href="#project-caddy">Caddy Panel ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Entwicklungswerkzeuge &amp; Integration</p><h3>Lokale KI &amp; Entwicklungsautomatisierung</h3><figure class="cv-domain-visual"><img alt="Tabula: experimentelle KI-Oberfläche" loading="lazy" src="assets/nnl-tabula-preview.jpg"/><figcaption>Tabula: experimentelle KI-Oberfläche</figcaption></figure><p>Lokale KI- und Entwicklerwerkzeuge mit C++ und Python entwickelt, darunter Modellintegration und Automatisierung von Arbeitsabläufen.</p><p>KI unterstützt Implementierung, Tests und Reviews. Tabula / Punchenko NNL untersucht experimentelle Sprach- und Modell-Workflows; Forschungsergebnisse werden weiter geprüft.</p><p class="cv-domain-link"><a href="https://github.com/jenyaukraine/ffprocessor" rel="noopener" target="_blank">ffprocessor ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Produktprojekte</p><h3>Commerce, Datenmigration &amp; Verwaltung</h3><figure class="cv-domain-visual"><img alt="Shop Jewel: Commerce-Oberfläche" loading="lazy" src="assets/shopjewel-preview.webp"/><figcaption>Shop Jewel: Commerce-Oberfläche</figcaption></figure><p>Fermershop verbindet einen Webshop mit praktischen Verwaltungswerkzeugen. Ich arbeitete an Katalog, Produktdaten und zuverlässiger Auslieferung.</p><p>Weitere Commerce-Arbeit umfasst den 6-Moments-/Shop-Jewel-Shop und die Paketierung einer OpenCart-Erweiterung.</p><p class="cv-domain-link cv-domain-previews"><a href="#project-fermershop">Fermershop ansehen ↗</a><a href="#project-shopjewel">Shop Jewel ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Praxiswerkzeuge</p><h3>Desktop-Anwendungen &amp; Browser-Werkzeuge</h3><figure class="cv-domain-visual"><img alt="TidyDrive: Produktvisualisierung" loading="lazy" src="assets/tidydrive-logo.webp"/><figcaption>TidyDrive: Produktvisualisierung</figcaption></figure><p>Desktop-Anwendungen mit Rust und Tauri umfassen ein Excel-Werkzeug und eine macOS-Oberfläche zur Geräteverwaltung.</p><p>TidyDrive ist ein aktiver geräteübergreifender Prototyp; Frequent Tab ist eine lokale Chrome-Erweiterung. Die Hardwarevalidierung des neuen TidyDrive-Ablaufs steht noch aus.</p><p class="cv-domain-link"><a href="https://github.com/jenyaukraine/helper-excel" rel="noopener" target="_blank">Duplicate Control releases ↗</a></p><p class="cv-domain-link cv-domain-previews"><a href="https://github.com/jenyaukraine/TidyDrive-Releases" rel="noopener" target="_blank">TidyDrive-Releases auf GitHub ↗</a><a href="#project-tidydrive">TidyDrive ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Produktintegration</p><h3>Telegram, Kataloge &amp; Geschäftsabläufe</h3><figure class="cv-domain-visual"><img alt="Rezar: mobiler Fahrzeugkatalog" loading="lazy" src="assets/rezar-miniapp-preview.jpg"/><figcaption>Rezar: mobiler Fahrzeugkatalog</figcaption></figure><p>Rezar verbindet einen Python-Telegram-Bot mit mobilem Katalog, Suche und Filtern, Fahrzeugdetails, Anfragebearbeitung und einer Verwaltungsoberfläche für den Katalog.</p><p>Das weitere Projektportfolio umfasst Aufgaben-Marktplätze, Familienkoordination, Video-Werkzeuge und Tattoo-Konzept-Workflows. Gemeinsam ist diesen Projekten die Umsetzung einer konkreten Nutzeraufgabe in einen durchgängigen Produktablauf.</p><p class="cv-domain-link"><a href="https://jenyaukraine.github.io/rezar_bot_miniapp/" rel="noopener" target="_blank">Rezar Mini App ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Geräteintegration</p><h3>Embedded-Systeme &amp; Prototypenbau</h3><figure class="cv-domain-visual"><img alt="Elektronik-Prototyp" loading="lazy" src="assets/electronics-board.webp"/><figcaption>Elektronik-Prototyp</figcaption></figure><p>Praktische Arbeit mit ESP32, ESPHome, Home Assistant, UART, RS-485 und CAN: Geräteintegration, Firmware-Konfiguration, lokale Websteuerung, OTA-Abläufe und Elektronik-Fehlersuche.</p><p>Projekte verbinden Hardware mit Softwareoberflächen, etwa die Integration von Klimaanlagen und Oberflächen zur Klimasteuerung. Löten, Anschlussarbeiten und Prototypen für 3D-gedruckte Gehäuse ergänzen die Softwareentwicklung.</p><p class="cv-domain-link cv-domain-previews"><a href="#beyond-web">Hardwareprojekt ansehen ↗</a></p></article><article class="card cv-domain"><p class="section-kicker">Eigenständige Projekte</p><h3>Spiele, Interaktion &amp; kreative Produktion</h3><figure class="cv-domain-visual"><img alt="Neon Crown: Spielszene" loading="lazy" src="assets/neon-crown-camp-de.webp"/><figcaption>Neon Crown: Spielszene</figcaption></figure><p>Neon Crown untersucht Gameplay- und Weltsysteme mit Unreal Engine und C++, darunter Interaktion, HUDs, Szenenintegration und Build-/Release-Werkzeuge. MythicBoost ist ein Lua-basiertes World-of-Warcraft-Add-on mit konfigurierbarem HUD und Spielanalyse.</p><p>Die elektronische Musikproduktion als Techno Punch ergänzt Komposition, Klang, Artwork und Videopräsentation. Diese Projekte beschäftigen sich mit dem gesamten Erlebnis aus Bild, Ton und Interaktion.</p><p class="cv-domain-link"><a href="https://github.com/jenyaukraine/wow-mythic-boost" rel="noopener" target="_blank">MythicBoost ↗</a></p><p class="cv-domain-link cv-domain-previews"><a href="#project-neoncrown">NeonCrown ansehen ↗</a></p></article></div></section>
+<section class="section section-dark ai-section">
+<div class="container">
+<p class="section-kicker">KI-NATIVE ENGINEERING</p>
+<h2>Agentic Engineering &amp; KI-gestützter SDLC</h2>
+<p>Ich entwickle KI-native Engineering-Workflows, in denen KI-Agenten den gesamten Delivery-Zyklus unterstützen: Problemklärung, Planung, Implementierung, Tests, Code-Reviews, Deployment, Monitoring und Support — mit menschlicher Verantwortung, Validierung und Produktionszuverlässigkeit.</p><figure class="cv-ai-visual"><img alt="Tabula: experimentelle KI-Oberfläche" loading="lazy" src="assets/nnl-tabula-preview.jpg"/><figcaption>Projektbeispiel: Tabula / Punchenko NNL</figcaption></figure>
+<div class="grid-2">
+<article class="card">
+<h3>Positionierung</h3>
+<ul>
+<li>AI-Native Software Architect</li>
+<li>Lead für Agentic Engineering</li>
+<li>AI Platform &amp; Automation Engineer</li>
+</ul>
+</article>
+<article class="card">
+<h3>Was ich aufbaue</h3>
+<ul>
+<li>Agentic Workflows für wiederholbare Engineering- und Betriebsaufgaben</li>
+<li>KI-gestützte SDLC-Loops mit Reviews, Tests, Observability und Rollback</li>
+<li>Werkzeugnutzende Agenten mit Anbindung an APIs, Repositories, CI/CD und interne Systeme</li>
+</ul>
+</article>
+<article class="card full cv-delivery-workflow"><h3>Von der Anforderung zur geprüften Umsetzung</h3><ol><li>Anfragen in Linear erfassen und Anforderungen klären.</li><li>Aufgaben und Kontext mit Claude strukturieren.</li><li>Die Umsetzung schrittweise über mehrere Agenten koordinieren.</li><li>Ergebnisse mit der ursprünglichen Aufgabe abgleichen, fehlende Logik erkennen und gezielt nacharbeiten lassen.</li></ol><p>Ich halte die Verbindung zwischen Kundenwunsch, Aufgabenbeschreibung und tatsächlichem Ergebnis aufrecht. Mein Beitrag umfasst Aufgabenklärung, Koordination und eigene Prüfung der Umsetzung.</p></article>
+</div>
+</div>
+</section>
+<section class="section section-dark">
+<div class="container">
+<h2>Kernkompetenzen</h2>
+<div class="cv-strength-grid">
+<article class="cv-strength-card"><div class="cv-strength-head"><span>01</span><h3>Architektur &amp; Qualität</h3></div><ul class="list"><li>🧠 System- und Architekturdenken</li><li>🏗 Skalierbare Backend- und Plattformarchitektur</li><li>🔁 Legacy-Refactoring und Abbau technischer Schulden</li><li>🧩 Modularisierung großer Codebasen</li><li>🧵 Strukturierte Problemanalyse und Zerlegung</li></ul></article>
+<article class="cv-strength-card"><div class="cv-strength-head"><span>02</span><h3>Umsetzung &amp; KI</h3></div><ul class="list"><li>⚡ Performance-Optimierung und Engpassanalyse</li><li>🧪 CI/CD, Automatisierung, reproduzierbare Umgebungen</li><li>🤖 KI-gestützte Entwicklung und Automatisierung</li><li>🔁 KI-native Entwicklung, Agentic Workflows &amp; KI-gestützter SDLC</li><li>📊 Traffic-Funnels und systematische Traffic-Prozesse</li></ul></article>
+<article class="cv-strength-card"><div class="cv-strength-head"><span>03</span><h3>Infrastruktur &amp; Geräte</h3></div><ul class="list"><li>🔐 Sicherheitsorientiertes Systemdesign</li><li>🌐 Netzwerkbewusste Architektur und Remote-Systeme</li><li>🖥 IoT-, Embedded- und gerätegesteuerte Systeme</li><li>📡 24/7-Infrastrukturbetrieb, Monitoring und Incident-Troubleshooting</li><li>🛠 Linux-Netzwerke, DNS/DHCP, Ubiquiti, MikroTik und VMware-Umgebungen</li></ul></article>
+</div>
+</div>
+</section>
+<section class="section container" id="tech-stack">
+<h2>Technologiestack</h2>
+<div class="grid-2">
+<article class="card">
+<h3>Backend</h3>
+<ul>
+<li>PHP (Laravel), Node.js, Python, TypeScript</li>
+<li>REST-APIs, WebSockets</li>
+<li>Modulare Backend-Architekturen</li>
+<li>MySQL, PostgreSQL</li>
+<li>Redis, S3-kompatibler Speicher</li>
+<li>Erfahrung mit dem NestJS-Ökosystem</li>
+</ul>
+</article>
+<article class="card">
+<h3>Frontend</h3>
+<ul>
+<li>Migration von Vue 2 auf Vue 3</li>
+<li>Vite, modernes JavaScript-Tooling</li>
+<li>Modulare UI-Architektur</li>
+<li>Drag-&amp;-Drop-Oberflächen</li>
+<li>Timeline-basierte Benutzeroberflächen</li>
+<li>Canvas- und WebGL-basierte Interfaces</li>
+<li>Gutes Verständnis von React, Next.js und Nuxt</li>
+</ul>
+</article>
+<article class="card">
+<h3>DevOps / Infrastruktur</h3>
+<ul>
+<li>Docker, GitHub Actions, CI/CD-Pipelines</li>
+<li>Linux-basierte Systeme (Server und Embedded)</li>
+<li>Reproduzierbare Builds</li>
+<li>VPN-basierte Geräteanbindung</li>
+<li>OTA-Updates und A/B-Deployment-Strategien</li>
+<li>Veröffentlichungs- und Release-Prozesse in Marktplätzen</li>
+</ul>
+</article>
+<article class="card">
+<h3>Netzwerk &amp; Sicherheit</h3>
+<ul>
+<li>Sicherheitsorientiertes Backend- und Infrastrukturdesign</li>
+<li>Netzwerkarchitektur und Remote-Access-Systeme</li>
+<li>RouterOS- / RouterBoard-Umgebungen</li>
+<li>Ubiquiti-Netzwerkinfrastruktur</li>
+<li>DNS, DHCP, Routing sowie Nagios- und Zabbix-Monitoring</li>
+<li>Gateway-Design und Remote-Konnektivitätslösungen</li>
+<li>Sichere Geräteprovisionierung und Update-Pipelines</li>
+</ul>
+</article>
+<article class="card full">
+<h3>Hardware / Embedded</h3>
+<ul>
+<li>ARM-Geräte (Rock Pi, RK3588, Raspberry-Pi-Klasse)</li>
+<li>Custom-Linux-Builds</li>
+<li>Geräteprovisionierung und Remote-Fleet-Management</li>
+<li>IoT- und Edge-Geräte</li>
+<li>Elektronik-Prototyping, Löten, Hardware-Debugging</li>
+<li>3D-Druck und physische Prototyping-Workflows</li>
+</ul>
+</article>
+</div>
+</section>
+<section class="section section-dark cv-showcase" id="achievements"><div class="container">
+<p class="section-kicker">AUSGEWÄHLTE ERGEBNISSE</p><h2>Von komplexen Systemen zu nutzbaren Produkten.</h2>
+<div class="cv-showcase-grid">
+<article class="cv-feature cv-feature-large"><img alt="Vernetztes Geräteprojekt" loading="lazy" src="assets/electronics-device.webp"/><div><span>01 / VERNETZTE GERÄTE</span><h3>Digital Signage, das im Betrieb funktioniert</h3><p>Bild- und Videoprodukte mit zuverlässigem Betrieb vernetzter Geräte.</p></div></article>
+<article class="cv-feature"><img alt="Fermershop-Oberfläche" loading="lazy" src="assets/fermershop-live.png"/><div><span>02 / PRODUKTPLATTFORMEN</span><h3>Legacy-Systeme weiterentwickeln</h3><p>Multi-Tenant-Architektur, modulare Backends und moderne Vue-Oberflächen.</p></div></article>
+<article class="cv-feature"><img alt="Experimentelle Tabula-Oberfläche" loading="lazy" src="assets/nnl-tabula-preview.jpg"/><div><span>03 / ENTWICKLERWERKZEUGE</span><h3>Lokale KI praktisch einsetzen</h3><p>C++-Werkzeuge, AI-gestützte Workflows und reproduzierbare Prüfungen.</p></div></article>
+</div><details class="cv-evidence"><summary>Alle Ergebnisse im Detail ansehen <span aria-hidden="true">↗</span></summary><ul class="list"><li>Digitale Medienprodukte für vernetzte Geräte entwickelt und gepflegt.</li><li>Eine mandantenfähige Webplattform und ihr Frontend modernisiert.</li><li>Backend-Strukturen verbessert und technische Schulden reduziert.</li><li>Werkzeuge für Geräteverwaltung und Updates unterstützt.</li><li>Wiederholbare Build- und Auslieferungsprozesse etabliert.</li><li>KI-gestützte Abläufe und lokale Entwicklerwerkzeuge entwickelt.</li></ul></details>
+</div></section>
+<section class="section container cv-early-work"><p class="section-kicker">WEITERE FACETTEN</p><h2>Auch jenseits der Web-App.</h2><div class="cv-early-grid">
+<article class="cv-early-card"><img alt="Tabula-Projektoberfläche" loading="lazy" src="assets/nnl-tabula-preview.jpg"/><div><span>LOCAL AI / C++ / PYTHON</span><h3>Werkzeuge für Entwickler</h3><p>Lokale KI-Experimente, Entwicklerwerkzeuge und automatisierte technische Bewertungen.</p><details><summary>Projekte ansehen</summary><ul><li>Open-Source-Werkzeuge für KI und lokale Modellexperimente.</li><li>Werkzeuge für lokale KI-Abläufe in der Entwicklung.</li><li>Ein Prototyp für technische Aufgabenbewertungen.</li></ul></details></div></article>
+<article class="cv-early-card"><img alt="Elektronik-Prototyp" loading="lazy" src="assets/electronics-board.webp"/><div><span>LINUX / NETZWERKE / GERÄTE</span><h3>Infrastruktur, die laufen muss</h3><p>Erfahrung mit Betrieb, Monitoring, Netzwerken und Embedded Linux.</p><details><summary>Erfahrung ansehen</summary><ul>
 <li>ISP-Betrieb und Qualitätssicherung in 24/7-Umgebungen</li>
 <li>Linux/CentOS-Administration, Bash, VMware, Nagios und Zabbix</li>
 <li>Ubiquiti, MikroTik, Routing, DNS/DHCP und Netzwerk-Troubleshooting</li>
 <li>Rock-Pi-Backup-Tools, Embedded Linux und Remote-Systemsupport</li>
 </ul></details></div></article>
-        </div></section>
-
-    <section class="section container cv-open-source"><div class="cv-open-visual" aria-hidden="true"><span>GERRIT</span><i></i><span>LINUX</span><i></i><span>RUNTIME</span></div><div><p class="section-kicker">OPEN SOURCE &amp; SYSTEME</p><h2>Auch unter der Oberfläche.</h2><p>Beiträge im Wikipedia-Ökosystem und am Linux-Kernel. Verständnis für Laufzeitumgebungen, Performance und systemnahe Grenzen.</p><details class="cv-evidence"><summary>Erfahrung im Detail</summary><ul class="list">
+</div></section>
+<section class="section container cv-open-source"><div aria-hidden="true" class="cv-open-visual"><span>GERRIT</span><i></i><span>LINUX</span><i></i><span>RUNTIME</span></div><div><p class="section-kicker">OPEN SOURCE &amp; SYSTEME</p><h2>Auch unter der Oberfläche.</h2><p>Beiträge im Wikipedia-Ökosystem und am Linux-Kernel. Verständnis für Laufzeitumgebungen, Performance und systemnahe Grenzen.</p><details class="cv-evidence"><summary>Erfahrung im Detail</summary><ul class="list">
 <li>Open-Source-Beiträge, einschließlich Arbeit im Wikipedia-Ökosystem (Gerrit-Workflow)</li>
 <li>Beiträge zu Linux-Kernel-Patches</li>
 <li>Erfahrung nahe an systemnahen Grenzen und Performance-Limits</li>
 <li>Starkes Verständnis von Linux-Internals und Runtime-Umgebungen</li>
 </ul></details></div></section>
-
-    <section class="section expertise-group cv-approach"><div class="container"><p class="section-kicker">HOW I WORK / ARBEITSWEISE</p><h2>Wie ich arbeite</h2><p class="cv-approach-lead">Vier Perspektiven auf meine Arbeit. Die Details lassen sich bei Interesse öffnen.</p><div class="cv-approach-grid"><article class="cv-approach-card"><span class="cv-approach-index">01</span><p class="section-kicker">ARCHITEKTUR</p><h3>Klarheit statt Komplexität</h3><p>Systeme so aufbauen, dass Teams sie verstehen und weiterentwickeln können.</p><details><summary>Details ansehen</summary><ul class="list">
+<section class="section expertise-group cv-approach"><div class="container"><p class="section-kicker">HOW I WORK / ARBEITSWEISE</p><h2>Wie ich arbeite</h2><p class="cv-approach-lead">Vier Perspektiven auf meine Arbeit. Die Details lassen sich bei Interesse öffnen.</p><div class="cv-approach-grid"><article class="cv-approach-card"><span class="cv-approach-index">01</span><p class="section-kicker">ARCHITEKTUR</p><h3>Klarheit statt Komplexität</h3><p>Systeme so aufbauen, dass Teams sie verstehen und weiterentwickeln können.</p><details><summary>Details ansehen</summary><ul class="list">
 <li>Einfache, skalierbare Architekturen statt Over-Engineering</li>
 <li>Klare Trennung zwischen Domain-Logik, Infrastruktur und UI</li>
 <li>Systeme müssen debugbar, beobachtbar und austauschbar sein</li>
@@ -275,39 +240,36 @@
 <li>Starke Dokumentationskultur</li>
 <li>Unabhängiger, fokussierter, introvertiertenfreundlicher Arbeitsstil</li>
 </ul></details></article></div></div></section>
-
-    <section class="section project-section" id="projects"><div class="container"><p class="section-kicker">PROJEKTE</p><h2>Ausgewählte Projekte</h2><p class="muted">Screenshots aus Frontend, Backend, Spielentwicklung und Elektronik.</p><div class="project-grid">
+<section class="section project-section" id="projects"><div class="container"><p class="section-kicker">PROJEKTE</p><h2>Ausgewählte Projekte</h2><p class="muted">Screenshots aus Frontend, Backend, Spielentwicklung und Elektronik.</p><div class="project-grid">
 <article class="project-card" id="project-caddy"><img alt="Caddy Panel mit Reverse-Proxy-Routen und Docker-Containern" loading="lazy" src="assets/caddy-panel.webp"/><div><span>React · Express · Docker · Caddy</span><h3>Caddy Panel</h3><p>Oberfläche zur Verwaltung von Reverse-Proxy-Routen und der zugehörigen Container, mit Prüfung und Rücksetzung vor dem Neuladen.</p></div></article>
-<article class="project-card" id="project-fermershop"><img alt="Fermershop mit Produktkategorien aus 1C" loading="lazy" src="assets/fermershop-live.png"/><div><span>Next.js · TypeScript · 1C-Datenmigration</span><h3>Fermershop</h3><p>Vollständige Shop-Oberfläche mit operativem Backoffice. Katalog, Preise, Bestände und Verkaufshistorie stammen aus einem 1C/BAS-Backup. Der Shop arbeitet mit vorbereiteten Daten statt einer laufenden 1C-Verbindung; beim Deployment werden auch Anwendungsdatenbank und Konfiguration wiederhergestellt.</p></div></article>
+<article class="project-card" id="project-fermershop"><img alt="Fermershop-Webshop" loading="lazy" src="assets/fermershop-live.png"/><div><span>Next.js · TypeScript · Commerce</span><h3>Fermershop</h3><p>Webshop mit praktischen Verwaltungswerkzeugen für Katalog, Lagerbestand und Verkaufsabläufe.</p></div></article>
 <article class="project-card"><div aria-label="Demoansicht der CryptoFreelance-Oberfläche" class="crypto-preview" role="img"><strong>CryptoFreelance <small>DEMO</small></strong><p>Freiberufliche Aufträge. Transparente Auszahlungen.</p><div class="crypto-stats"><span>Verfügbares Guthaben <b>$1,500</b></span><span>Aktive Aufträge <b>2</b></span><span>Bewertung <b>92</b></span></div><div class="crypto-task">Smart-Contract-Abo <em>USDC</em></div><div class="crypto-task">DeFi-Analyse-Dashboard <em>In Bearbeitung</em></div></div><div><span>JavaScript · Frontend · Backend</span><h3>CryptoFreelance</h3><p>Oberfläche eines Marktplatzes für freiberufliche Aufträge, Bewerbungen, Kontoaktivitäten und Auszahlungen in Kryptowährung. Die Demoansicht zeigt kein echtes Benutzerkonto.</p></div></article>
 <article class="project-card" id="project-neoncrown"><img alt="Spielbare Waldlagerszene in NeonCrown" loading="lazy" src="assets/neon-crown-camp-de.webp"/><div><span>Unreal Engine · Spielsysteme</span><h3>NeonCrown</h3><p>Spielbares Waldlager mit Figuren, HUD, Interaktion und Weltsystemen.</p></div></article>
 <article class="project-card"><img alt="iHub-Oberfläche für Licht, Lüftung, Temperatur und Feuchte" loading="lazy" src="assets/ihub-climate-de.webp"/><div><span>Preact · ESP32 · Klimasteuerung</span><h3>iHub</h3><p>Lokale Oberfläche für Lichtpläne, Lüftung, Temperatur und Luftfeuchtigkeit.</p></div></article>
 </div></div></section>
+<section class="section container" id="beyond-web">
+<h2>Über Webentwicklung hinaus</h2>
+<div class="grid-2">
+<article class="card"><img alt="Geöffnete Steuerplatine einer Bosch-Klimaanlage bei der Integration in ein Smart Home mit ESP32-C3" loading="lazy" src="assets/bosch-ac-board.png"/><div><h3>Elektronik und Hausautomatisierung</h3><p>Praktische Erfahrung mit Prototypenbau, Löten und Fehlersuche mit ESP32, RS-485 und CAN. Zuletzt habe ich eine Bosch-Klimaanlage mit einem ESP32-C3 Super Mini, einem direkten Anschluss und einer verbesserten Antenne ausgestattet, den Controller programmiert und in mein Smart Home eingebunden.</p></div></article>
+<article class="card music-card"><img alt="Cover von Techno Punch — Polyrhythmic Drive" loading="lazy" src="assets/polyrhythmic-drive.webp"/><div><p class="section-kicker">TECHNO PUNCH</p><h3>Polyrhythmic Drive</h3><p>Meine elektronische Musik: Komposition, Produktion und visuelle Gestaltung.</p><p><a href="https://www.youtube.com/watch?v=u6hkw9bWDto&amp;list=PLGAa6q9riUcc&amp;index=9">Auf YouTube anhören ↗</a> · <a href="https://www.youtube.com/watch?v=iBWzzKkJJFo&amp;list=PLGAa6q9riUcc&amp;index=1">Weitere Musik ↗</a></p></div><audio aria-label="Techno Punch — Polyrhythmic Drive abspielen" controls="" preload="metadata"><source src="assets/polyrhythmic-drive.mp3" type="audio/mpeg"/>Ihr Browser unterstützt die Audiowiedergabe nicht.</audio></article>
+</div>
+</section>
+<section class="section section-dark cv-contact" id="contact"><div class="container"><div class="cv-contact-copy"><p class="section-kicker">LASSEN SIE UNS SPRECHEN</p><h2>Was möchten Sie bauen?</h2><p>Eine Rolle, ein Projekt oder eine konkrete technische Herausforderung: Schreiben Sie mir und wir finden einen guten Startpunkt.</p><a class="contact-cta" href="mailto:jenyaukraine@gmail.com?subject=Anfrage%20zur%20Zusammenarbeit">E-Mail schreiben <span aria-hidden="true">↗</span></a><p class="cv-rate-note">Projektumfang und Konditionen besprechen wir direkt.</p></div><div class="cv-contact-links"><div aria-hidden="true" class="cv-contact-mark"><span>&lt;/&gt;</span><i></i><b>LET'S BUILD</b></div><a href="mailto:jenyaukraine@gmail.com"><small>EMAIL</small><strong>jenyaukraine@gmail.com</strong><span aria-hidden="true">↗</span></a><a href="https://github.com/jenyaukraine" rel="noopener" target="_blank"><small>GITHUB</small><strong>github.com/jenyaukraine</strong><span aria-hidden="true">↗</span></a></div></div></section>
+</main>
 
-
-    <section class="section container" id="beyond-web">
-      <h2>Über Webentwicklung hinaus</h2>
-      <div class="grid-2">
-        <article class="card"><img src="assets/bosch-ac-board.png" alt="Geöffnete Steuerplatine einer Bosch-Klimaanlage bei der Integration in ein Smart Home mit ESP32-C3" loading="lazy"><div><h3>Elektronik und Hausautomatisierung</h3><p>Praktische Erfahrung mit Prototypenbau, Löten und Fehlersuche mit ESP32, RS-485 und CAN. Zuletzt habe ich eine Bosch-Klimaanlage mit einem ESP32-C3 Super Mini, einem direkten Anschluss und einer verbesserten Antenne ausgestattet, den Controller programmiert und in mein Smart Home eingebunden.</p></div></article>
-        <article class="card music-card"><img src="assets/polyrhythmic-drive.webp" alt="Cover von Techno Punch — Polyrhythmic Drive" loading="lazy"><div><p class="section-kicker">TECHNO PUNCH</p><h3>Polyrhythmic Drive</h3><p>Meine elektronische Musik: Komposition, Produktion und visuelle Gestaltung.</p><p><a href="https://www.youtube.com/watch?v=u6hkw9bWDto&amp;list=PLGAa6q9riUcc&amp;index=9">Auf YouTube anhören ↗</a> · <a href="https://www.youtube.com/watch?v=iBWzzKkJJFo&amp;list=PLGAa6q9riUcc&amp;index=1">Weitere Musik ↗</a></p></div><audio controls preload="metadata" aria-label="Techno Punch — Polyrhythmic Drive abspielen"><source src="assets/polyrhythmic-drive.mp3" type="audio/mpeg">Ihr Browser unterstützt die Audiowiedergabe nicht.</audio></article>
-      </div>
-    </section>
-    <section class="section section-dark cv-contact" id="contact"><div class="container"><div class="cv-contact-copy"><p class="section-kicker">LASSEN SIE UNS SPRECHEN</p><h2>Was möchten Sie bauen?</h2><p>Eine Rolle, ein Projekt oder eine konkrete technische Herausforderung: Schreiben Sie mir und wir finden einen guten Startpunkt.</p><a class="contact-cta" href="mailto:jenyaukraine@gmail.com?subject=Anfrage%20zur%20Zusammenarbeit">E-Mail schreiben <span aria-hidden="true">↗</span></a><p class="cv-rate-note">Projektumfang und Konditionen besprechen wir direkt.</p></div><div class="cv-contact-links"><div class="cv-contact-mark" aria-hidden="true"><span>&lt;/&gt;</span><i></i><b>LET'S BUILD</b></div><a href="mailto:jenyaukraine@gmail.com"><small>EMAIL</small><strong>jenyaukraine@gmail.com</strong><span aria-hidden="true">↗</span></a><a href="https://github.com/jenyaukraine" target="_blank" rel="noopener"><small>GITHUB</small><strong>github.com/jenyaukraine</strong><span aria-hidden="true">↗</span></a></div></div></section>
-  </main>
-
-
-  <footer class="footer">
-    <div class="container">
-      <p>Eugen Punchenko — Full-Stack Engineer</p>
-      <p class="muted">Strukturierte Systeme. Zuverlässige Umsetzung. Langfristiger technischer Einfluss.</p>
-    <p><a href="privacy.html">Datenschutz</a></p>
-    </div>
-  </footer>
-  <script src="theme.js?v=20261030s"></script>
-  <script src="app.js?v=20261030r" defer></script>
-  <script src="matrix-world.js?v=20261030s" defer></script>
-  <script src="music-invite.js?v=20261030r" defer></script>
-  <script src="cv-navigation.js?v=20261030r" defer></script>
-  <script src="tech-map.js?v=20261030s" defer></script>
+<footer class="footer">
+<div class="container">
+<p>Eugen Punchenko — Full-Stack Engineer</p>
+<p class="muted">Strukturierte Systeme. Zuverlässige Umsetzung. Langfristiger technischer Einfluss.</p>
+<p><a href="privacy.html">Datenschutz</a></p>
+</div>
+</footer>
+<script src="theme.js?v=20261030s"></script>
+<script defer="" src="app.js?v=20261030r"></script>
+<script defer="" src="matrix-world.js?v=20261030s"></script>
+<script defer="" src="music-invite.js?v=20261030r"></script>
+<script defer="" src="music-polish.js?v=20261030a"></script>
+<script defer="" src="cv-navigation.js?v=20261030r"></script>
+<script defer="" src="tech-map.js?v=20261030s"></script>
 </body>
 </html>
