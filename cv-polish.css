@@ -77,7 +77,7 @@
 @media screen and (max-width:650px) {
   .cv-reading-layout .cv-section-nav > .container { flex-wrap:nowrap!important; gap:3px!important; padding-left:8px; padding-right:8px; }
   .cv-section-nav .cv-nav-tools { margin-left:auto!important; }
-  .cv-section-nav a,.cv-nav-more > summary { white-space:nowrap; font-size:9px!important; padding:6px 2px!important; }
+  .cv-section-nav a,.cv-nav-more > summary { white-space:nowrap; font-size:10px!important; padding:6px 2px!important; }
   .cv-section-nav button { white-space:nowrap; font-size:10px; padding:5px!important; }
   .hero .lang-switch a,.hero .lang-switch strong { padding:7px 8px!important; font-size:11px!important; }
   .cv-track-card { flex-wrap:wrap; }
