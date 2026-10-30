@@ -4,6 +4,7 @@
   body.matrix-world.theme-light main > #projects { background:#f1f2f4!important; }
   /* Keep the animated code above the page background and behind every reading panel. */
   body.matrix-world .matrix-world-canvas { display:block!important; z-index:1; }
+  body.matrix-world .matrix-neo { z-index:3; }
   body.cv-reading-layout .hero-with-cover::before {
     background:linear-gradient(90deg,#07090daf 0%,#080a0d73 38%,#080a0d33 70%,#080a0d14 100%),
                linear-gradient(0deg,#08090db3 0%,transparent 48%);
@@ -86,9 +87,16 @@
   .cv-floating-track small { color:var(--muted); font-size:10px; }
   .cv-floating-track button { flex:0 0 30px; width:30px; height:30px; border:0; border-radius:50%; background:#86ddc4; color:#12352b; cursor:pointer; }
   .cv-youtube-float { text-decoration:none; }
+  button.cv-youtube-float { font:inherit; text-align:left; cursor:pointer; }
   .cv-youtube-float:hover,.cv-youtube-float:focus-visible { border-color:#86ddc4; outline:2px solid #86ddc4; outline-offset:2px; }
   .cv-floating-icon { display:grid; place-items:center; flex:0 0 30px; width:30px; height:30px; border-radius:50%; background:#86ddc4; color:#12352b; font-size:12px; }
   body.theme-light .cv-floating-track { background:#fff; }
+  .cv-video-dialog { width:min(900px,calc(100vw - 32px)); max-width:none; max-height:calc(100vh - 32px); padding:16px; border:1px solid #86ddc477; border-radius:14px; background:#151518; color:#eeeef0; box-shadow:0 24px 80px #000b; }
+  .cv-video-dialog::backdrop { background:#050608cc; }
+  .cv-video-dialog-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; font-weight:700; }
+  .cv-video-dialog-head button { width:34px; height:34px; border:1px solid #74747f; border-radius:50%; background:#24242a; color:#fff; font-size:20px; cursor:pointer; }
+  .cv-video-dialog iframe { display:block; width:100%; aspect-ratio:16/9; border:0; border-radius:8px; background:#08090b; }
+  .cv-video-dialog > a { display:inline-block; margin-top:12px; color:#86ddc4; font-size:13px; }
 }
 @media screen and (max-width:650px) {
   body.cv-reading-layout .hero-with-cover::before { background:linear-gradient(0deg,#08090de6 0%,#08090dad 48%,#08090d26 100%); }

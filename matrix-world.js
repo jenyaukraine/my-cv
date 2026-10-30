@@ -63,9 +63,9 @@
   let pose=66.666,rotation=0;
   if(flight){const t=Math.min(1,(now-flight.start)/1050),ease=1-Math.pow(1-t,3);x=flight.fromX+(targetX-flight.fromX)*ease;y=flight.fromDocY+(flight.toDocY-flight.fromDocY)*ease-window.scrollY-Math.sin(t*Math.PI)*Math.min(135,height*.18);pose=t<.55?33.333:0;rotation=direction*(Math.sin(t*Math.PI)*28);if(t===1)flight=null;}
   else{x+=(targetX-x)*.18;y+=(targetY-y)*.2;}
-  const entered=elapsed>6;body.classList.toggle('matrix-awake',elapsed>5);
+  const entered=elapsed>1.3;body.classList.toggle('matrix-awake',elapsed>1);
   if(entered&&!revealed){revealed=true;flight={start:now,fromX:x+size*.4,fromDocY:y+window.scrollY+size*.4,toX:targetX,toDocY:lift.y+lift.h*.18};}
-  actor.style.opacity=entered?String(Math.min(1,(elapsed-6)/1.2)*(width<700?.38:width<1400?.55:.95)):'0';
+  actor.style.opacity=entered?String(Math.min(1,(elapsed-1.3)/.8)*(width<700?.38:width<1400?.65:.95)):'0';
   if(entered&&now<scrollingUntil&&now-lastShot>580){lastShot=now;const startX=x+size*.6,startY=y+size*.55;beams.push({x:startX,y:startY,dir:direction,born:now});}
   if(now-lastShot<95)pose=100;
   actor.style.transform=`translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) rotate(${rotation.toFixed(1)}deg)`;sprite.style.backgroundPosition=pose+'% center';
