@@ -1,4 +1,7 @@
 @media screen {
+  /* Keep the selected-projects section on the same page surface as its neighbours. */
+  body.matrix-world main > #projects { background:#070708!important; }
+  body.matrix-world.theme-light main > #projects { background:#f1f2f4!important; }
   /* Keep the side gutters clean; the canvas was tinting them grey or black. */
   body.matrix-world .matrix-world-canvas { display:none!important; }
   body.matrix-world.cv-reading-layout.theme-light main { background:#f1f2f4!important; }
