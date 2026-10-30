@@ -65,7 +65,7 @@
       const language = document.documentElement.lang;
       const projects = [
         {
-          title: 'TidyDrive', image: 'assets/tidydrive-logo.webp', stack: 'Hardware · product',
+          id: 'project-tidydrive', title: 'TidyDrive', image: 'assets/tidydrive-logo.webp', stack: 'Hardware · product',
           copy: { en: 'A phone flash drive. Development is ongoing.', de: 'Ein USB-Stick für das Smartphone. Die Entwicklung läuft.' }
         },
         {
@@ -77,7 +77,7 @@
           copy: { en: 'A mobile-first car catalogue with search, filters, budget estimates and vehicle details.', de: 'Mobil optimierter Autokatalog mit Suche, Filtern, Budgetschätzung und Fahrzeugdetails.' }
         },
         {
-          title: 'Shop Jewel / 6 Moments', image: 'assets/shopjewel-preview.webp', stack: 'Commerce · jewellery',
+          id: 'project-shopjewel', title: 'Shop Jewel / 6 Moments', image: 'assets/shopjewel-preview.webp', stack: 'Commerce · jewellery',
           copy: { en: 'Jewellery storefront and editorial product presentation.', de: 'Schmuck-Onlineshop mit redaktioneller Produktpräsentation.' }
         },
         {
@@ -96,6 +96,7 @@
       projects.forEach(project => {
         const card = document.createElement('article');
         card.className = 'project-card';
+        if (project.id) card.id = project.id;
         const image = document.createElement('img');
         image.src = project.image;
         image.alt = `${project.title} project visual`;

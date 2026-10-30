@@ -1,5 +1,7 @@
 /* Visual storytelling for the denser CV sections. */
 @media screen {
+  .cv-domain-previews a + a {margin-left:15px}
+  .project-card[id] {scroll-margin-top:80px}
   body.cv-reading-layout #achievements .container {padding-bottom:38px}
   body.cv-reading-layout #achievements h2 {max-width:790px;font-size:clamp(2rem,4.4vw,4.3rem);line-height:1.06;letter-spacing:-.055em;margin:12px 0 32px}
   .cv-showcase-grid {display:grid;grid-template-columns:1.14fr 1fr;grid-template-rows:repeat(2,260px);gap:15px}
