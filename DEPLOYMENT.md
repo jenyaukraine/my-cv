@@ -1,6 +1,14 @@
 # Hosting and analytics
 
-The existing CV, its EN/DE content, theme, animation, project gallery and original PDF downloads are preserved. Added features are isolated in `app.js`, `analytics.css` and the Node server.
+The existing CV, its EN/DE content, project gallery and original PDF downloads are preserved. Additional profile material describes the confirmed digital-signage work and the wider project portfolio. Analytics are isolated in `app.js`, `analytics.css` and the Node server.
+
+## CV presentation
+
+The default theme follows `prefers-color-scheme` from the browser/device. A deliberate choice through the existing theme switch is stored locally and takes precedence. Without a manual choice, a device-theme change updates the CV automatically.
+
+Day mode uses the original light CV presentation. Night mode enables `matrix-world.js` and `matrix-world.css`: progressive full-page code rain, decorative elevators beside sections and a sprite travelling between them in response to scrolling. The background intensifies over 50 seconds of visible-page animation time; the character enters after six seconds. Motion pauses when the document is hidden, can be paused using the on-page control, and respects reduced-motion preferences. Decorations never capture pointer input. Text remains in foreground panels.
+
+`music-invite.js` offers Pentaloop through a non-modal side prompt. Playback starts only after the visitor presses Play. The compact player supports pause/resume and close; the original track controls remain available. The prompt choice is remembered for that tab session. Theme and music scripts must retain their versioned asset URLs when edited to avoid stale browser caches.
 
 ## Addresses
 
@@ -35,4 +43,4 @@ Campaign example: `https://inkora.at/cv/?utm_source=linkedin&utm_campaign=php-ro
 
 ## Checks
 
-Run `npm test` for integration coverage of analytics, origin checks, admin access, profile edits, logout, persistence and private-file protection. The original `styles.css`, `theme.js` and both original PDFs are deliberately unchanged.
+Run `npm test` for integration coverage of analytics, origin checks, admin access, profile edits, logout, persistence and private-file protection. The original `styles.css` and both original PDFs remain unchanged. `theme.js` keeps the existing theme/project/gallery/music functionality, follows the system theme by default and hands the former hero-only animation off to the separate full-page animation module.

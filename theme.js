@@ -1,22 +1,28 @@
 (function () {
   const KEY = 'cv_theme';
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  let manualTheme = null;
 
   function apply(theme) {
     const light = theme === 'light';
     document.body.classList.toggle('theme-light', light);
     const toggles = document.querySelectorAll('.theme-toggle-input');
     toggles.forEach(t => { t.checked = light; });
+    document.dispatchEvent(new CustomEvent('cv-theme-change', { detail: { theme } }));
   }
 
   function init() {
-    const saved = localStorage.getItem(KEY);
-    // Light is the default for new visitors; an explicit dark preference is preserved.
-    apply(saved === 'dark' ? 'dark' : 'light');
+    try { const saved = localStorage.getItem(KEY); manualTheme = ['light', 'dark'].includes(saved) ? saved : null; } catch {}
+    apply(manualTheme || (systemTheme.matches ? 'dark' : 'light'));
+    systemTheme.addEventListener('change', event => {
+      if (!manualTheme) apply(event.matches ? 'dark' : 'light');
+    });
 
     document.querySelectorAll('.theme-toggle-input').forEach(input => {
       input.addEventListener('change', () => {
         const theme = input.checked ? 'light' : 'dark';
-        localStorage.setItem(KEY, theme);
+        manualTheme = theme;
+        try { localStorage.setItem(KEY, theme); } catch {}
         apply(theme);
       });
     });
@@ -130,61 +136,7 @@
       secondTrack.addEventListener('play', () => firstTrack.pause());
     }
 
-    const hero = document.querySelector('.hero');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (hero && !reduceMotion.matches) {
-      const canvas = document.createElement('canvas');
-      canvas.className = 'matrix-rain';
-      canvas.setAttribute('aria-hidden', 'true');
-      hero.prepend(canvas);
-      const scene = document.createElement('div');
-      scene.className = 'action-scene';
-      scene.setAttribute('aria-hidden', 'true');
-      scene.innerHTML = '<div class="elevator-door"></div><div class="action-figure"></div><i class="bullet-trail bullet-trail-one"></i><i class="bullet-trail bullet-trail-two"></i>';
-      hero.prepend(scene);
-      hero.addEventListener('pointermove', event => {
-        const rect = hero.getBoundingClientRect();
-        scene.style.setProperty('--parallax-x', `${((event.clientX - rect.left) / rect.width - .5) * 22}px`);
-        scene.style.setProperty('--parallax-y', `${((event.clientY - rect.top) / rect.height - .5) * 14}px`);
-      }, { passive: true });
-      const context = canvas.getContext('2d');
-      const glyphs = '01アイウエオカキクケコサシスセソタチツテト';
-      let drops = [];
-      let width = 0;
-      let height = 0;
-      let lastFrame = 0;
-      let visible = true;
-      const resize = () => {
-        const scale = Math.min(window.devicePixelRatio || 1, 1.5);
-        width = hero.clientWidth;
-        height = hero.clientHeight;
-        canvas.width = Math.round(width * scale);
-        canvas.height = Math.round(height * scale);
-        context.setTransform(scale, 0, 0, scale, 0, 0);
-        context.fillStyle = '#0b1b27';
-        context.fillRect(0, 0, width, height);
-        drops = Array.from({ length: Math.ceil(width / 24) }, () => -Math.random() * height / 24);
-      };
-      resize();
-      new ResizeObserver(resize).observe(hero);
-      new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }).observe(hero);
-      const draw = time => {
-        requestAnimationFrame(draw);
-        if (!visible || reduceMotion.matches || time - lastFrame < 48) return;
-        lastFrame = time;
-        context.fillStyle = 'rgba(10, 27, 37, .13)';
-        context.fillRect(0, 0, width, height);
-        context.font = '15px monospace';
-        drops.forEach((drop, index) => {
-          const x = index * 24;
-          const y = drop * 24;
-          context.fillStyle = Math.random() > .96 ? '#c8ffe6' : '#47c896';
-          context.fillText(glyphs[Math.floor(Math.random() * glyphs.length)], x, y);
-          drops[index] = y > height + Math.random() * 500 ? -Math.random() * 30 : drop + .32;
-        });
-      };
-      requestAnimationFrame(draw);
-    }
+
   }
 
   if (document.readyState === 'loading') {
