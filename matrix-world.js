@@ -15,7 +15,9 @@
  let width=0,height=0,size=180,rain=[],active=-1,elapsed=0,last=0,lastPaint=0,scrollY=window.scrollY,direction=1,scrollingUntil=0,lastShot=0,flight=null,x=0,y=0,frame=0,paused=reduced.matches;
  let beams=[],revealed=false,enabled=!body.classList.contains('theme-light');
  let audioContext,analyser,spectrum,pulse=0;const audioSources=new WeakSet();
- document.addEventListener('play',event=>{const media=event.target;if(!(media instanceof HTMLMediaElement)||!navigator.userActivation?.hasBeenActive)return;try{const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;if(!audioContext){audioContext=new Audio();analyser=audioContext.createAnalyser();analyser.fftSize=256;analyser.smoothingTimeConstant=.85;spectrum=new Uint8Array(analyser.frequencyBinCount);analyser.connect(audioContext.destination);}if(!audioSources.has(media)){audioContext.createMediaElementSource(media).connect(analyser);audioSources.add(media);}audioContext.resume().catch(()=>{});}catch{}},true);
+ function connectAudio(media){if(!(media instanceof HTMLMediaElement))return;try{const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;if(!audioContext){audioContext=new Audio();analyser=audioContext.createAnalyser();analyser.fftSize=256;analyser.smoothingTimeConstant=.85;spectrum=new Uint8Array(analyser.frequencyBinCount);analyser.connect(audioContext.destination);}if(audioContext.state!=='running'&&!navigator.userActivation?.hasBeenActive)return;if(!audioSources.has(media)){audioContext.createMediaElementSource(media).connect(analyser);audioSources.add(media);}audioContext.resume().catch(()=>{});}catch{}}
+ document.addEventListener('play',event=>connectAudio(event.target),true);
+ document.addEventListener('pointerdown',()=>{const media=[...document.querySelectorAll('audio')].find(a=>!a.paused);if(media)connectAudio(media);},{once:true});
  body.classList.toggle('matrix-world',enabled);
  const updateToggle=()=>{body.classList.toggle('matrix-paused',paused);};
  const pause=value=>{paused=value;last=0;beams=[];updateToggle();if(paused){actor.style.opacity='0';canvas.style.opacity='.18';ctx.clearRect(0,0,width,height);}};

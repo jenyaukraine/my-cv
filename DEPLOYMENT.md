@@ -8,7 +8,7 @@ The default theme follows `prefers-color-scheme` from the browser/device. A deli
 
 Day mode uses light reading panels with dark text. Night mode keeps the same reading-panel structure and enables `matrix-world.js` and `matrix-world.css`: sparse code rain only in the outer gutters, decorative elevators centred beside sections and a sprite travelling between them in response to scrolling. The background intensifies gently over 65 seconds of visible-page animation time, with capped stream density; the character enters after six seconds. Motion pauses when the document is hidden, can be paused using the on-page control, and respects reduced-motion preferences. Decorations never capture pointer input. Text remains in foreground panels.
 
-`music-invite.js` offers Pentaloop through a non-modal side prompt. Playback starts only after the visitor presses Play. The compact player supports pause/resume and close; the original track controls remain available. The prompt choice is remembered for that tab session. Theme and music scripts must retain their versioned asset URLs when edited to avoid stale browser caches.
+`music-invite.js` creates a persistent floating Pentaloop player and a matching inline player. Initial volume is 30%; playback is attempted on load. Browser autoplay policies may require a first click. Both players share playback state, elapsed/duration labels, seeking and a speaker mute control. Music subtly modulates the night animation through Web Audio when available. Theme and music scripts must retain their versioned asset URLs when edited to avoid stale browser caches.
 
 ## Addresses
 
@@ -44,3 +44,7 @@ Campaign example: `https://inkora.at/cv/?utm_source=linkedin&utm_campaign=php-ro
 ## Checks
 
 Run `npm test` for integration coverage of analytics, origin checks, admin access, profile edits, logout, persistence and private-file protection. The original `styles.css` and both original PDFs remain unchanged. `theme.js` keeps the existing theme/project/gallery/music functionality, follows the system theme by default and hands the former hero-only animation off to the separate full-page animation module.
+
+The public counter shows unique anonymous browsers and currently active tabs. Lifetime unique-browser hashes are retained separately from the 90-day page-load detail. Unique tracking starts with this feature; earlier page loads are not backfilled as unique people. See privacy.html.
+
+The sticky terminal-style navigation includes text search and current-section highlighting. The visual technology map preserves the original stack details in an expandable section. Brand icons come from Simple Icons; cinematic header and transparent character strip were generated with ImageGen.
